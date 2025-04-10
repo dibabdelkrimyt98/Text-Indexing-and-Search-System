@@ -14,4 +14,12 @@ document.getElementById('fileInput').addEventListener('change', function () {
   document.getElementById('indexButton').addEventListener('click', () => {
     alert('Indexing files... (mock logic)');
   });
+  document.getElementById('indexButton').addEventListener('click', () => {
+    const dialog = document.getElementById('successDialog');
+    dialog.classList.add('show');
+  });
+  document.getElementById('closeDialog').addEventListener('click', () => {
+    const dialog = document.getElementById('successDialog');
+    dialog.classList.remove('show');
+  });
   

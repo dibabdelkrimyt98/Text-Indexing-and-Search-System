@@ -187,4 +187,71 @@ body {
     background-color: #aaa;
     cursor: not-allowed;
   }
+  /* Dialog backdrop */
+.dialog-backdrop {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+  }
   
+  .dialog-backdrop.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  
+  /* Dialog box */
+  .dialog-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    animation: popIn 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    color: #1b4d3e;
+  }
+  
+  .dialog-box i {
+    font-size: 3rem;
+    color: #28a745;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dialog-box h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .dialog-box button {
+    background: #1b4d3e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .dialog-box button:hover {
+    background: #163f32;
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
