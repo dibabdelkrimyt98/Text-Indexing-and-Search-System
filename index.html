@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOS System - Abu Obaida Search System</title>
+
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="light-mode">
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="navbar collapsed" id="sidebar">
+      <div class="nav-top">
+        <div class="logo">A</div>
+        <button id="toggleSidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
+      </div>
+
+      <div class="nav-group">
+        <nav class="nav-menu">
+          <a href="index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
+        </nav>
+    
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="en">🇬🇧</button>
+          <button class="lang-btn" data-lang="fr">🇫🇷</button>
+          <button class="lang-btn" data-lang="ar">🇵🇸</button>
+        </div>
+      </div>
+    
+      <div class="controls">
+        <button id="themeToggle">🌙</button>
+      </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h2 id="typingText"></h2>
+        <p>A search engine dedicated to resilience and truth.</p>
+        <button>Try Now</button>
+      </div>
+    </section>
+    <div class="floating-search" id="floatingSearch">
+        <input type="text" placeholder="Type your query..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>

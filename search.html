@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - AOS System</title>
+  <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Search Documents</h1>
+    <form id="searchForm">
+      <input type="text" id="searchInput" placeholder="Enter your query...">
+      <select id="similaritySelect">
+        <option value="cosine">Cosine Similarity</option>
+        <option value="euclidean">Euclidean Distance</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+    <ul id="results"></ul>
+  </div>
+
+  <script src="js/search.js"></script>
+</body>
+</html>
