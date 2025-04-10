@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upload & Index - AOS System</title>
-  <link rel="stylesheet" href="css/upload.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/upload.css" />
 </head>
-<body>
-  <div class="container">
-    <h1>Upload Documents</h1>
-    <form id="uploadForm">
-      <input type="file" id="fileInput" multiple accept=".txt" />
-      <ul id="fileList"></ul>
-      <button type="submit">Index Files</button>
-    </form>
+<body class="light-mode">
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="navbar collapsed" id="sidebar">
+      <div class="nav-top">
+        <div class="logo">A</div>
+        <button id="toggleSidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
+      </div>
+      <div class="nav-group">
+        <nav class="nav-menu">
+          <a href="index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
+        </nav>
+    
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="en">🇬🇧</button>
+          <button class="lang-btn" data-lang="fr">🇫🇷</button>
+          <button class="lang-btn" data-lang="ar">🇵🇸</button>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="themeToggle">🌙</button>
+      </div>
+    </aside>
+
+    <!-- Upload Section -->
+    <section class="upload-hero">
+      <div class="overlay"></div>
+      <div class="upload-boxes">
+        <div class="upload-box" id="uploadBox">
+          <i class="fas fa-file-upload"></i>
+          <p>Click or drag your <strong>.txt</strong> files here to upload</p>
+          <input type="file" id="fileInput" multiple accept=".txt">
+        </div>
+
+        <div class="index-box">
+          <h2>Uploaded Files</h2>
+          <ul id="fileList"></ul>
+          <button id="indexButton" disabled>Index Files</button>
+        </div>
+      </div>
+    </section>
   </div>
 
+  <script src="js/app.js"></script>
   <script src="js/upload.js"></script>
 </body>
 </html>
