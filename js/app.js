@@ -1,41 +1,64 @@
-// Typing effect
-const text = "Empowering Knowledge. Preserving Truth.";
-let index = 0;
-const speed = 60;
+// ========== Typing Effect ==========
 
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("typingText").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, speed);
+const text1 = "You are welcome in AOS System.";
+const text2 = "Empowering Knowledge. Preserving Truth.";
+
+let index1 = 0;
+let index2 = 0;
+const speed = 55;
+
+function typeWriterLine1() {
+  const el1 = document.getElementById("typingText1");
+  if (index1 < text1.length) {
+    el1.innerHTML += text1.charAt(index1);
+    index1++;
+    setTimeout(typeWriterLine1, speed);
+  } else {
+    setTimeout(typeWriterLine2, 500); // wait before typing line 2
   }
 }
-window.addEventListener("DOMContentLoaded", typeWriter);
 
-// Theme toggle
+function typeWriterLine2() {
+  const el2 = document.getElementById("typingText2");
+  if (index2 < text2.length) {
+    el2.innerHTML += text2.charAt(index2);
+    index2++;
+    setTimeout(typeWriterLine2, speed);
+  }
+}
+window.addEventListener("DOMContentLoaded", typeWriterLine1);
+
+// ========== Theme Toggle ==========
+
 document.getElementById('themeToggle').addEventListener('click', () => {
   const body = document.body;
   const isDark = body.classList.toggle('dark-mode');
   body.classList.toggle('light-mode', !isDark);
 });
 
-// Sidebar toggle
+// ========== Sidebar Toggle ==========
+
 document.getElementById('toggleSidebar').addEventListener('click', () => {
   document.getElementById('sidebar').classList.toggle('collapsed');
 });
 
-// Language switcher (mock)
+// ========== Language Switcher ==========
+
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     alert(`Language switched to ${btn.dataset.lang} (demo)`);
-    // Here you can load translation files or update UI dynamically
+    // TODO: Integrate actual language switching
   });
 });
+
+// ========== Floating Search Toggle ==========
 
 const toggleSearchBtn = document.getElementById('toggleSearch');
 const floatingSearch = document.getElementById('floatingSearch');
 
-toggleSearchBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  floatingSearch.classList.toggle('active');
-});
+if (toggleSearchBtn && floatingSearch) {
+  toggleSearchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    floatingSearch.classList.toggle('active');
+  });
+}
