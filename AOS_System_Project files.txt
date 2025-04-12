@@ -1,0 +1,39 @@
+AOS_System_Project/  <-- Main project root
+|
+├── manage.py          <-- Django's command-line utility
+|
+├── aos_project/       <-- Django project configuration directory
+│   ├── __init__.py
+│   ├── settings.py    <-- Project settings (INSTALLED_APPS, MIDDLEWARE, etc.)
+│   ├── urls.py        <-- Main URL routing for the project
+│   ├── wsgi.py        <-- WSGI entry point for deployment
+│   └── asgi.py        <-- ASGI entry point (for async features/deployment)
+|
+├── indexer_app/       <-- Your main Django app for indexing/searching features
+│   ├── __init__.py
+│   ├── admin.py       <-- Admin site configurations (optional)
+│   ├── apps.py        <-- App configuration
+│   ├── models.py      <-- Database models (maybe minimal, e.g., to track indexed files)
+│   ├── views.py       <-- Where your logic goes (handle uploads, indexing, search)
+│   ├── urls.py        <-- URL routing specific to this app
+│   ├── forms.py       <-- Django forms (e.g., for file uploads)
+│   ├── migrations/    <-- Database migration files
+│   │   └── __init__.py
+│   ├── static/        <-- Static files specific to this app
+│   │   └── indexer_app/
+│   │       ├── css/
+│   │       │   └── search.css  <-- Your existing CSS could go here
+│   │       ├── js/
+│   │       │   └── search.js   <-- Your existing JS could go here
+│   │       └── images/
+│   │           └── ...     <-- Your existing Assets/images could go here
+│   └── templates/     <-- HTML templates specific to this app
+│       └── indexer_app/
+│           ├── search.html     <-- Your existing search.html (modified for Django templates)
+│           ├── upload.html     <-- Your existing upload.html (modified)
+│           └── index_view.html <-- Template for visualizing the index
+|
+├── media/             <-- Directory to store user-uploaded files (configure in settings.py)
+│   └── documents/
+|
+└── index_data/        <-- Directory to store the generated TF-IDF index files (local storage) [cite: 12]
