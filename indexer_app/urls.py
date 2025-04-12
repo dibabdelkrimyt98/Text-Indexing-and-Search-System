@@ -5,5 +5,5 @@ app_name='indexer_app'
 urlpatterns = [
     path('', views.upload_index_view, name='upload_index'),
     path('view_index/', views.view_index_view, name='view_index'),
-     path('search/', views.search_view, name='search'),
+    path('search/', views.search_view, name='search'),
 ]
