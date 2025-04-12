@@ -156,6 +156,13 @@ body {
     opacity: 0;
     cursor: pointer;
   }
+
+  .loader {
+    transition: opacity 0.3s ease;
+    font-style: italic;
+    color: #4CAF50;
+    margin-top: 8px;
+  }
   
   .index-box ul {
     list-style: none;

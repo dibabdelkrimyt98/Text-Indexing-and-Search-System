@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Search - AOS System</title>
 
@@ -43,22 +43,42 @@
     <section class="search-area">
       <div class="overlay"></div>
       <div class="search-content">
-        <h2 class="animated-title"  id="searchHeading"></h2>
+        <h2 class="animated-title" id="searchHeading"></h2>
+
         <form id="searchForm">
-          <input type="text" id="searchInput" placeholder="Enter your query...">
-          <select id="similaritySelect">
-            <option value="cosine">Cosine Similarity</option>
-            <option value="euclidean">Euclidean Distance</option>
-          </select>
+          <div class="search-row">
+            <input type="text" id="searchInput" placeholder="Enter your search..." />
+            <div id="typingLoader" class="typing-loader" style="opacity:0;">
+              <span class="spinner"></span>
+              <span class="text">Thinking...</span>
+            </div>
+          </div>
+          <div class="method-selector">
+            <label for="similaritySelect">Select Method:</label>
+            <select id="similaritySelect">
+              <option value="cosine">Cosine Similarity</option>
+              <option value="euclidean">Euclidean Distance</option>
+            </select>
+            <span class="tooltip">
+              ⓘ
+              <span class="tooltip-text">
+                Choose a method to compare your query with indexed documents.<br />
+                <strong>Cosine</strong>: angle-based comparison.<br />
+                <strong>Euclidean</strong>: distance-based comparison.
+              </span>
+            </span>
+          </div>
+
           <button type="submit"><i class="fas fa-search"></i> Search</button>
         </form>
+
         <ul id="results"></ul>
       </div>
     </section>
   </div>
 
+  <!-- Scripts -->
   <script src="js/app.js"></script>
   <script src="js/search.js"></script>
 </body>
 </html>
-
