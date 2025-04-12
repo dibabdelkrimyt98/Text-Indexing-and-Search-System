@@ -1,7 +1,7 @@
 // ========== Typing Effect ==========
 
 const text1 = "You are welcome in AOS System.";
-const text2 = "Empowering Knowledge. Preserving Truth.";
+const text2 = "Empowering Knowledge .. Preserving Truth.";
 
 let index1 = 0;
 let index2 = 0;
