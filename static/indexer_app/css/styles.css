@@ -110,7 +110,7 @@
   .hero {
     flex: 1;
     position: relative;
-    background: url('../assets/images/background_pic.jpg') center/cover no-repeat;
+    background: url('/static/images/bg_image.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
