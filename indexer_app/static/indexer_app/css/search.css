@@ -98,7 +98,7 @@ body.dark-mode {
 .search-area {
   flex: 1;
   position: relative;
-  background: url('/static/images/bg_image.jpg') center/cover no-repeat;
+  background: url('/indexer_app/static/images/bg_image.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
