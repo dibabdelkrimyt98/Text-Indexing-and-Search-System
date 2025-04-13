@@ -1,0 +1,97 @@
+@import url('styles.css'); /* Import global styles from your system */
+
+/* TF-IDF specific */
+.tfidf-section {
+  flex: 1;
+  position: relative;
+  background: url('/indexer_app/static/images/bg_image.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.tfidf-content {
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  overflow-x: auto;
+}
+
+.tfidf-content h2 {
+  color: #1b4d3e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 65vh;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive Table */
+table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+thead {
+  background-color: #1b4d3e;
+  color: white;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+/* Sticky First Column */
+thead th:first-child,
+tbody td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #fff;
+  z-index: 2;
+  font-weight: bold;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+thead th:first-child {
+  z-index: 3;
+}
+
+tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .tfidf-content {
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+
+  .table-wrapper {
+    max-height: 50vh;
+  }
+}

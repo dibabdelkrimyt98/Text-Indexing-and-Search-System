@@ -339,3 +339,26 @@ mark {
     width: 90%;
   }
 }
+
+.tfidf-switch {
+  margin-top: 2rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.tfidf-btn {
+  display: inline-block;
+  background-color: #1b4d3e;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.tfidf-btn:hover {
+  background-color: #163f32;
+  transform: scale(1.05);
+}
