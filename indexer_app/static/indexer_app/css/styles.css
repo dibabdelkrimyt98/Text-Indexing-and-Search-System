@@ -216,4 +216,18 @@
       font-size: 1rem;
     }
   }
+  .hero-btn {
+    display: inline-block;
+    background-color: #1b4d3e;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+  }
   
+  .hero-btn:hover {
+    background-color: #163f32;
+    transform: scale(1.05);
+  }
