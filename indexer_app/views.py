@@ -1,86 +1,77 @@
-import os
-from django.shortcuts import render
+from typing import List, Dict, Any
 from django.http import JsonResponse
-from django.core.files.storage import FileSystemStorage
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+# Ensure NLTK resources are available
 import nltk
 
-
-# Download necessary resources for nltk
-nltk.download('punkt')
-
-
-# Home page view
-def index(request):
-    return render(request, 'indexer_app/index.html')
+nltk.download("punkt")
+nltk.download("stopwords")
 
 
+# Dummy document model (you need to create this in models.py or remove this import if unused)
+# from .models import Document
 
-# Upload a document and save it to the server
-def upload_document(request):
-    if request.method == 'POST' and request.FILES.get('document'):
-        document = request.FILES['document']
-        fs = FileSystemStorage()
-        filename = fs.save(document.name, document)
-        file_url = fs.url(filename)
-        return JsonResponse({
-            'file_url': file_url
+
+def preprocess_text(text: str) -> str:
+    """
+    Preprocesses input text: lowercasing, removing stopwords and non-alpha tokens.
+
+    Args:
+        text (str): The input text to clean.
+
+    Returns:
+        str: The cleaned and preprocessed text.
+    """
+    stop_words = set(stopwords.words("english"))
+    words = word_tokenize(text)
+    filtered = [w.lower() for w in words if w.isalpha() and w.lower() not in stop_words]
+    return " ".join(filtered)
+
+
+def tfidf_similarity_view(request):
+    """
+    View that simulates TF-IDF computation and similarity for dummy content.
+
+    Returns:
+        JsonResponse: TF-IDF similarity data or error message.
+    """
+    if request.method != "GET":
+        return JsonResponse({"error": "Invalid request method."}, status=405)
+
+    dummy_titles = ["Doc A", "Doc B", "Doc C"]
+    dummy_contents = [
+        "Resistance is a right.",
+        "The Palestinian struggle is about land and justice.",
+        "Truth and resilience define our spirit.",
+    ]
+
+    # Apply preprocessing
+    processed_docs: List[str] = [preprocess_text(doc) for doc in dummy_contents]
+
+    if not processed_docs:
+        return JsonResponse({"error": "No documents available."}, status=404)
+
+    vectorizer = TfidfVectorizer()
+    tfidf_matrix = vectorizer.fit_transform(processed_docs)
+    similarity_matrix = cosine_similarity(tfidf_matrix)
+
+    results: List[Dict[str, Any]] = []
+    for i, title in enumerate(dummy_titles):
+        similar_docs = []
+        for j, score in enumerate(similarity_matrix[i]):
+            if i != j:
+                similar_docs.append({
+                    "title": dummy_titles[j],
+                    "similarity": round(float(score), 4),
+                })
+        similar_docs.sort(key=lambda x: x["similarity"], reverse=True)
+        results.append({
+            "title": title,
+            "similar_documents": similar_docs
         })
 
-        return JsonResponse({'file_url': file_url})
-
-    return JsonResponse({'error': 'No document uploaded'}, status=400)
-
-# Process the uploaded document, calculate similarity, and return results
-def process_document(request):
-    if request.method == 'POST' and request.FILES.get('document'):
-        document = request.FILES['document']
-        fs = FileSystemStorage()
-        filename = fs.save(document.name, document)
-        file_url = fs.url(filename)
-
-        # Read the document's content
-        with open(os.path.join(fs.location, filename), 'r', encoding='utf-8') as file:
-            text = file.read()
-
-        # Compute the TF-IDF matrix and similarity score
-        vectorizer = TfidfVectorizer(stop_words='english')
-        tfidf_matrix = vectorizer.fit_transform([text])
-        cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
-
-        return JsonResponse({
-            'file_url': file_url,
-            'similarity_score': cosine_sim[0][0]
-        })
-
-    return JsonResponse({'error': 'No document uploaded'}, status=400)
-
-# Search for a query and return similar documents
-def search(request):
-    if request.method == 'GET':
-        query = request.GET.get('query', '')
-        results = []
-
-        if query:
-            document_list = os.listdir('documents/')
-            for document_name in document_list:
-                if document_name.endswith('.txt'):
-                    with open(os.path.join('documents/', document_name), 'r', encoding='utf-8') as file:
-                        text = file.read()
-                    similarity = calculate_similarity(query, text)
-                    results.append({
-                        'document': document_name,
-                        'similarity': similarity
-                    })
-
-        return JsonResponse({'results': results})
-
-    return JsonResponse({'error': 'Invalid request'}, status=400)
-
-# Calculate similarity score between query and document text
-def calculate_similarity(query, text):
-    vectorizer = TfidfVectorizer(stop_words='english')
-    tfidf_matrix = vectorizer.fit_transform([query, text])
-    cosine_sim = cosine_similarity(tfidf_matrix[0:1], tfidf_matrix[1:])
-    return cosine_sim[0][0]
+    return JsonResponse({"results": results})
