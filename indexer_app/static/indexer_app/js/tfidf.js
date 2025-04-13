@@ -27,5 +27,16 @@ document.getElementById('toggleSidebar')?.addEventListener('click', () => {
   const headRow = document.createElement("tr");
   headRow.innerHTML = `<th>Term</th>` + docNames.map(doc => `<th>${doc}</th>`).join('');
   thead.innerHTML = '';
-  thead.appendChild(headRow
+  thead.appendChild(headRow);
+  
+  // Inject table rows
+  const tableBody = document.querySelector("#tfidfTable tbody");
+  tableBody.innerHTML = '';
+  
+  tfidfData.forEach(row => {
+    const tr = document.createElement("tr");
+    const valueCells = row.values.map(val => `<td>${val.toFixed(3)}</td>`).join('');
+    tr.innerHTML = `<td><strong>${row.term}</strong></td>${valueCells}`;
+    tableBody.appendChild(tr);
+  });
   
