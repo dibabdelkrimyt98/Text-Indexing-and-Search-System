@@ -39,7 +39,10 @@ def preprocess_text(text: str) -> str:
 
 @require_http_methods(["GET"])
 def tfidf_similarity_view(request: HttpRequest) -> JsonResponse:
-    
+    """
+    Handle GET request and return dummy TF-IDF similarity data
+    between three predefined documents.
+    """
     dummy_titles: List[str] = ["Doc A", "Doc B", "Doc C"]
     dummy_contents: List[str] = [
         "Resistance is a right.",
