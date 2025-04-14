@@ -1,47 +1,53 @@
-"""Views for computing TF-IDF and document similarity in AOS System."""
-
 from typing import List, Dict, Any
-from django.http import JsonResponse
-from django.http import HttpRequest
+from django.http import HttpResponse, JsonResponse, HttpRequest
+from django.shortcuts import render
 from django.views.decorators.http import require_http_methods
-
-# These packages raise Mypy import warnings due to lack of type stubs
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+
 import nltk
-nltk.download('punkt')
-# Download NLTK corpora (should ideally be done once globally, not at runtime)
-nltk.download("punkt", quiet=True)
-nltk.download("stopwords", quiet=True)
+
+nltk.download("punkt")
+nltk.download("stopwords")
+
+
+def index(request: HttpRequest) -> HttpResponse:
+    """Render the homepage."""
+    return render(request, "indexer_app/index.html")
+
+
+def upload_page(request: HttpRequest) -> HttpResponse:
+    """Render the upload page."""
+    return render(request, "indexer_app/upload.html")
+
+
+def search_page(request: HttpRequest) -> HttpResponse:
+    """Render the search page."""
+    return render(request, "indexer_app/search.html")
+
+
+def tfidf_table_page(request: HttpRequest) -> HttpResponse:
+    """Render the TF-IDF table display page."""
+    return render(request, "indexer_app/tfidf_table.html")
 
 
 def preprocess_text(text: str) -> str:
-    """
-
-    Args:
-        text (str): Raw input string.
-
-    Returns:
-        str: Cleaned string with only relevant tokens.
-    """
+    """Remove stopwords and tokenize."""
     stop_words = set(stopwords.words("english"))
     words = word_tokenize(text)
-
-    # Filter out stopwords and punctuation
     filtered = [
-        word.lower()
-        for word in words
-        if word.isalpha() and word.lower() not in stop_words
-    ]
+        w.lower()
+        for w in words
+        if w.isalpha() and w.lower() not in stop_words
+    ]   
     return " ".join(filtered)
+
 
 @require_http_methods(["GET"])
 def tfidf_similarity_view(request: HttpRequest) -> JsonResponse:
     """
-    Handle GET request and return dummy TF-IDF similarity data
-    between three predefined documents.
     """
     dummy_titles: List[str] = ["Doc A", "Doc B", "Doc C"]
     dummy_contents: List[str] = [
@@ -51,7 +57,8 @@ def tfidf_similarity_view(request: HttpRequest) -> JsonResponse:
     ]
 
     processed_docs: List[str] = [
-        preprocess_text(doc) for doc in dummy_contents
+        preprocess_text(doc)
+        for doc in dummy_contents
     ]
 
     if not processed_docs:
