@@ -13,4 +13,6 @@ urlpatterns = [
         views.tfidf_similarity_view,
         name='tfidf_similarity'
     ),
+    # It might be useful to add a path for the TF-IDF table page
+    path('tfidf-table/', views.tfidf_table_page, name='tfidf_table'), 
 ]
