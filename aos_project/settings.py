@@ -1,17 +1,22 @@
 """Django settings for aos_project."""
 
 from pathlib import Path
+from typing import List, Dict, Any
 
 # Base directory
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR: Path = Path(__file__).resolve().parent.parent
+
+# Media files configuration
+MEDIA_URL: str = '/media/'
+MEDIA_ROOT: Path = BASE_DIR / 'media'
 
 # Security
-SECRET_KEY = 'your-secret-key'
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY: str = 'your-secret-key'
+DEBUG: bool = True
+ALLOWED_HOSTS: List[str] = []
 
 # Installed apps
-INSTALLED_APPS = [
+INSTALLED_APPS: List[str] = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -22,7 +27,7 @@ INSTALLED_APPS = [
 ]
 
 # Middleware
-MIDDLEWARE = [
+MIDDLEWARE: List[str] = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -32,10 +37,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'aos_project.urls'
+ROOT_URLCONF: str = 'aos_project.urls'
 
 # Templates
-TEMPLATES = [
+TEMPLATES: List[Dict[str, Any]] = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / "templates"],
@@ -51,10 +56,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'aos_project.wsgi.application'
+WSGI_APPLICATION: str = 'aos_project.wsgi.application'
 
 # Database
-DATABASES = {
+DATABASES: Dict[str, Dict[str, Any]] = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -62,7 +67,7 @@ DATABASES = {
 }
 
 # Password validation
-AUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS: List[Dict[str, str]] = [
     {
         'NAME': (
             'django.contrib.auth.password_validation.'
@@ -90,12 +95,37 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
+LANGUAGE_CODE: str = 'en-us'
+TIME_ZONE: str = 'UTC'
+USE_I18N: bool = True
+USE_TZ: bool = True
 
 # Static files
-STATIC_URL = 'static/'
+STATIC_URL: str = 'static/'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Default primary key field type
+DEFAULT_AUTO_FIELD: str = 'django.db.models.BigAutoField'
+
+# Logging configuration
+LOGGING: Dict[str, Any] = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'debug.log',
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file'],
+        'level': 'INFO',
+    },
+}
+
+# File upload settings
+FILE_UPLOAD_MAX_MEMORY_SIZE: int = 5 * 1024 * 1024  # 5MB
+FILE_UPLOAD_PERMISSIONS: int = 0o644
+FILE_UPLOAD_DIRECTORY_PERMISSIONS: int = 0o755
