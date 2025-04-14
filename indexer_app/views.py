@@ -1,77 +1,88 @@
+"""Views for computing TF-IDF and document similarity in AOS System."""
+
 from typing import List, Dict, Any
-from django.http import JsonResponse
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+from django.http import JsonResponse, HttpRequest
+from django.views.decorators.http import require_http_methods
 
-# Ensure NLTK resources are available
+# These packages raise Mypy import warnings due to lack of type stubs
+from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore
+from sklearn.metrics.pairwise import cosine_similarity  # type: ignore
+from nltk.corpus import stopwords  # type: ignore
+from nltk.tokenize import word_tokenize  # type: ignore
+
 import nltk
-
-nltk.download("punkt")
-nltk.download("stopwords")
-
-
-# Dummy document model (you need to create this in models.py or remove this import if unused)
-# from .models import Document
+nltk.download('punkt')
+# Download NLTK corpora (should ideally be done once globally, not at runtime)
+nltk.download("punkt", quiet=True)
+nltk.download("stopwords", quiet=True)
 
 
 def preprocess_text(text: str) -> str:
     """
-    Preprocesses input text: lowercasing, removing stopwords and non-alpha tokens.
 
     Args:
-        text (str): The input text to clean.
+        text (str): Raw input string.
 
     Returns:
-        str: The cleaned and preprocessed text.
+        str: Cleaned string with only relevant tokens.
     """
     stop_words = set(stopwords.words("english"))
     words = word_tokenize(text)
-    filtered = [w.lower() for w in words if w.isalpha() and w.lower() not in stop_words]
+
+    # Filter out stopwords and punctuation
+    filtered = [
+        word.lower()
+        for word in words
+        if word.isalpha() and word.lower() not in stop_words
+    ]
     return " ".join(filtered)
 
-
+@require_http_methods(["GET"])
 def tfidf_similarity_view(request):
-    """
-    View that simulates TF-IDF computation and similarity for dummy content.
-
-    Returns:
-        JsonResponse: TF-IDF similarity data or error message.
-    """
     if request.method != "GET":
         return JsonResponse({"error": "Invalid request method."}, status=405)
 
-    dummy_titles = ["Doc A", "Doc B", "Doc C"]
-    dummy_contents = [
+ 
+    dummy_titles: List[str] = ["Doc A", "Doc B", "Doc C"]
+    dummy_contents: List[str] = [
         "Resistance is a right.",
         "The Palestinian struggle is about land and justice.",
         "Truth and resilience define our spirit.",
     ]
 
-    # Apply preprocessing
-    processed_docs: List[str] = [preprocess_text(doc) for doc in dummy_contents]
+    # Step 1: Preprocess documents
+    processed_docs: List[str] = [
+        preprocess_text(doc)
+            for doc in dummy_contents
+    ]
+
 
     if not processed_docs:
-        return JsonResponse({"error": "No documents available."}, status=404)
+        return JsonResponse({"error": "No documents to process."}, status=404)
 
+    # Step 2: Generate TF-IDF matrix
     vectorizer = TfidfVectorizer()
     tfidf_matrix = vectorizer.fit_transform(processed_docs)
+
+    # Step 3: Compute cosine similarity between all docs
     similarity_matrix = cosine_similarity(tfidf_matrix)
 
+    # Step 4: Build similarity result
     results: List[Dict[str, Any]] = []
     for i, title in enumerate(dummy_titles):
-        similar_docs = []
-        for j, score in enumerate(similarity_matrix[i]):
-            if i != j:
-                similar_docs.append({
-                    "title": dummy_titles[j],
-                    "similarity": round(float(score), 4),
-                })
+        similar_docs = [
+            {
+                "title": dummy_titles[j],
+                "similarity": round(float(score), 4),
+            }
+            for j, score in enumerate(similarity_matrix[i])
+            if i != j
+        ]
         similar_docs.sort(key=lambda x: x["similarity"], reverse=True)
+
         results.append({
             "title": title,
-            "similar_documents": similar_docs
+            "similar_documents": similar_docs,
         })
 
     return JsonResponse({"results": results})

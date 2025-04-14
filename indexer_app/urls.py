@@ -1,10 +1,8 @@
-"""URL configuration for indexer_app."""
-
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('upload/', views.upload_file, name='upload'),
-    path('search/', views.search, name='search'),
+    path('admin/', admin.site.urls),
+    path('', include('indexer_app.urls')),
 ]
+
