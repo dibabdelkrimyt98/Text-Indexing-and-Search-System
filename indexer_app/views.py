@@ -1,15 +1,15 @@
 """Views for computing TF-IDF and document similarity in AOS System."""
 
 from typing import List, Dict, Any
-from django.http import JsonResponse, HttpRequest
+from django.http import JsonResponse
+from django.http import HttpRequest
 from django.views.decorators.http import require_http_methods
 
 # These packages raise Mypy import warnings due to lack of type stubs
-from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore
-from sklearn.metrics.pairwise import cosine_similarity  # type: ignore
-from nltk.corpus import stopwords  # type: ignore
-from nltk.tokenize import word_tokenize  # type: ignore
-
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 import nltk
 nltk.download('punkt')
 # Download NLTK corpora (should ideally be done once globally, not at runtime)
@@ -38,11 +38,8 @@ def preprocess_text(text: str) -> str:
     return " ".join(filtered)
 
 @require_http_methods(["GET"])
-def tfidf_similarity_view(request):
-    if request.method != "GET":
-        return JsonResponse({"error": "Invalid request method."}, status=405)
-
- 
+def tfidf_similarity_view(request: HttpRequest) -> JsonResponse:
+    
     dummy_titles: List[str] = ["Doc A", "Doc B", "Doc C"]
     dummy_contents: List[str] = [
         "Resistance is a right.",
@@ -50,27 +47,20 @@ def tfidf_similarity_view(request):
         "Truth and resilience define our spirit.",
     ]
 
-    # Step 1: Preprocess documents
     processed_docs: List[str] = [
-        preprocess_text(doc)
-            for doc in dummy_contents
+        preprocess_text(doc) for doc in dummy_contents
     ]
 
-
     if not processed_docs:
-        return JsonResponse({"error": "No documents to process."}, status=404)
+        return JsonResponse({"error": "No documents available."}, status=404)
 
-    # Step 2: Generate TF-IDF matrix
     vectorizer = TfidfVectorizer()
     tfidf_matrix = vectorizer.fit_transform(processed_docs)
-
-    # Step 3: Compute cosine similarity between all docs
     similarity_matrix = cosine_similarity(tfidf_matrix)
 
-    # Step 4: Build similarity result
     results: List[Dict[str, Any]] = []
     for i, title in enumerate(dummy_titles):
-        similar_docs = [
+        similar_docs: List[Dict[str, Any]] = [
             {
                 "title": dummy_titles[j],
                 "similarity": round(float(score), 4),
@@ -79,7 +69,6 @@ def tfidf_similarity_view(request):
             if i != j
         ]
         similar_docs.sort(key=lambda x: x["similarity"], reverse=True)
-
         results.append({
             "title": title,
             "similar_documents": similar_docs,
