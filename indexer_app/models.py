@@ -1,9 +1,12 @@
+"""
+Document model for the indexing application.
+"""
+
 from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
-from typing import Dict, Any, cast
-import json
+from typing import Dict, Any, cast, ClassVar
 
 
 def validate_file_size(value: int) -> None:
@@ -37,58 +40,58 @@ class Document(models.Model):
         file_size (int): Size of the document in bytes
     """
     
+    # Type hint for the objects manager
+    objects: ClassVar[models.Manager]
+    
     # File type choices
-    FILE_TYPES: list[tuple[str, str]] = [
+    FILE_TYPES = [
         ('txt', 'Text File'),
         ('pdf', 'PDF Document'),
         ('doc', 'Word Document'),
         ('docx', 'Word Document (DOCX)'),
     ]
     
-    title: models.CharField = models.CharField(
+    # Fields
+    title = models.CharField(
         max_length=255,
         unique=True,
         db_index=True,
         help_text="Unique title for the document"
     )
     
-    content: models.TextField = models.TextField(
+    content = models.TextField(
         help_text="Original document content"
     )
     
-    processed_content: models.TextField = models.TextField(
+    processed_content = models.TextField(
         blank=True,
         help_text="Preprocessed content for TF-IDF calculation"
     )
     
-    uploaded_at: models.DateTimeField = models.DateTimeField(
+    uploaded_at = models.DateTimeField(
         default=timezone.now,
         db_index=True,
         help_text="Timestamp of document upload"
     )
     
-    tfidf_vector: models.JSONField = models.JSONField(
+    tfidf_vector = models.JSONField(
         null=True,
         blank=True,
         help_text="TF-IDF vector data stored as JSON"
     )
     
-    file_type: models.CharField = models.CharField(
+    file_type = models.CharField(
         max_length=10,
         choices=FILE_TYPES,
         default='txt',
         help_text="Type of the document file"
     )
     
-    file_size: models.IntegerField = models.IntegerField(
-        default=0,
-        validators=[
-            MinValueValidator(0),
-            validate_file_size
-        ],
+    file_size = models.IntegerField(
+        validators=[MinValueValidator(1), validate_file_size],
         help_text="Size of the document in bytes"
     )
-
+    
     class Meta:
         ordering = ['-uploaded_at']
         indexes = [
@@ -98,100 +101,58 @@ class Document(models.Model):
         ]
         verbose_name = 'Document'
         verbose_name_plural = 'Documents'
-
+    
     def __str__(self) -> str:
-        """String representation of the document."""
-        return f"{self.title} ({self.file_type})"
-
+        """Return string representation of the document."""
+        return str(self.title)
+    
     def clean(self) -> None:
-        """
-        Validate the model instance.
-        Raises ValidationError for invalid data.
-        """
+        """Validate the model before saving."""
         super().clean()
-        if not self.title:
-            raise ValidationError("Title is required")
-        if not self.content:
-            raise ValidationError("Content is required")
-        if self.file_size < 0:
-            raise ValidationError("File size cannot be negative")
-
+        if self.file_size and self.file_size > 5 * 1024 * 1024:  # 5MB
+            raise ValidationError({
+                'file_size': 'File size cannot exceed 5MB'
+            })
+    
     def save(self, *args: Any, **kwargs: Any) -> None:
-        """Override save method to perform cleaning."""
+        """Save the model with validation."""
         self.full_clean()
         super().save(*args, **kwargs)
-
+    
     def get_vector_data(self) -> Dict[str, Any]:
-        empty_dict: Dict[str, Any] = {}
-        
-        try:
-            if isinstance(self.tfidf_vector, str):
-                return cast(Dict[str, Any], json.loads(self.tfidf_vector))
-            if isinstance(self.tfidf_vector, dict):
-                return cast(Dict[str, Any], self.tfidf_vector)
-            return empty_dict
-        except (json.JSONDecodeError, TypeError):
-            return empty_dict
-
+        """Get the TF-IDF vector data."""
+        if not self.tfidf_vector:
+            return {}
+        return cast(Dict[str, Any], self.tfidf_vector)
+    
     def get_file_extension(self) -> str:
-        """
-        Get the file extension for the document.
-        
-        Returns:
-            str: File extension (e.g., '.txt', '.pdf')
-        """
+        """Get the file extension."""
         return f".{self.file_type}"
-
+    
     def get_file_size_display(self) -> str:
-        """
-        Get human-readable file size.
-        
-        Returns:
-            str: Formatted file size (e.g., '2.5 MB')
-        """
-        size = float(self.file_size)  # Convert to float for division
-        for unit in ['B', 'KB', 'MB', 'GB']:
-            if size < 1024.0:
-                return f"{size:.1f} {unit}"
-            size /= 1024.0
-        return f"{size:.1f} TB"
-
+        """Get a human-readable file size."""
+        size_bytes = self.file_size
+        if size_bytes < 1024:
+            return f"{size_bytes} bytes"
+        elif size_bytes < 1024 * 1024:
+            return f"{size_bytes / 1024:.1f} KB"
+        else:
+            return f"{size_bytes / (1024 * 1024):.1f} MB"
+    
     @property
     def is_processed(self) -> bool:
-        """
-        Check if document has been processed.
-        
-        Returns:
-            bool: True if document has processed content and TF-IDF vector
-        """
-        return bool(self.processed_content and self.tfidf_vector)
-
+        """Check if the document has been processed."""
+        return bool(
+            self.processed_content and
+            self.tfidf_vector is not None
+        )
+    
     @classmethod
     def get_supported_file_types(cls) -> list[str]:
-        """
-        Get list of supported file types.
-        
-        Returns:
-            list[str]: List of supported file extensions
-        """
-        return [ext for ext, _ in cls.FILE_TYPES]
-
+        """Get list of supported file extensions."""
+        return [f".{ft[0]}" for ft in cls.FILE_TYPES]
+    
     def update_tfidf_vector(self, vector_data: Dict[str, Any]) -> None:
-        """
-        Update the TF-IDF vector data.
-        
-        Args:
-            vector_data: Dictionary containing vector data
-        Raises:
-            ValidationError: If vector data is invalid
-        """
-        if not isinstance(vector_data, dict):
-            raise ValidationError("Vector data must be a dictionary")
-        
-        try:
-            self.tfidf_vector = vector_data
-            self.save(update_fields=['tfidf_vector'])
-        except Exception as e:
-            raise ValidationError(
-                f"Failed to update TF-IDF vector: {str(e)}"
-            )
+        """Update the TF-IDF vector data."""
+        self.tfidf_vector = vector_data
+        self.save(update_fields=['tfidf_vector'])
