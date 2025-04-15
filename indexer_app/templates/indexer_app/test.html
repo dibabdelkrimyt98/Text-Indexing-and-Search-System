@@ -1,0 +1,25 @@
+<!-- indexer_app/templates/indexer_app/test.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Render - AOS System</title>
+  <link rel="stylesheet" href="/indexer_app/static/indexer_app/css/process_results.css">
+</head>
+<body>
+  <div class="test-container">
+    <h1>Testing Render</h1>
+    {% if success %}
+      <p class="success">Document processed successfully!</p>
+      <div class="doc-info">
+        <strong>Title:</strong> {{ document.title }}<br>
+        <strong>Size:</strong> {{ document.file_size }} bytes<br>
+        <strong>Type:</strong> {{ document.file_type }}<br>
+      </div>
+    {% else %}
+      <p class="error">Something went wrong.</p>
+    {% endif %}
+  </div>
+  <script src="/static/indexer_app/js/process_results.js"></script>
+</body>
+</html>

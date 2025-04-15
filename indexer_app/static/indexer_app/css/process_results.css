@@ -102,3 +102,12 @@ body {
 .action-btn:hover {
   background-color: #163f32;
 }
+.processed-content {
+  background-color: #f4f4f4;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  max-height: 400px;
+  overflow-y: auto;
+}
