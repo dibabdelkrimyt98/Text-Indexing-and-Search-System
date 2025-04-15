@@ -67,7 +67,7 @@ DocumentManager = Manager[Document]
 
 def get_document_manager() -> DocumentManager:
     """Get the Document manager with proper typing."""
-    return cast(DocumentManager, Document.objects)
+    return cast(DocumentManager, Document._default_manager)
 
 
 def handle_uploaded_file(uploaded_file: UploadedFile) -> Tuple[str, str]:

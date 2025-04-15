@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Process Results - AOS System</title>
+  <title>Processing Results - AOS System</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="/static/indexer_app/css/process_results.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/indexer_app/static/indexer_app/css/process_results.css" />
 </head>
 <body class="light-mode">
   <div class="layout">
+    <!-- Sidebar -->
     <aside class="navbar collapsed" id="sidebar">
       <div class="nav-top">
         <div class="logo">A</div>
@@ -18,9 +24,9 @@
       </div>
       <div class="nav-group">
         <nav class="nav-menu">
-          <a href="/indexer_app/templates/indexer_app/index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
-          <a href="/indexer_app/templates/indexer_app/upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
-          <a href="/indexer_app/templates/indexer_app/search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
+          <a href="/" class="nav-item"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="/upload/" class="nav-item"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="/search/" class="nav-item"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
       </div>
       <div class="controls">
@@ -28,28 +34,35 @@
       </div>
     </aside>
 
+    <!-- Results Section -->
     <section class="results-area">
       <div class="overlay"></div>
       <div class="results-content">
-        <h2 class="animated-title">Indexed Documents</h2>
-        <div id="results-container" class="results-table-wrapper">
-          <table id="results-table">
-            <thead>
-              <tr>
-                <th>Document Name</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody id="results-body"></tbody>
-          </table>
+        <h2>Document Indexed</h2>
+
+        {% if success %}
+        <div class="document-summary">
+          <p><strong>Title:</strong> {{ document.title }}</p>
+          <p><strong>Type:</strong> {{ document.file_type }}</p>
+          <p><strong>Size:</strong> {{ document.file_size }} bytes</p>
         </div>
+        <div class="document-preview">
+          <h3>Processed Content</h3>
+          <pre>{{ document.processed_content }}</pre>
+        </div>
+        {% else %}
+        <p class="error">An error occurred while processing the document.</p>
+        {% endif %}
+
         <div class="actions">
-          <a href="/indexer_app/templates/indexer_app/search.html" class="action-btn">Go to Search</a>
+          <a href="/indexer_app/templates/indexer_app/upload.html" class="btn">⬅ Back to Upload</a>
+          <a href="/indexer_app/templates/indexer_app/search.html" class="btn alt">🔍 Go to Search</a>
         </div>
       </div>
     </section>
   </div>
 
-  <script src="/static/indexer_app/js/process_results.js"></script>
+  <!-- Scripts -->
+  <script src="/static/indexer_app/js/app.js"></script>
 </body>
 </html>
