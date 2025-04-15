@@ -341,3 +341,24 @@ def update_tfidf_vectors() -> None:
     except Exception as e:
         logger.error("Error updating TF-IDF vectors: %s", str(e))
         raise ValidationError("Failed to update TF-IDF vectors") from e
+    
+    
+def process_results(request: HttpRequest) -> HttpResponse:
+    document_id = request.GET.get('id')
+    if not document_id or not document_id.isdigit():
+        return render(request, 'indexer_app/process_results.html', {
+            'success': False,
+            'error_message': 'Invalid or missing document ID.',
+        })
+
+    try:
+        document = Document.objects.get(id=document_id)
+        return render(request, 'indexer_app/process_results.html', {
+            'success': True,
+            'document': document,
+        })
+    except Document.DoesNotExist:
+        return render(request, 'indexer_app/process_results.html', {
+            'success': False,
+            'error_message': 'Document not found.',
+        })

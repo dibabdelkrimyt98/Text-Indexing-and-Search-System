@@ -41,19 +41,22 @@
         <h2>Document Indexed</h2>
 
         {% if success %}
-        <div class="document-summary">
-          <p><strong>Title:</strong> {{ document.title }}</p>
-          <p><strong>Type:</strong> {{ document.file_type }}</p>
-          <p><strong>Size:</strong> {{ document.file_size }} bytes</p>
-        </div>
-        <div class="document-preview">
-          <h3>Processed Content</h3>
-          <pre>{{ document.processed_content }}</pre>
-        </div>
+        {% if document %}
+            <div class="document-summary">
+              <p><strong>Title:</strong> {{ document.title }}</p>
+              <p><strong>Type:</strong> {{ document.file_type }}</p>
+              <p><strong>Size:</strong> {{ document.file_size }} bytes</p>
+            </div>
+            <div class="document-preview">
+              <h3>Processed Content</h3>
+              <pre aria-label="Processed document content">{{ document.processed_content|safe }}</pre>
+            </div>
         {% else %}
-        <p class="error">An error occurred while processing the document.</p>
+            <p class="error">Document data is missing.</p>
         {% endif %}
-
+    {% else %}
+        <p class="error">An error occurred while processing the document.</p>
+    {% endif %}
         <div class="actions">
           <a href="/indexer_app/templates/indexer_app/upload.html" class="btn">⬅ Back to Upload</a>
           <a href="/indexer_app/templates/indexer_app/search.html" class="btn alt">🔍 Go to Search</a>
