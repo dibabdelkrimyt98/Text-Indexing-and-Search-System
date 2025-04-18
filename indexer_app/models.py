@@ -3,10 +3,12 @@ Document model for the indexing application.
 """
 
 from django.db import models
-from django.utils import timezone
+# from django.utils import timezone
+from datetime import timezone
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from typing import Dict, Any, cast, ClassVar
+import json
 
 
 def validate_file_size(value: int) -> None:
