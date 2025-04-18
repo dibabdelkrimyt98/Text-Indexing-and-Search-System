@@ -8,22 +8,71 @@ document.getElementById('fileInput').addEventListener('change', function () {
       fileList.appendChild(li);
     }
     document.getElementById('indexButton').disabled = this.files.length === 0;
-  });
-  
-  // Mock indexing button
-  document.getElementById('indexButton').addEventListener('click', () => {
-    alert('Indexing files... (mock logic)');
-  });
-  document.getElementById('indexButton').addEventListener('click', () => {
-    const dialog = document.getElementById('successDialog');
-    dialog.classList.add('show');
-  });
-  document.getElementById('closeDialog').addEventListener('click', () => {
+});
+
+// Handle file upload and indexing
+document.getElementById('indexButton').addEventListener('click', async () => {
+    const fileInput = document.getElementById('fileInput');
+    const files = fileInput.files;
+    
+    if (files.length === 0) {
+        alert('Please select files to upload');
+        return;
+    }
+
+    const formData = new FormData();
+    for (let file of files) {
+        formData.append('document', file);
+        formData.append('title', file.name);
+    }
+
+    try {
+        const response = await fetch('/process/', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken')
+            }
+        });
+
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Upload failed');
+        }
+
+        const result = await response.json();
+        if (result.success) {
+            const dialog = document.getElementById('successDialog');
+            dialog.classList.add('show');
+        } else {
+            throw new Error('Upload failed');
+        }
+    } catch (error) {
+        alert(error.message);
+    }
+});
+
+// Close dialog
+document.getElementById('closeDialog').addEventListener('click', () => {
     const dialog = document.getElementById('successDialog');
     dialog.classList.remove('show');
-  });
-  document.getElementById("indexButton").addEventListener("click", () => {
-    window.location.href = "/process/";
-  });
+    window.location.href = '/results/';
+});
+
+// Helper function to get CSRF token
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
   
   

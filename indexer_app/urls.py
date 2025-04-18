@@ -12,4 +12,5 @@ urlpatterns = [
     path('process/', views.process_document_view, name='process_document'),
     path('search/', views.search_view, name='search'),
     path('similarity/', views.tfidf_similarity_view, name='similarity'),
+    path('results/', views.process_results, name='process_results'),
 ]

@@ -40,7 +40,7 @@ except LookupError:
 
 
 # Constants
-MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
+MAX_FILE_SIZE = 40 * 1024 * 1024  # 40MB
 ALLOWED_MIME_TYPES = {
     'text/plain',
     'application/pdf',
