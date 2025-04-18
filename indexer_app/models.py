@@ -3,12 +3,13 @@ Document model for the indexing application.
 """
 
 from django.db import models
-# from django.utils import timezone
-from datetime import timezone
+from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from typing import Dict, Any, cast, ClassVar
-import json
+from django.db.models.fields import (
+    CharField, TextField, DateTimeField, IntegerField
+)
 
 
 def validate_file_size(value: int) -> None:
@@ -54,42 +55,42 @@ class Document(models.Model):
     ]
     
     # Fields
-    title = models.CharField(
+    title: CharField = models.CharField(
         max_length=255,
         unique=True,
         db_index=True,
         help_text="Unique title for the document"
     )
     
-    content = models.TextField(
+    content: TextField = models.TextField(
         help_text="Original document content"
     )
     
-    processed_content = models.TextField(
+    processed_content: TextField = models.TextField(
         blank=True,
         help_text="Preprocessed content for TF-IDF calculation"
     )
     
-    uploaded_at = models.DateTimeField(
+    uploaded_at: DateTimeField = models.DateTimeField(
         default=timezone.now,
         db_index=True,
         help_text="Timestamp of document upload"
     )
     
-    tfidf_vector = models.JSONField(
+    tfidf_vector: models.JSONField = models.JSONField(
         null=True,
         blank=True,
         help_text="TF-IDF vector data stored as JSON"
     )
     
-    file_type = models.CharField(
+    file_type: CharField = models.CharField(
         max_length=10,
         choices=FILE_TYPES,
         default='txt',
         help_text="Type of the document file"
     )
     
-    file_size = models.IntegerField(
+    file_size: IntegerField = models.IntegerField(
         validators=[MinValueValidator(1), validate_file_size],
         help_text="Size of the document in bytes"
     )
