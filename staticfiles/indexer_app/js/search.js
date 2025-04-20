@@ -23,7 +23,9 @@ function animateHeading(text, element, delay = 20) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  animateHeading(title, headingEl, 30);
+  if (headingEl) {
+    animateHeading(title, headingEl, 30);
+  }
 });
 
 // ========== Live Input Typing Indicator ==========
@@ -31,7 +33,9 @@ const searchInput = document.getElementById('searchInput');
 const loader = document.getElementById('typingLoader');
 
 searchInput.addEventListener('input', () => {
-  loader.style.opacity = searchInput.value.trim() ? 1 : 0;
+  if (loader) {
+    loader.style.opacity = searchInput.value.trim() ? 1 : 0;
+  }
 });
 
 // ========== Highlight Query Matches ==========
@@ -40,73 +44,101 @@ function highlightText(text, query) {
   return text.replace(regex, '<mark>$1</mark>');
 }
 
-// ========== Display Results with Animation ==========
-function displayResults(results, query) {
-  const resultsList = document.getElementById("results");
-  resultsList.innerHTML = '';
-
-  if (results.length === 0) {
-    resultsList.innerHTML = "<li>No results found.</li>";
-    return;
-  }
-
-  results.forEach((res, idx) => {
-    const li = document.createElement("li");
-    li.innerHTML = highlightText(res, query);
-    li.style.opacity = 0;
-    li.style.transform = "translateY(10px)";
-    li.style.transition = "all 0.4s ease";
-    li.classList.add("fade-in");
-
-    resultsList.appendChild(li);
-
-    setTimeout(() => {
-      li.style.opacity = 1;
-      li.style.transform = "translateY(0)";
-    }, idx * 100);
-  });
-}
-
 // ========== Submit Search Form ==========
-document.getElementById("searchForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const typingLoader = document.querySelector('.typing-loader');
 
-  const query = searchInput.value.trim();
-  const method = document.getElementById("similaritySelect").value;
-  const resultsList = document.getElementById("results");
+    if (!searchForm || !searchResults) {
+        console.error('Required elements not found');
+        return;
+    }
 
-  resultsList.innerHTML = "";
+    // Handle search form submission
+    searchForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const query = searchInput.value.trim();
+        if (!query) return;
 
-  if (!query) {
-    resultsList.innerHTML = '<li class="fade-in">⚠️ Please enter a query.</li>';
-    return;
-  }
+        // Show loading state
+        searchResults.innerHTML = '';
+        typingLoader.style.display = 'flex';
 
-  // Show searching animation
-  const loading = document.createElement("li");
-  loading.innerHTML = '<span class="loader"></span> Searching...';
-  resultsList.appendChild(loading);
+        try {
+            const response = await fetch('/indexer_app/api/search/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    query: query,
+                    method: document.getElementById('similaritySelect').value
+                })
+            });
 
-  // Optional: change button while searching
-  const searchBtn = document.querySelector('#searchForm button');
-  const originalBtnHTML = searchBtn.innerHTML;
-  searchBtn.disabled = true;
-  searchBtn.innerHTML = `<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span>`;
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
 
-  setTimeout(() => {
-    resultsList.innerHTML = "";
+            const data = await response.json();
+            
+            // Hide loading state
+            typingLoader.style.display = 'none';
+            
+            // Clear previous results
+            searchResults.innerHTML = '';
 
-    const mockResults = [
-      `Result for "${query}" using ${method}:`,
-      `Matched in document_01.txt`,
-      `Matched in document_03.txt`,
-      `Matched in document_07.txt`
-    ];
+            if (data.error) {
+                searchResults.innerHTML = `<div class="error-message">${data.error}</div>`;
+                return;
+            }
 
-    displayResults(mockResults, query);
+            // Create results container
+            const resultsTable = document.createElement('table');
+            resultsTable.className = 'results-table';
+            
+            // Add table header
+            resultsTable.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Document Title</th>
+                        <th>Type</th>
+                        <th>Relevance Score</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            `;
 
-    // Reset button
-    searchBtn.innerHTML = originalBtnHTML;
-    searchBtn.disabled = false;
-  }, 1000);
+            // Add results to table
+            const tbody = resultsTable.querySelector('tbody');
+            data.results.forEach((result, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${result.title}</td>
+                    <td>${result.file_type.toUpperCase()}</td>
+                    <td>${result.score}%</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // Add summary
+            const summary = document.createElement('div');
+            summary.className = 'search-summary';
+            summary.textContent = `Found ${data.total} results for "${query}" using ${document.getElementById('similaritySelect').options[document.getElementById('similaritySelect').selectedIndex].text}`;
+            
+            // Add results to page
+            searchResults.appendChild(summary);
+            searchResults.appendChild(resultsTable);
+
+        } catch (error) {
+            console.error('Search error:', error);
+            typingLoader.style.display = 'none';
+            searchResults.innerHTML = '<div class="error-message">An error occurred while searching</div>';
+        }
+    });
 });

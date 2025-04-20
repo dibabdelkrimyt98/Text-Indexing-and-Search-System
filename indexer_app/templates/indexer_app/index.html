@@ -62,12 +62,14 @@
           <span id="typingText2"></span>
         </h2>
         <p>A search engine dedicated to resilience and truth.</p>
-        <a href="{% url 'indexer_app:test' %}" class="hero-btn">Try Now</a>
+        <a href="{% url 'indexer_app:try' %}" class="hero-btn">Try Now</a>
       </div>
     </section>
     <div class="floating-search" id="floatingSearch">
         <input type="text" placeholder="Type your query..." />
-        <button><i class="fas fa-search"></i></button>
+        <a href="{% url 'indexer_app:try' %}">
+            <button><i class="fas fa-search"></i></button>
+        </a>
     </div>
   </div>
 

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
   <title>Try Me - AOS System</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="/indexer_app/static/indexer_app/css/try.css" />
+  <link rel="stylesheet" href="{% static 'indexer_app/css/try.css' %}" />
 </head>
 <body class="light-mode">
   <div class="layout">
@@ -18,10 +19,9 @@
       </div>
       <div class="nav-group">
         <nav class="nav-menu">
-          <a href="index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
-          <a href="upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
-          <a href="search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
-          
+          <a href="{% url 'indexer_app:index' %}"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="{% url 'indexer_app:upload_document' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="{% url 'indexer_app:search' %}"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
         <div class="lang-switcher">
           <button class="lang-btn" data-lang="en">🇬🇧</button>
@@ -34,34 +34,32 @@
       </div>
     </aside>
 
-<!-- Try Me Hero Section -->
-<section class="upload-hero">
-  <div class="overlay"></div>
-  <div class="upload-boxes">
+    <!-- Try Me Hero Section -->
+    <section class="upload-hero" style="background-image: url('{% static 'indexer_app/assets/images/background_pic.jpg' %}');">
+      <div class="overlay"></div>
+      <div class="upload-boxes">
+        <!-- Left: Upload guide -->
+        <a href="{% url 'indexer_app:upload_document' %}" class="guide-link">
+          <div class="upload-box guide-box">
+            <i class="fas fa-cloud-upload-alt pulse-icon"></i>
+            <h2>Upload Your Knowledge</h2>
+            <p>Start by uploading your <strong>.txt</strong> files to feed the system with data.</p>
+            <p class="small-tip">Drag & drop or use the upload button.</p>
+          </div>
+        </a>
 
-    <!-- Left: Upload guide -->
-    <a href="upload.html" class="guide-link">
-      <div class="upload-box guide-box">
-        <i class="fas fa-cloud-upload-alt pulse-icon"></i>
-        <h2>Upload Your Knowledge</h2>
-        <p>Start by uploading your <strong>.txt</strong> files to feed the system with data.</p>
-        <p class="small-tip">Drag & drop or use the upload button.</p>
+        <!-- Right: Search guide -->
+        <a href="{% url 'indexer_app:search' %}" class="guide-link">
+          <div class="index-box guide-box">
+            <i class="fas fa-search spark-icon"></i>
+            <h2>Try a Smart Search</h2>
+            <p>Explore documents using AI-powered semantic search.</p>
+            <p class="small-tip">Type your question and see magic happen ✨</p>
+          </div>
+        </a>
       </div>
-    </a>
-
-    <!-- Right: Search guide -->
-    <a href="search.html" class="guide-link">
-      <div class="index-box guide-box">
-        <i class="fas fa-search spark-icon"></i>
-        <h2>Try a Smart Search</h2>
-        <p>Explore documents using AI-powered semantic search.</p>
-        <p class="small-tip">Type your question and see magic happen ✨</p>
-      </div>
-    </a>
-
+    </section>
   </div>
-</section>
-  </div>
-  <script src="/indexer_app/static/indexer_app/js/try.js"></script>
+  <script src="{% static 'indexer_app/js/try.js' %}"></script>
 </body>
 </html>

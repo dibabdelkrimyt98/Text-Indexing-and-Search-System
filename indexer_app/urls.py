@@ -8,6 +8,7 @@ app_name = 'indexer_app'
 urlpatterns = [
     path('', views.index, name='index'),
     path('home/', views.home_view, name='home'),
+    path('try/', views.try_view, name='try'),
     path('upload/', views.upload_document_view, name='upload_document'),
     path('process/', views.process_document_view, name='process'),
     path('search/', views.search_view, name='search'),

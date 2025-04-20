@@ -801,3 +801,53 @@ mark {
     border-radius: 8px;
     margin-top: 20px;
 }
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.results-table th,
+.results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.results-table th {
+    background-color: #1b4d3e;
+    color: white;
+    font-weight: 500;
+}
+
+.results-table tbody tr:hover {
+    background-color: rgba(27, 77, 62, 0.05);
+}
+
+.results-table td:first-child {
+    font-weight: 500;
+    color: #1b4d3e;
+}
+
+.search-summary {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.error-message {
+    color: #fff;
+    background: rgba(220, 53, 69, 0.8);
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 15px;
+}

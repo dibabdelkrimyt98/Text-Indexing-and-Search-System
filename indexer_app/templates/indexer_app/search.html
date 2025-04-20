@@ -55,9 +55,10 @@
       <div class="search-content">
         <h2 class="animated-title">Document Search</h2>
         <form id="searchForm">
+          {% csrf_token %}
           <div class="search-row">
-            <input type="text" id="searchInput" placeholder="Search documents..." required>
-            <button type="submit">
+            <input type="text" id="searchInput" name="query" placeholder="Search documents..." required>
+            <button type="submit" id="searchButton">
               <i class="fas fa-search"></i>
               Search
             </button>
@@ -65,8 +66,8 @@
           
           <div class="method-selector">
             <label for="similaritySelect">Select Method:</label>
-            <select id="similaritySelect">
-              <option value="cosine">Cosine Similarity</option>
+            <select id="similaritySelect" name="method">
+              <option value="cosine">Cosine Similarity (TF-IDF)</option>
               <option value="euclidean">Euclidean Distance</option>
             </select>
             <span class="tooltip">
@@ -138,18 +139,20 @@
           </div>
         </form>
 
-        <div id="results" class="fade-in">
+        <div id="results" class="search-results">
           <div class="typing-loader" style="display: none;">
             <div class="spinner"></div>
             <span class="text">Searching...</span>
           </div>
-          <ul id="searchResults"></ul>
+          <div id="searchResults" class="results-container">
+            <!-- Search results will be displayed here -->
+          </div>
         </div>
       </div>
     </main>
   </div>
 
   <!-- Scripts -->
-  <script src="{% static 'indexer_app/js/search.js' %}"></script>
+  <script src="{% static 'indexer_app/js/search.js' %}?v={% now 'U' %}"></script>
 </body>
 </html>

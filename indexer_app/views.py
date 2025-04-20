@@ -15,7 +15,7 @@ from django.views.decorators.http import require_http_methods
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 # pylint: disable=import-error
 from django.conf import settings
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.db import transaction
 from django.core.files.uploadedfile import UploadedFile
 from django.utils import timezone
@@ -453,12 +453,208 @@ def preprocess_text(text: str) -> str:
     # Tokenize and convert to lowercase
     tokens = word_tokenize(text.lower())
     
-    # Remove stopwords
+    # Remove stopwords and punctuation
     stop_words = set(stopwords.words('english'))
-    filtered_tokens = [t for t in tokens if t not in stop_words]
+    filtered_tokens = [t for t in tokens if t not in stop_words and t.isalnum()]
     
     # Join tokens back into text
     return ' '.join(filtered_tokens)
+
+
+def find_best_context(content: str, query: str, window_size: int = 100) -> str:
+    """Find the most relevant context around a search match."""
+    content_lower = content.lower()
+    query_lower = query.lower()
+    
+    # Find all occurrences of the query
+    matches = []
+    start = 0
+    while True:
+        index = content_lower.find(query_lower, start)
+        if index == -1:
+            break
+        matches.append(index)
+        start = index + 1
+    
+    if not matches:
+        # If no exact matches, try to find partial matches
+        query_words = query_lower.split()
+        for word in query_words:
+            index = content_lower.find(word)
+            if index != -1:
+                matches.append(index)
+    
+    if not matches:
+        # If still no matches, return the beginning of the content
+        return content[:200] + "..."
+    
+    # Find the best context window
+    best_context = ""
+    max_matches = 0
+    
+    for match in matches:
+        start = max(0, match - window_size)
+        end = min(len(content), match + len(query) + window_size)
+        context = content[start:end]
+        
+        # Count how many query words appear in this context
+        matches_in_context = sum(1 for word in query_lower.split() 
+                               if word in context.lower())
+        
+        if matches_in_context > max_matches:
+            max_matches = matches_in_context
+            best_context = context
+    
+    return f"...{best_context}..."
+
+
+@require_http_methods(["POST"])
+@csrf_exempt  # Temporarily exempt from CSRF for testing
+def search_documents(request: HttpRequest) -> JsonResponse:
+    """Search for documents based on query parameters."""
+    try:
+        # Log the incoming request
+        logger.info(f"Search request received - POST data: {request.POST}")
+        
+        # Get search parameters from request
+        data = request.POST
+        query = data.get('query', '').strip()
+        method = data.get('method', 'cosine')
+        file_type = data.get('fileType', 'all')
+        date_range = data.get('dateRange', 'all')
+        exact_match = data.get('exactMatch', 'false').lower() == 'true'
+
+        logger.info(f"Search parameters: query='{query}', method={method}, file_type={file_type}, date_range={date_range}, exact_match={exact_match}")
+
+        if not query:
+            return JsonResponse({
+                'error': 'Search query is required'
+            }, status=400)
+
+        # Start with all documents
+        documents = Document.objects.all()
+        logger.info(f"Total documents before filtering: {documents.count()}")
+
+        # Apply file type filter
+        if file_type != 'all':
+            documents = documents.filter(file_type=file_type)
+            logger.info(f"Documents after file type filter: {documents.count()}")
+
+        # Apply date range filter
+        if date_range != 'all':
+            from django.utils import timezone
+            from datetime import timedelta
+            now = timezone.now()
+            since = now  # Initialize with default value
+            
+            if date_range == 'day':
+                since = now - timedelta(days=1)
+            elif date_range == 'week':
+                since = now - timedelta(weeks=1)
+            elif date_range == 'month':
+                since = now - timedelta(days=30)
+            elif date_range == 'year':
+                since = now - timedelta(days=365)
+            
+            documents = documents.filter(uploaded_at__gte=since)
+            logger.info(f"Documents after date filter: {documents.count()}")
+
+        # For exact match search
+        if exact_match:
+            matching_docs = []
+            for doc in documents:
+                # Search in both original content and processed content
+                content_match = query.lower() in doc.content.lower()
+                processed_match = query.lower() in doc.processed_content.lower()
+                
+                if content_match or processed_match:
+                    # Find the best context that shows the match
+                    context = find_best_context(doc.content, query)
+                    
+                    matching_docs.append({
+                        'id': doc.id,
+                        'title': doc.title,
+                        'file_type': doc.file_type,
+                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
+                        'score': 100,  # Exact match gets 100%
+                        'preview': context,
+                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
+                    })
+            logger.info(f"Exact match results: {len(matching_docs)}")
+        else:
+            # Create TF-IDF vectorizer with better parameters
+            vectorizer = TfidfVectorizer(
+                min_df=1,  # Include all terms
+                max_df=0.9,  # Ignore terms that appear in more than 90% of docs
+                stop_words='english',  # Remove English stop words
+                ngram_range=(1, 2),  # Include both unigrams and bigrams
+                strip_accents='unicode'  # Handle accented characters
+            )
+            
+            # Get all document contents - combine original and processed content
+            doc_contents = [f"{doc.content} {doc.processed_content}" for doc in documents]
+            logger.info(f"Processing {len(doc_contents)} documents for TF-IDF")
+            
+            # Preprocess the query
+            processed_query = preprocess_text(query)
+            
+            # Add query to the documents for vectorization
+            all_texts = doc_contents + [processed_query]
+            
+            # Create TF-IDF matrix
+            tfidf_matrix = vectorizer.fit_transform(all_texts)
+            
+            # Get query vector (last row of the matrix)
+            query_vector = tfidf_matrix.getrow(-1)
+            
+            # Get document vectors (all rows except the last one)
+            doc_vectors = vstack([tfidf_matrix.getrow(i) for i in range(tfidf_matrix.shape[0]-1)])
+            
+            # Calculate similarities
+            if method == 'cosine':
+                from sklearn.metrics.pairwise import cosine_similarity
+                similarities = cosine_similarity(doc_vectors.toarray(), query_vector.toarray())
+            else:  # euclidean
+                from sklearn.metrics.pairwise import euclidean_distances
+                distances = euclidean_distances(doc_vectors.toarray(), query_vector.toarray())
+                similarities = 1 / (1 + distances)  # Convert distance to similarity
+            
+            # Create results list
+            matching_docs = []
+            for doc, score in zip(documents, similarities):
+                score_value = float(score[0])  # Get the score value
+                if score_value > 0.1:  # Only include relevant results
+                    # Find the best context that shows the match
+                    context = find_best_context(doc.content, query)
+                    
+                    matching_docs.append({
+                        'id': doc.id,
+                        'title': doc.title,
+                        'file_type': doc.file_type,
+                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
+                        'score': round(score_value * 100, 1),  # Convert to percentage
+                        'preview': context,
+                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
+                    })
+            logger.info(f"TF-IDF search results: {len(matching_docs)}")
+
+        # Sort results by score
+        matching_docs.sort(key=lambda x: x['score'], reverse=True)
+        
+        response_data = {
+            'results': matching_docs[:20],  # Limit to top 20 results
+            'total': len(matching_docs),
+            'query': query
+        }
+        logger.info(f"Returning {len(response_data['results'])} results")
+        return JsonResponse(response_data)
+
+    except Exception as e:
+        logger.error(f"Error in search_documents: {str(e)}")
+        logger.exception("Full traceback:")
+        return JsonResponse({
+            'error': 'An error occurred while searching documents'
+        }, status=500)
 
 
 @require_http_methods(["GET"])
@@ -730,124 +926,20 @@ def test_bg_view(request: HttpRequest) -> HttpResponse:
     return render(request, 'indexer_app/test_bg.html')
 
 
-@require_http_methods(["POST"])
-def search_documents(request: HttpRequest) -> JsonResponse:
-    try:
-        # Get search parameters from request
-        data = request.POST
-        query = data.get('query', '').strip()
-        method = data.get('method', 'cosine')
-        file_type = data.get('fileType', 'all')
-        date_range = data.get('dateRange', 'all')
-        exact_match = data.get('exactMatch', 'false').lower() == 'true'
-
-        if not query:
-            return JsonResponse({
-                'error': 'Search query is required'
-            }, status=400)
-
-        # Start with all documents
-        documents = Document.objects.all()
-
-        # Apply file type filter
-        if file_type != 'all':
-            documents = documents.filter(file_type=file_type)
-
-        # Apply date range filter
-        if date_range != 'all':
-            from django.utils import timezone
-            from datetime import timedelta
-            now = timezone.now()
-            since = now  # Initialize with default value
-            
-            if date_range == 'day':
-                since = now - timedelta(days=1)
-            elif date_range == 'week':
-                since = now - timedelta(weeks=1)
-            elif date_range == 'month':
-                since = now - timedelta(days=30)
-            elif date_range == 'year':
-                since = now - timedelta(days=365)
-            
-            documents = documents.filter(uploaded_at__gte=since)
-
-        # For exact match search
-        if exact_match:
-            matching_docs = []
-            for doc in documents:
-                if query.lower() in doc.content.lower():
-                    # Find the context around the match
-                    index = doc.content.lower().find(query.lower())
-                    start = max(0, index - 100)
-                    end = min(len(doc.content), index + len(query) + 100)
-                    context = doc.content[start:end]
-                    
-                    matching_docs.append({
-                        'id': doc.id,
-                        'title': doc.title,
-                        'file_type': doc.file_type,
-                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
-                        'score': 100,  # Exact match gets 100%
-                        'preview': f"...{context}...",
-                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
-                    })
-        else:
-            # Create TF-IDF vectorizer
-            vectorizer = TfidfVectorizer(min_df=1, max_df=0.9)
-            
-            # Get all document contents
-            doc_contents = [doc.processed_content for doc in documents]
-            
-            # Add query to the documents for vectorization
-            all_texts = doc_contents + [preprocess_text(query)]
-            
-            # Create TF-IDF matrix
-            tfidf_matrix = vectorizer.fit_transform(all_texts)
-            
-            # Get query vector (last row of the matrix)
-            query_vector = tfidf_matrix.getrow(-1).toarray()
-            
-            # Get document vectors (all rows except the last one)
-            doc_vectors = vstack([tfidf_matrix.getrow(i) for i in range(tfidf_matrix.shape[0]-1)]).toarray()
-            
-            # Calculate similarities
-            if method == 'cosine':
-                from sklearn.metrics.pairwise import cosine_similarity
-                similarities = cosine_similarity(doc_vectors, query_vector)
-            else:  # euclidean
-                from sklearn.metrics.pairwise import euclidean_distances
-                distances = euclidean_distances(doc_vectors, query_vector)
-                similarities = 1 / (1 + distances)  # Convert distance to similarity
-            
-            # Create results list
-            matching_docs = []
-            for doc, score in zip(documents, similarities):
-                score_value = float(score[0])  # Get the score value
-                if score_value > 0.1:  # Only include relevant results
-                    # Get a preview of the content
-                    preview = doc.content[:200] + "..." if len(doc.content) > 200 else doc.content
-                    
-                    matching_docs.append({
-                        'id': doc.id,
-                        'title': doc.title,
-                        'file_type': doc.file_type,
-                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
-                        'score': round(score_value * 100, 1),  # Convert to percentage
-                        'preview': preview,
-                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
-                    })
-
-        # Sort results by score
-        matching_docs.sort(key=lambda x: x['score'], reverse=True)
-
-        return JsonResponse({
-            'results': matching_docs[:20],  # Limit to top 20 results
-            'total': len(matching_docs),
-            'query': query
-        })
-
-    except Exception as e:
-        logger.error(f"Error in search_documents: {str(e)}")
-        return JsonResponse({
-            'error': 'An error occurred while searching documents'
-        }, status=500)
+@csrf_protect
+def try_view(request: HttpRequest) -> HttpResponse:
+    """
+    Render the try page.
+    
+    Args:
+        request: The HTTP request
+        
+    Returns:
+        HttpResponse with rendered template
+    """
+    logger.info("Rendering try page")
+    return render(
+        request,
+        'indexer_app/try.html',
+        {'title': 'Try AOS System'}
+    )

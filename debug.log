@@ -2567,3 +2567,311 @@ INFO 2025-04-20 16:02:34,680 autoreload 11308 18092 C:\Users\HP\Downloads\aos sy
 INFO 2025-04-20 16:02:34,680 autoreload 11308 18092 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
 INFO 2025-04-20 16:02:35,548 autoreload 15440 21232 Watching for file changes with StatReloader
 INFO 2025-04-20 16:02:35,548 autoreload 15440 21232 Watching for file changes with StatReloader
+INFO 2025-04-20 16:03:58,051 basehttp 15440 21404 "GET /indexer_app/search/ HTTP/1.1" 200 5832
+INFO 2025-04-20 16:03:58,051 basehttp 15440 21404 "GET /indexer_app/search/ HTTP/1.1" 200 5832
+INFO 2025-04-20 16:08:46,502 basehttp 15440 15000 "GET /indexer_app/search/ HTTP/1.1" 200 5832
+INFO 2025-04-20 16:08:46,502 basehttp 15440 15000 "GET /indexer_app/search/ HTTP/1.1" 200 5832
+INFO 2025-04-20 16:11:59,424 basehttp 15440 15008 "GET /indexer_app/search/ HTTP/1.1" 200 5834
+INFO 2025-04-20 16:11:59,424 basehttp 15440 15008 "GET /indexer_app/search/ HTTP/1.1" 200 5834
+INFO 2025-04-20 16:12:12,110 basehttp 15440 15008 "GET /indexer_app/ HTTP/1.1" 200 2732
+INFO 2025-04-20 16:12:12,110 basehttp 15440 15008 "GET /indexer_app/ HTTP/1.1" 200 2732
+INFO 2025-04-20 16:12:17,433 basehttp 15440 15008 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 16:12:17,433 basehttp 15440 15008 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 16:13:44,256 basehttp 15440 15008 "GET /indexer_app/search/ HTTP/1.1" 200 5834
+INFO 2025-04-20 16:13:44,256 basehttp 15440 15008 "GET /indexer_app/search/ HTTP/1.1" 200 5834
+INFO 2025-04-20 16:14:29,767 autoreload 15440 21232 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 16:14:29,767 autoreload 15440 21232 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 16:14:31,033 autoreload 20008 19916 Watching for file changes with StatReloader
+INFO 2025-04-20 16:14:31,033 autoreload 20008 19916 Watching for file changes with StatReloader
+INFO 2025-04-20 17:59:16,948 basehttp 20008 2724 "GET /indexer_app/search/ HTTP/1.1" 200 5992
+INFO 2025-04-20 17:59:16,948 basehttp 20008 2724 "GET /indexer_app/search/ HTTP/1.1" 200 5992
+INFO 2025-04-20 17:59:31,441 autoreload 20008 19916 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 17:59:31,441 autoreload 20008 19916 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 17:59:33,294 autoreload 18372 20368 Watching for file changes with StatReloader
+INFO 2025-04-20 17:59:33,294 autoreload 18372 20368 Watching for file changes with StatReloader
+INFO 2025-04-20 18:01:19,419 basehttp 18372 18332 "GET /indexer_app/search/ HTTP/1.1" 200 6004
+INFO 2025-04-20 18:01:19,419 basehttp 18372 18332 "GET /indexer_app/search/ HTTP/1.1" 200 6004
+INFO 2025-04-20 18:01:19,659 basehttp 18372 18332 "GET /static/indexer_app/js/search.js?v=1745168479 HTTP/1.1" 200 4948
+INFO 2025-04-20 18:01:19,659 basehttp 18372 18332 "GET /static/indexer_app/js/search.js?v=1745168479 HTTP/1.1" 200 4948
+INFO 2025-04-20 18:01:21,196 views 18372 18332 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['cosine']}>
+INFO 2025-04-20 18:01:21,197 views 18372 18332 Search parameters: query='web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:01:21,201 views 18372 18332 Total documents before filtering: 17
+INFO 2025-04-20 18:01:21,209 views 18372 18332 Processing 17 documents for TF-IDF
+INFO 2025-04-20 18:01:21,286 views 18372 18332 TF-IDF search results: 0
+INFO 2025-04-20 18:01:21,289 views 18372 18332 Returning 0 results
+INFO 2025-04-20 18:01:21,289 basehttp 18372 18332 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:01:21,289 basehttp 18372 18332 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:04:32,943 basehttp 18372 19732 "GET /indexer_app/search/ HTTP/1.1" 200 6004
+INFO 2025-04-20 18:04:32,943 basehttp 18372 19732 "GET /indexer_app/search/ HTTP/1.1" 200 6004
+INFO 2025-04-20 18:04:33,032 basehttp 18372 19732 "GET /static/indexer_app/js/search.js?v=1745168672 HTTP/1.1" 200 7105
+INFO 2025-04-20 18:04:33,032 basehttp 18372 19732 "GET /static/indexer_app/js/search.js?v=1745168672 HTTP/1.1" 200 7105
+INFO 2025-04-20 18:15:39,870 basehttp 18372 2120 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:15:39,870 basehttp 18372 2120 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:15:39,966 basehttp 18372 2120 "GET /static/indexer_app/js/search.js?v=1745169339 HTTP/1.1" 200 8952
+INFO 2025-04-20 18:15:39,966 basehttp 18372 2120 "GET /static/indexer_app/js/search.js?v=1745169339 HTTP/1.1" 200 8952
+INFO 2025-04-20 18:15:42,655 views 18372 2120 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:15:42,655 views 18372 2120 Search parameters: query='web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:15:42,662 views 18372 2120 Total documents before filtering: 17
+INFO 2025-04-20 18:15:42,669 views 18372 2120 Processing 17 documents for TF-IDF
+INFO 2025-04-20 18:15:42,677 views 18372 2120 TF-IDF search results: 0
+INFO 2025-04-20 18:15:42,677 views 18372 2120 Returning 0 results
+INFO 2025-04-20 18:15:42,680 basehttp 18372 2120 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:15:42,680 basehttp 18372 2120 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:15:47,171 views 18372 2120 Search request received - POST data: <QueryDict: {'query': ['RL'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:15:47,172 views 18372 2120 Search parameters: query='RL', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:15:47,175 views 18372 2120 Total documents before filtering: 17
+INFO 2025-04-20 18:15:47,178 views 18372 2120 Processing 17 documents for TF-IDF
+INFO 2025-04-20 18:15:47,188 views 18372 2120 TF-IDF search results: 1
+INFO 2025-04-20 18:15:47,188 views 18372 2120 Returning 1 results
+INFO 2025-04-20 18:15:47,188 basehttp 18372 2120 "POST /indexer_app/api/search/ HTTP/1.1" 200 219
+INFO 2025-04-20 18:15:47,188 basehttp 18372 2120 "POST /indexer_app/api/search/ HTTP/1.1" 200 219
+INFO 2025-04-20 18:19:45,462 views 18372 17860 Process document view called
+INFO 2025-04-20 18:19:45,462 views 18372 17860 Request method: POST
+INFO 2025-04-20 18:19:45,462 views 18372 17860 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf (application/pdf)>]}>
+INFO 2025-04-20 18:19:45,462 views 18372 17860 Request POST: <QueryDict: {}>
+INFO 2025-04-20 18:19:45,462 views 18372 17860 Request META: {'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\HP\\AppData\\Roaming', 'BUNDLED_DEBUGPY_PATH': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundled\\libs\\debugpy', 'CHOCOLATEYINSTALL': 'C:\\ProgramData\\chocolatey', 'CHOCOLATEYLASTPATHUPDATE': '133675076924179776', 'CHROME_CRASHPAD_PIPE_NAME': '\\\\.\\pipe\\crashpad_14136_ZSMTIIVPWRZDMVMM', 'COLORTERM': 'truecolor', 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-MIJNC2U', 'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 'CURSOR_TRACE_ID': '5f33619456cc46c389d20ca753650534', 'DJANGO_SETTINGS_MODULE': 'aos_project.settings', 'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'EFC_10140': '1', 'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'GIT_ASKPASS': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass.sh', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\HP', 'JAVA_HOME': 'C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21', 'LANG': 'en_US.UTF-8', 'LOCALAPPDATA': 'C:\\Users\\HP\\AppData\\Local', 'LOGONSERVER': '\\\\DESKTOP-MIJNC2U', 'NUMBER_OF_PROCESSORS': '8', 'ONEDRIVE': 'C:\\Users\\HP\\OneDrive', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'undefined', 'OS': 'Windows_NT', 'PATH': 'c:\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot\\bin;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\HP\\Downloads\\php-8.3.3-nts-Win32-vs16-x64;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\HP\\Downloads\\nginx-1.26.2\\nginx-1.26.2;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Java\\jdk1.8.0_202\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\HP\\.cargo\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-17.0.10.7-hotspot\\bin;C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\Users\\HP\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\HP\\AppData\\Roaming\\npm;search-ms:displayname=Search%20Results%20in%20Local%20Disk%20(C%3A)&crumb=location:C%3A%5C\\php;C:\\Users\\HP\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\HP\\Downloads;C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 142 Stepping 12, GenuineIntel', 'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '8e0c', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSMODULEPATH': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PT8HOME': 'C:\\Program Files\\Cisco Packet Tracer 8.2.1', 'PUBLIC': 'C:\\Users\\Public', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'RUN_MAIN': 'true', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 'SYSTEMROOT': 'C:\\Windows', 'TEMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'TERM_PROGRAM': 'vscode', 'TERM_PROGRAM_VERSION': '0.48.9', 'TMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'USERDOMAIN': 'DESKTOP-MIJNC2U', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-MIJNC2U', 'USERNAME': 'HP', 'USERPROFILE': 'C:\\Users\\HP', 'VS140COMNTOOLS': 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-43aca5be0de423cc.txt', 'VSCODE_ENV_PREPEND': 'PATH=c\\x3a\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'VSCODE_GIT_ASKPASS_MAIN': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': 'C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\Cursor.exe', 'VSCODE_GIT_IPC_HANDLE': '\\\\.\\pipe\\vscode-git-2924d4b4e2-sock', 'WINDIR': 'C:\\Windows', 'ZES_ENABLE_SYSMAN': '1', 'SERVER_NAME': 'DESKTOP-MIJNC2U', 'GATEWAY_INTERFACE': 'CGI/1.1', 'SERVER_PORT': '8000', 'REMOTE_HOST': '', 'CONTENT_LENGTH': '2733112', 'SCRIPT_NAME': '', 'SERVER_PROTOCOL': 'HTTP/1.1', 'SERVER_SOFTWARE': 'WSGIServer/0.2', 'REQUEST_METHOD': 'POST', 'PATH_INFO': '/indexer_app/process/', 'QUERY_STRING': '', 'REMOTE_ADDR': '127.0.0.1', 'CONTENT_TYPE': 'multipart/form-data; boundary=----geckoformboundary57fd6a8c260d00771ad841ab21642794', 'HTTP_HOST': '127.0.0.1:8000', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'HTTP_ACCEPT': '*/*', 'HTTP_ACCEPT_LANGUAGE': 'en-US,en;q=0.5', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br, zstd', 'HTTP_REFERER': 'http://127.0.0.1:8000/indexer_app/upload/', 'HTTP_X_CSRFTOKEN': 'ha8MXm6TAYjnH1i9GEm3Rmvt4ACTeSpbL2sHCJ4iTFcVubTIclI8hHfwDYhThFgI', 'HTTP_ORIGIN': 'http://127.0.0.1:8000', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_SEC_FETCH_DEST': 'empty', 'HTTP_SEC_FETCH_MODE': 'cors', 'HTTP_SEC_FETCH_SITE': 'same-origin', 'HTTP_PRIORITY': 'u=0', 'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x0000027B85569D80>, 'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 'wsgi.version': (1, 0), 'wsgi.run_once': False, 'wsgi.url_scheme': 'http', 'wsgi.multithread': True, 'wsgi.multiprocess': False, 'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 'CSRF_COOKIE': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H'}
+INFO 2025-04-20 18:19:45,487 views 18372 17860 Request headers: {'Content-Length': '2733112', 'Content-Type': 'multipart/form-data; boundary=----geckoformboundary57fd6a8c260d00771ad841ab21642794', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/indexer_app/upload/', 'X-Csrftoken': 'ha8MXm6TAYjnH1i9GEm3Rmvt4ACTeSpbL2sHCJ4iTFcVubTIclI8hHfwDYhThFgI', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'}
+INFO 2025-04-20 18:19:45,490 views 18372 17860 Processing file: A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf
+INFO 2025-04-20 18:19:45,490 views 18372 17860 File size: 2732829
+INFO 2025-04-20 18:19:45,490 views 18372 17860 Content type: application/pdf
+INFO 2025-04-20 18:19:45,490 views 18372 17860 Processing document with base title: A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf
+INFO 2025-04-20 18:19:45,490 views 18372 17860 Upload directory exists: True
+INFO 2025-04-20 18:19:45,490 views 18372 17860 Upload directory is absolute: True
+INFO 2025-04-20 18:19:45,490 views 18372 17860 Upload directory path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 18:19:45,505 views 18372 17860 Upload directory is writable
+INFO 2025-04-20 18:19:45,507 views 18372 17860 Starting to handle uploaded file: A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf
+INFO 2025-04-20 18:19:45,507 views 18372 17860 File size: 2732829 bytes
+INFO 2025-04-20 18:19:45,507 views 18372 17860 Content type: application/pdf
+INFO 2025-04-20 18:19:45,507 views 18372 17860 File path: C:\Users\HP\Downloads\aos system\media\documents\A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf
+INFO 2025-04-20 18:19:45,507 views 18372 17860 File extension: .pdf
+INFO 2025-04-20 18:19:45,507 views 18372 17860 UPLOAD_DIR absolute path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 18:19:45,507 views 18372 17860 Upload directory exists: True
+INFO 2025-04-20 18:19:45,507 views 18372 17860 Upload directory is absolute: True
+INFO 2025-04-20 18:19:45,518 views 18372 17860 File saved successfully to disk at: C:\Users\HP\Downloads\aos system\media\documents\A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf
+INFO 2025-04-20 18:19:45,523 views 18372 17860 File exists after save: True
+INFO 2025-04-20 18:19:45,523 views 18372 17860 Saved file size: 2732829 bytes
+INFO 2025-04-20 18:19:45,523 views 18372 17860 PDF document placeholder content created
+INFO 2025-04-20 18:19:45,528 views 18372 17860 File processing completed successfully. MIME type: application/pdf
+INFO 2025-04-20 18:19:45,528 views 18372 17860 File processed successfully. MIME type: application/pdf
+INFO 2025-04-20 18:19:45,530 views 18372 17860 Text preprocessing completed
+INFO 2025-04-20 18:19:45,530 views 18372 17860 File type: pdf
+INFO 2025-04-20 18:19:45,568 views 18372 17860 Document created with ID: 18
+INFO 2025-04-20 18:19:45,629 views 18372 17860 TF-IDF vectors updated successfully
+INFO 2025-04-20 18:19:45,629 views 18372 17860 Returning success response: {'success': True, 'message': 'Document processed successfully', 'document_id': 18, 'title': 'A_Complete_Web_Development_Guide_For_Non_Technical_Startup_Founder.pdf'}
+INFO 2025-04-20 18:19:45,660 basehttp 18372 17860 "POST /indexer_app/process/ HTTP/1.1" 200 165
+INFO 2025-04-20 18:19:45,660 basehttp 18372 17860 "POST /indexer_app/process/ HTTP/1.1" 200 165
+INFO 2025-04-20 18:19:53,800 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:19:53,801 views 18372 17860 Search parameters: query='web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:19:53,805 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:19:53,805 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:19:53,822 views 18372 17860 TF-IDF search results: 0
+INFO 2025-04-20 18:19:53,822 views 18372 17860 Returning 0 results
+INFO 2025-04-20 18:19:53,822 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:19:53,822 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:19:54,886 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:19:54,888 views 18372 17860 Search parameters: query='web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:19:54,891 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:19:54,896 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:19:54,905 views 18372 17860 TF-IDF search results: 0
+INFO 2025-04-20 18:19:54,905 views 18372 17860 Returning 0 results
+INFO 2025-04-20 18:19:54,910 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:19:54,910 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:20:04,138 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['Web'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:20:04,138 views 18372 17860 Search parameters: query='Web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:20:04,138 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:20:04,147 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:20:04,152 views 18372 17860 TF-IDF search results: 0
+INFO 2025-04-20 18:20:04,152 views 18372 17860 Returning 0 results
+INFO 2025-04-20 18:20:04,152 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:20:04,152 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:20:06,074 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['Web_'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:20:06,076 views 18372 17860 Search parameters: query='Web_', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:20:06,079 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:20:06,083 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:20:06,089 views 18372 17860 TF-IDF search results: 0
+INFO 2025-04-20 18:20:06,089 views 18372 17860 Returning 0 results
+INFO 2025-04-20 18:20:06,089 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 44
+INFO 2025-04-20 18:20:06,089 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 44
+INFO 2025-04-20 18:20:08,313 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['_Web_'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:20:08,314 views 18372 17860 Search parameters: query='_Web_', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:20:08,318 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:20:08,324 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:20:08,329 views 18372 17860 TF-IDF search results: 0
+INFO 2025-04-20 18:20:08,329 views 18372 17860 Returning 0 results
+INFO 2025-04-20 18:20:08,329 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 45
+INFO 2025-04-20 18:20:08,329 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 45
+INFO 2025-04-20 18:20:20,043 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['Cahier'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:20:20,043 views 18372 17860 Search parameters: query='Cahier', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:20:20,050 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:20:20,054 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:20:20,054 views 18372 17860 TF-IDF search results: 0
+INFO 2025-04-20 18:20:20,054 views 18372 17860 Returning 0 results
+INFO 2025-04-20 18:20:20,068 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 46
+INFO 2025-04-20 18:20:20,068 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 46
+INFO 2025-04-20 18:20:25,137 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['CV'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:20:25,139 views 18372 17860 Search parameters: query='CV', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:20:25,142 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:20:25,146 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:20:25,156 views 18372 17860 TF-IDF search results: 6
+INFO 2025-04-20 18:20:25,157 views 18372 17860 Returning 6 results
+INFO 2025-04-20 18:20:25,158 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 1424
+INFO 2025-04-20 18:20:25,158 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 1424
+WARNING 2025-04-20 18:20:29,605 log 18372 17860 Not Found: /media/documents/CV IT Support -DIB Abdelkrim Y T-1_20250420_145046.pdf
+WARNING 2025-04-20 18:20:29,605 log 18372 17860 Not Found: /media/documents/CV IT Support -DIB Abdelkrim Y T-1_20250420_145046.pdf
+WARNING 2025-04-20 18:20:29,607 basehttp 18372 17860 "GET /media/documents/CV%20IT%20Support%20-DIB%20Abdelkrim%20Y%20T-1_20250420_145046.pdf HTTP/1.1" 404 6796
+WARNING 2025-04-20 18:20:29,607 basehttp 18372 17860 "GET /media/documents/CV%20IT%20Support%20-DIB%20Abdelkrim%20Y%20T-1_20250420_145046.pdf HTTP/1.1" 404 6796
+INFO 2025-04-20 18:21:23,368 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['CV'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['week']}>
+INFO 2025-04-20 18:21:23,369 views 18372 17860 Search parameters: query='CV', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:21:23,373 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:21:23,376 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:21:23,384 views 18372 17860 TF-IDF search results: 6
+INFO 2025-04-20 18:21:23,385 views 18372 17860 Returning 6 results
+INFO 2025-04-20 18:21:23,387 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 1424
+INFO 2025-04-20 18:21:23,387 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 1424
+INFO 2025-04-20 18:21:25,190 views 18372 17860 Search request received - POST data: <QueryDict: {'query': ['CV'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['week']}>
+INFO 2025-04-20 18:21:25,191 views 18372 17860 Search parameters: query='CV', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:21:25,193 views 18372 17860 Total documents before filtering: 18
+INFO 2025-04-20 18:21:25,196 views 18372 17860 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:21:25,205 views 18372 17860 TF-IDF search results: 6
+INFO 2025-04-20 18:21:25,205 views 18372 17860 Returning 6 results
+INFO 2025-04-20 18:21:25,205 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 1424
+INFO 2025-04-20 18:21:25,205 basehttp 18372 17860 "POST /indexer_app/api/search/ HTTP/1.1" 200 1424
+INFO 2025-04-20 18:23:33,766 autoreload 18372 20368 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:23:33,766 autoreload 18372 20368 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:23:35,602 autoreload 20804 11508 Watching for file changes with StatReloader
+INFO 2025-04-20 18:23:35,602 autoreload 20804 11508 Watching for file changes with StatReloader
+INFO 2025-04-20 18:23:53,109 autoreload 20804 11508 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:23:53,109 autoreload 20804 11508 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:23:54,742 autoreload 11936 6444 Watching for file changes with StatReloader
+INFO 2025-04-20 18:23:54,742 autoreload 11936 6444 Watching for file changes with StatReloader
+INFO 2025-04-20 18:24:12,121 basehttp 11936 12112 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:24:12,121 basehttp 11936 12112 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:24:12,327 basehttp 11936 12112 "GET /static/indexer_app/js/search.js?v=1745169852 HTTP/1.1" 200 8952
+INFO 2025-04-20 18:24:12,327 basehttp 11936 12112 "GET /static/indexer_app/js/search.js?v=1745169852 HTTP/1.1" 200 8952
+INFO 2025-04-20 18:24:14,913 views 11936 12112 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['week']}>
+INFO 2025-04-20 18:24:14,914 views 11936 12112 Search parameters: query='web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:24:14,917 views 11936 12112 Total documents before filtering: 18
+INFO 2025-04-20 18:24:14,922 views 11936 12112 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:24:14,973 views 11936 12112 TF-IDF search results: 0
+INFO 2025-04-20 18:24:14,973 views 11936 12112 Returning 0 results
+INFO 2025-04-20 18:24:14,985 basehttp 11936 12112 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:24:14,985 basehttp 11936 12112 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:24:20,401 views 11936 12112 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['cosine'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:24:20,403 views 11936 12112 Search parameters: query='web', method=cosine, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:24:20,407 views 11936 12112 Total documents before filtering: 18
+INFO 2025-04-20 18:24:20,413 views 11936 12112 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:24:20,423 views 11936 12112 TF-IDF search results: 0
+INFO 2025-04-20 18:24:20,425 views 11936 12112 Returning 0 results
+INFO 2025-04-20 18:24:20,427 basehttp 11936 12112 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:24:20,427 basehttp 11936 12112 "POST /indexer_app/api/search/ HTTP/1.1" 200 43
+INFO 2025-04-20 18:24:24,116 views 11936 12112 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['euclidean'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:24:24,118 views 11936 12112 Search parameters: query='web', method=euclidean, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:24:24,122 views 11936 12112 Total documents before filtering: 18
+INFO 2025-04-20 18:24:24,126 views 11936 12112 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:24:24,131 views 11936 12112 TF-IDF search results: 18
+INFO 2025-04-20 18:24:24,136 views 11936 12112 Returning 18 results
+INFO 2025-04-20 18:24:24,138 basehttp 11936 12112 "POST /indexer_app/api/search/ HTTP/1.1" 200 5103
+INFO 2025-04-20 18:24:24,138 basehttp 11936 12112 "POST /indexer_app/api/search/ HTTP/1.1" 200 5103
+INFO 2025-04-20 18:24:47,934 basehttp 11936 12112 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:24:47,934 basehttp 11936 12112 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:26:27,082 autoreload 11936 6444 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:26:27,082 autoreload 11936 6444 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:26:29,157 autoreload 18332 20884 Watching for file changes with StatReloader
+INFO 2025-04-20 18:26:29,157 autoreload 18332 20884 Watching for file changes with StatReloader
+INFO 2025-04-20 18:26:47,274 autoreload 18332 20884 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:26:47,274 autoreload 18332 20884 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:26:48,856 autoreload 17452 2248 Watching for file changes with StatReloader
+INFO 2025-04-20 18:26:48,856 autoreload 17452 2248 Watching for file changes with StatReloader
+INFO 2025-04-20 18:27:02,844 autoreload 17452 2248 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:27:02,844 autoreload 17452 2248 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:27:04,432 autoreload 12148 13192 Watching for file changes with StatReloader
+INFO 2025-04-20 18:27:04,432 autoreload 12148 13192 Watching for file changes with StatReloader
+INFO 2025-04-20 18:27:46,228 autoreload 12148 13192 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:27:46,228 autoreload 12148 13192 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:27:48,105 autoreload 6608 16000 Watching for file changes with StatReloader
+INFO 2025-04-20 18:27:48,105 autoreload 6608 16000 Watching for file changes with StatReloader
+INFO 2025-04-20 18:28:36,668 basehttp 6608 8612 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:28:36,668 basehttp 6608 8612 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:28:43,885 basehttp 6608 8612 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:28:43,885 basehttp 6608 8612 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:29:32,799 autoreload 6608 16000 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 18:29:32,799 autoreload 6608 16000 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 18:29:34,611 autoreload 5364 2192 Watching for file changes with StatReloader
+INFO 2025-04-20 18:29:34,611 autoreload 5364 2192 Watching for file changes with StatReloader
+INFO 2025-04-20 18:29:47,241 basehttp 5364 16620 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:29:47,241 basehttp 5364 16620 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:30:37,424 basehttp 5364 16620 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:30:37,424 basehttp 5364 16620 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:30:42,246 basehttp 5364 16620 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:30:42,246 basehttp 5364 16620 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:30:42,428 basehttp 5364 16620 "GET /static/indexer_app/js/search.js?v=1745170242 HTTP/1.1" 200 8952
+INFO 2025-04-20 18:30:42,428 basehttp 5364 16620 "GET /static/indexer_app/js/search.js?v=1745170242 HTTP/1.1" 200 8952
+INFO 2025-04-20 18:33:42,045 basehttp 5364 4164 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:33:42,045 basehttp 5364 4164 "GET /indexer_app/test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 18:34:33,184 autoreload 5364 2192 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 18:34:33,184 autoreload 5364 2192 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 18:34:35,958 autoreload 6176 10688 Watching for file changes with StatReloader
+INFO 2025-04-20 18:34:35,958 autoreload 6176 10688 Watching for file changes with StatReloader
+INFO 2025-04-20 18:34:54,831 autoreload 6176 10688 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:34:54,831 autoreload 6176 10688 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 18:34:56,628 autoreload 6860 16124 Watching for file changes with StatReloader
+INFO 2025-04-20 18:34:56,628 autoreload 6860 16124 Watching for file changes with StatReloader
+INFO 2025-04-20 18:35:02,679 basehttp 6860 12188 "GET /indexer_app/ HTTP/1.1" 200 2785
+INFO 2025-04-20 18:35:02,679 basehttp 6860 12188 "GET /indexer_app/ HTTP/1.1" 200 2785
+INFO 2025-04-20 18:35:02,905 basehttp 6860 12188 "GET /static/indexer_app/js/theme.js HTTP/1.1" 200 393
+INFO 2025-04-20 18:35:02,905 basehttp 6860 12188 "GET /static/indexer_app/js/theme.js HTTP/1.1" 200 393
+INFO 2025-04-20 18:35:20,982 autoreload 6860 16124 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 18:35:20,982 autoreload 6860 16124 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 18:35:22,633 autoreload 20664 16392 Watching for file changes with StatReloader
+INFO 2025-04-20 18:35:22,633 autoreload 20664 16392 Watching for file changes with StatReloader
+INFO 2025-04-20 18:35:38,815 views 20664 4300 Rendering try page
+INFO 2025-04-20 18:35:38,841 basehttp 20664 4300 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:35:38,841 basehttp 20664 4300 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:35:39,089 basehttp 20664 16548 "GET /static/indexer_app/js/try.js HTTP/1.1" 200 367
+INFO 2025-04-20 18:35:39,089 basehttp 20664 16548 "GET /static/indexer_app/js/try.js HTTP/1.1" 200 367
+INFO 2025-04-20 18:35:39,091 basehttp 20664 4300 "GET /static/indexer_app/css/try.css HTTP/1.1" 200 3419
+INFO 2025-04-20 18:35:39,091 basehttp 20664 4300 "GET /static/indexer_app/css/try.css HTTP/1.1" 200 3419
+WARNING 2025-04-20 18:35:39,143 log 20664 16548 Not Found: /indexer_app/static/images/bg_image.jpg
+WARNING 2025-04-20 18:35:39,143 log 20664 16548 Not Found: /indexer_app/static/images/bg_image.jpg
+WARNING 2025-04-20 18:35:39,143 basehttp 20664 16548 "GET /indexer_app/static/images/bg_image.jpg HTTP/1.1" 404 10914
+WARNING 2025-04-20 18:35:39,143 basehttp 20664 16548 "GET /indexer_app/static/images/bg_image.jpg HTTP/1.1" 404 10914
+INFO 2025-04-20 18:39:08,966 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:39:08,966 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:39:08,966 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:40:28,498 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:40:28,500 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:40:28,500 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:41:46,921 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:41:46,937 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:41:46,937 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:42:51,914 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:42:51,919 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:42:51,919 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:43:47,151 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:43:47,159 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:43:47,159 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:44:39,643 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:44:39,651 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:44:39,651 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:46:11,380 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:46:11,384 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:46:11,384 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2630
+INFO 2025-04-20 18:47:06,257 basehttp 20664 12980 "GET /indexer_app/upload/ HTTP/1.1" 200 4814
+INFO 2025-04-20 18:47:06,257 basehttp 20664 12980 "GET /indexer_app/upload/ HTTP/1.1" 200 4814
+INFO 2025-04-20 18:47:06,418 basehttp 20664 12980 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 18:47:06,418 basehttp 20664 12980 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 18:47:08,397 basehttp 20664 12980 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:47:08,397 basehttp 20664 12980 "GET /indexer_app/search/ HTTP/1.1" 200 6136
+INFO 2025-04-20 18:47:08,506 basehttp 20664 12980 "GET /static/indexer_app/js/search.js?v=1745171228 HTTP/1.1" 200 8906
+INFO 2025-04-20 18:47:08,506 basehttp 20664 12980 "GET /static/indexer_app/js/search.js?v=1745171228 HTTP/1.1" 200 8906
+INFO 2025-04-20 18:47:18,757 views 20664 12980 Search request received - POST data: <QueryDict: {'query': ['web'], 'method': ['euclidean'], 'exact_match': ['false'], 'file_type': ['all'], 'date_range': ['all']}>
+INFO 2025-04-20 18:47:18,759 views 20664 12980 Search parameters: query='web', method=euclidean, file_type=all, date_range=all, exact_match=False
+INFO 2025-04-20 18:47:18,764 views 20664 12980 Total documents before filtering: 18
+INFO 2025-04-20 18:47:18,771 views 20664 12980 Processing 18 documents for TF-IDF
+INFO 2025-04-20 18:47:18,914 views 20664 12980 TF-IDF search results: 18
+INFO 2025-04-20 18:47:18,914 views 20664 12980 Returning 18 results
+INFO 2025-04-20 18:47:18,914 basehttp 20664 12980 "POST /indexer_app/api/search/ HTTP/1.1" 200 5103
+INFO 2025-04-20 18:47:18,914 basehttp 20664 12980 "POST /indexer_app/api/search/ HTTP/1.1" 200 5103
+INFO 2025-04-20 18:47:49,494 views 20664 12980 Rendering try page
+INFO 2025-04-20 18:47:49,504 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2717
+INFO 2025-04-20 18:47:49,504 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2717
