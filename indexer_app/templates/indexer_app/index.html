@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -12,7 +13,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/indexer_app/static/indexer_app/css/styles.css" />
+  <link rel="stylesheet" href="{% static 'indexer_app/css/styles.css' %}" />
+  
+  <style>
+    .hero {
+      background-image: url("{% static 'indexer_app/assets/images/background_pic.jpg' %}") !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+  </style>
 </head>
 <body class="light-mode">
 
@@ -26,10 +36,9 @@
 
       <div class="nav-group">
         <nav class="nav-menu">
-          <a href="index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
-          <a href="upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
-          <a href="search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
-          
+          <a href="{% url 'indexer_app:index' %}"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="{% url 'indexer_app:upload_document' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="{% url 'indexer_app:search' %}"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
     
         <div class="lang-switcher">
@@ -53,16 +62,18 @@
           <span id="typingText2"></span>
         </h2>
         <p>A search engine dedicated to resilience and truth.</p>
-        <a href="try.html" class="hero-btn">Try Now</a>
+        <a href="{% url 'indexer_app:test' %}" class="hero-btn">Try Now</a>
       </div>
     </section>
     <div class="floating-search" id="floatingSearch">
         <input type="text" placeholder="Type your query..." />
         <button><i class="fas fa-search"></i></button>
-      </div>
+    </div>
   </div>
 
   <!-- Scripts -->
-  <script src="/indexer_app/static/indexer_app/js/app.js"></script>
+  <script src="{% static 'indexer_app/js/theme.js' %}" defer></script>
+  <script src="{% static 'indexer_app/js/lang.js' %}" defer></script>
+  <script src="{% static 'indexer_app/js/app.js' %}" defer></script>
 </body>
 </html>

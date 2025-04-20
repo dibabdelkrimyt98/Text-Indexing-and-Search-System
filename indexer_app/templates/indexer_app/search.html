@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +7,19 @@
   <title>Search - AOS System</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="/indexer_app/static/indexer_app/css/search.css" />
+  <link rel="stylesheet" href="{% static 'indexer_app/css/search.css' %}" />
+  
+  <style>
+    .search-area {
+      background: url('{% static "indexer_app/assets/images/background_pic.jpg" %}') center/cover no-repeat !important;
+    }
+  </style>
 </head>
 <body class="light-mode">
   <div class="layout">
@@ -22,37 +29,40 @@
         <div class="logo">A</div>
         <button id="toggleSidebar" class="toggle-btn"><i class="fas fa-bars"></i></button>
       </div>
+
       <div class="nav-group">
         <nav class="nav-menu">
-          <a href="index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
-          <a href="upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
-          <a href="search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
+          <a href="{% url 'indexer_app:index' %}"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="{% url 'indexer_app:upload_document' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="{% url 'indexer_app:search' %}"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
+    
         <div class="lang-switcher">
           <button class="lang-btn" data-lang="en">🇬🇧</button>
           <button class="lang-btn" data-lang="fr">🇫🇷</button>
           <button class="lang-btn" data-lang="ar">🇵🇸</button>
         </div>
       </div>
+    
       <div class="controls">
         <button id="themeToggle">🌙</button>
       </div>
     </aside>
 
     <!-- Search Section -->
-    <section class="search-area">
+    <main class="search-area">
       <div class="overlay"></div>
       <div class="search-content">
-        <h2 class="animated-title" id="searchHeading"></h2>
-
+        <h2 class="animated-title">Document Search</h2>
         <form id="searchForm">
           <div class="search-row">
-            <input type="text" id="searchInput" placeholder="Enter your search..." />
-            <div id="typingLoader" class="typing-loader" style="opacity:0;">
-              <span class="spinner"></span>
-              <span class="text">Thinking...</span>
-            </div>
+            <input type="text" id="searchInput" placeholder="Search documents..." required>
+            <button type="submit">
+              <i class="fas fa-search"></i>
+              Search
+            </button>
           </div>
+          
           <div class="method-selector">
             <label for="similaritySelect">Select Method:</label>
             <select id="similaritySelect">
@@ -68,21 +78,78 @@
               </span>
             </span>
           </div>
+          
+          <div class="search-options fade-in">
+            <div class="filter-group">
+              <div class="filter-item">
+                <label for="fileType">File Type:</label>
+                <select id="fileType">
+                  <option value="all">All Types</option>
+                  <option value="pdf">PDF</option>
+                  <option value="doc">DOC</option>
+                  <option value="txt">TXT</option>
+                </select>
+                <span class="tooltip">
+                  ⓘ
+                  <span class="tooltip-text">
+                    Filter results by file type:<br />
+                    <strong>All</strong>: Show all document types<br />
+                    <strong>PDF</strong>: Adobe PDF documents<br />
+                    <strong>DOC</strong>: Word documents<br />
+                    <strong>TXT</strong>: Plain text files
+                  </span>
+                </span>
+              </div>
 
-          <button type="submit"><i class="fas fa-search"></i> Search</button>
+              <div class="filter-item">
+                <label for="dateRange">Time Range:</label>
+                <select id="dateRange">
+                  <option value="all">All Time</option>
+                  <option value="day">Last 24 Hours</option>
+                  <option value="week">Last Week</option>
+                  <option value="month">Last Month</option>
+                  <option value="year">Last Year</option>
+                </select>
+                <span class="tooltip">
+                  ⓘ
+                  <span class="tooltip-text">
+                    Filter by document age:<br />
+                    <strong>All Time</strong>: No time restriction<br />
+                    <strong>24 Hours</strong>: Very recent documents<br />
+                    <strong>Week/Month</strong>: Recent updates<br />
+                    <strong>Year</strong>: Within last year
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="exactMatch">
+              <span class="checkmark"></span>
+              Exact Match
+              <span class="tooltip">
+                ⓘ
+                <span class="tooltip-text">
+                  <strong>Exact Match</strong>: Find documents containing the exact phrase<br />
+                  When disabled, matches similar words and variations
+                </span>
+              </span>
+            </label>
+          </div>
         </form>
 
-        <ul id="results"></ul>
-        <div class="tfidf-switch">
-          <p>Want to see document-term scores?</p>
-          <a href="tfidf.html" class="tfidf-btn">View TF-IDF Table</a>
+        <div id="results" class="fade-in">
+          <div class="typing-loader" style="display: none;">
+            <div class="spinner"></div>
+            <span class="text">Searching...</span>
+          </div>
+          <ul id="searchResults"></ul>
         </div>
       </div>
-    </section>
+    </main>
   </div>
 
   <!-- Scripts -->
-  <script src="/static/indexer_app/js/app.js"></script>
-  <script src="/indexer_app/static/indexer_app/js/search.js"></script>
+  <script src="{% static 'indexer_app/js/search.js' %}"></script>
 </body>
 </html>

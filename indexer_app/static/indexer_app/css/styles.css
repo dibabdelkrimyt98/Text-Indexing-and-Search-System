@@ -110,11 +110,14 @@
   .hero {
     flex: 1;
     position: relative;
-    background: url('/indexer_app/static/images/bg_image.jpg') center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    min-height: 100vh;
   }
   .overlay {
     position: absolute;
@@ -130,21 +133,32 @@
     max-width: 800px;
   }
   .hero h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   .hero p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
-  .hero button {
+  .hero-btn {
+    display: inline-block;
     background-color: #1b4d3e;
     color: white;
     padding: 0.8rem 2rem;
     border: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .hero-btn:hover {
+    background-color: #2c7a62;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .floating-search {
@@ -215,19 +229,4 @@
     .hero p {
       font-size: 1rem;
     }
-  }
-  .hero-btn {
-    display: inline-block;
-    background-color: #1b4d3e;
-    color: white;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.3s;
-  }
-  
-  .hero-btn:hover {
-    background-color: #163f32;
-    transform: scale(1.05);
   }

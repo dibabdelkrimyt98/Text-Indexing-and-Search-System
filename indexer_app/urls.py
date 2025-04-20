@@ -11,6 +11,7 @@ urlpatterns = [
     path('upload/', views.upload_document_view, name='upload_document'),
     path('process/', views.process_document_view, name='process'),
     path('search/', views.search_view, name='search'),
+    path('api/search/', views.search_documents, name='search_documents'),
     path('similarity/', views.tfidf_similarity_view, name='similarity'),
     path('results/', views.process_results, name='results'),
     path('test-json/', views.test_json_view, name='test_json'),

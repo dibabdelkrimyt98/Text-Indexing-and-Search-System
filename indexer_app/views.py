@@ -19,6 +19,8 @@ from django.views.decorators.csrf import csrf_protect
 from django.db import transaction
 from django.core.files.uploadedfile import UploadedFile
 from django.utils import timezone
+import numpy as np
+from scipy.sparse import vstack
 
 from .models import Document
 
@@ -726,3 +728,126 @@ def test_bg_view(request: HttpRequest) -> HttpResponse:
         HttpResponse with rendered template
     """
     return render(request, 'indexer_app/test_bg.html')
+
+
+@require_http_methods(["POST"])
+def search_documents(request: HttpRequest) -> JsonResponse:
+    try:
+        # Get search parameters from request
+        data = request.POST
+        query = data.get('query', '').strip()
+        method = data.get('method', 'cosine')
+        file_type = data.get('fileType', 'all')
+        date_range = data.get('dateRange', 'all')
+        exact_match = data.get('exactMatch', 'false').lower() == 'true'
+
+        if not query:
+            return JsonResponse({
+                'error': 'Search query is required'
+            }, status=400)
+
+        # Start with all documents
+        documents = Document.objects.all()
+
+        # Apply file type filter
+        if file_type != 'all':
+            documents = documents.filter(file_type=file_type)
+
+        # Apply date range filter
+        if date_range != 'all':
+            from django.utils import timezone
+            from datetime import timedelta
+            now = timezone.now()
+            since = now  # Initialize with default value
+            
+            if date_range == 'day':
+                since = now - timedelta(days=1)
+            elif date_range == 'week':
+                since = now - timedelta(weeks=1)
+            elif date_range == 'month':
+                since = now - timedelta(days=30)
+            elif date_range == 'year':
+                since = now - timedelta(days=365)
+            
+            documents = documents.filter(uploaded_at__gte=since)
+
+        # For exact match search
+        if exact_match:
+            matching_docs = []
+            for doc in documents:
+                if query.lower() in doc.content.lower():
+                    # Find the context around the match
+                    index = doc.content.lower().find(query.lower())
+                    start = max(0, index - 100)
+                    end = min(len(doc.content), index + len(query) + 100)
+                    context = doc.content[start:end]
+                    
+                    matching_docs.append({
+                        'id': doc.id,
+                        'title': doc.title,
+                        'file_type': doc.file_type,
+                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
+                        'score': 100,  # Exact match gets 100%
+                        'preview': f"...{context}...",
+                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
+                    })
+        else:
+            # Create TF-IDF vectorizer
+            vectorizer = TfidfVectorizer(min_df=1, max_df=0.9)
+            
+            # Get all document contents
+            doc_contents = [doc.processed_content for doc in documents]
+            
+            # Add query to the documents for vectorization
+            all_texts = doc_contents + [preprocess_text(query)]
+            
+            # Create TF-IDF matrix
+            tfidf_matrix = vectorizer.fit_transform(all_texts)
+            
+            # Get query vector (last row of the matrix)
+            query_vector = tfidf_matrix.getrow(-1).toarray()
+            
+            # Get document vectors (all rows except the last one)
+            doc_vectors = vstack([tfidf_matrix.getrow(i) for i in range(tfidf_matrix.shape[0]-1)]).toarray()
+            
+            # Calculate similarities
+            if method == 'cosine':
+                from sklearn.metrics.pairwise import cosine_similarity
+                similarities = cosine_similarity(doc_vectors, query_vector)
+            else:  # euclidean
+                from sklearn.metrics.pairwise import euclidean_distances
+                distances = euclidean_distances(doc_vectors, query_vector)
+                similarities = 1 / (1 + distances)  # Convert distance to similarity
+            
+            # Create results list
+            matching_docs = []
+            for doc, score in zip(documents, similarities):
+                score_value = float(score[0])  # Get the score value
+                if score_value > 0.1:  # Only include relevant results
+                    # Get a preview of the content
+                    preview = doc.content[:200] + "..." if len(doc.content) > 200 else doc.content
+                    
+                    matching_docs.append({
+                        'id': doc.id,
+                        'title': doc.title,
+                        'file_type': doc.file_type,
+                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
+                        'score': round(score_value * 100, 1),  # Convert to percentage
+                        'preview': preview,
+                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
+                    })
+
+        # Sort results by score
+        matching_docs.sort(key=lambda x: x['score'], reverse=True)
+
+        return JsonResponse({
+            'results': matching_docs[:20],  # Limit to top 20 results
+            'total': len(matching_docs),
+            'query': query
+        })
+
+    except Exception as e:
+        logger.error(f"Error in search_documents: {str(e)}")
+        return JsonResponse({
+            'error': 'An error occurred while searching documents'
+        }, status=500)
