@@ -50,10 +50,8 @@ ALLOWED_MIME_TYPES = {
 }
 ALLOWED_EXTENSIONS = {'.txt', '.doc', '.docx', '.pdf'}
 
-
-# Create upload directory if it doesn't exist
+# Define upload directory
 UPLOAD_DIR = Path(settings.MEDIA_ROOT) / 'documents'
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def handle_uploaded_file(uploaded_file: UploadedFile) -> Tuple[str, str]:
@@ -98,6 +96,16 @@ def handle_uploaded_file(uploaded_file: UploadedFile) -> Tuple[str, str]:
                     destination.write(chunk)
             logger.info(f"File saved successfully to disk at: {file_path}")
             logger.info(f"File exists after save: {file_path.exists()}")
+            
+            # Verify file was saved correctly
+            if not file_path.exists():
+                raise Exception(f"File was not saved correctly: {file_path}")
+                
+            # Check file size
+            saved_size = file_path.stat().st_size
+            logger.info(f"Saved file size: {saved_size} bytes")
+            if saved_size != uploaded_file.size:
+                logger.warning(f"File size mismatch: uploaded={uploaded_file.size}, saved={saved_size}")
         except Exception as e:
             logger.error(f"Error saving file to disk: {str(e)}")
             logger.error(f"File path that failed: {file_path}")
@@ -248,6 +256,7 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
     logger.info(f"Request FILES: {request.FILES}")
     logger.info(f"Request POST: {request.POST}")
     logger.info(f"Request META: {request.META}")
+    logger.info(f"Request headers: {request.headers}")
     
     try:
         # Check if a document was uploaded
@@ -298,15 +307,50 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
             )
 
         # Get the title from the form or use the filename
-        title = request.POST.get('title', uploaded_file.name)
-        logger.info(f"Processing document with title: {title}")
+        base_title = request.POST.get('title', uploaded_file.name)
+        logger.info(f"Processing document with base title: {base_title}")
 
-        # Check if a document with this title already exists
-        if Document.objects.filter(title=title).exists():
-            logger.error(f"Document with title '{title}' already exists")
+        # Check if a document with this title already exists and add a timestamp if needed
+        title = base_title
+        counter = 1
+        while Document.objects.filter(title=title).exists():
+            # Add a timestamp to make the title unique
+            timestamp = timezone.now().strftime("%Y%m%d_%H%M%S")
+            title = f"{Path(base_title).stem}_{timestamp}{Path(base_title).suffix}"
+            logger.info(f"Title already exists, using new title: {title}")
+            counter += 1
+            if counter > 10:  # Prevent infinite loop
+                logger.error("Too many attempts to create a unique title")
+                return JsonResponse(
+                    {"error": "Could not create a unique title for the document"},
+                    status=500
+                )
+
+        # Ensure upload directory exists
+        try:
+            UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Upload directory exists: {UPLOAD_DIR.exists()}")
+            logger.info(f"Upload directory is absolute: {UPLOAD_DIR.is_absolute()}")
+            logger.info(f"Upload directory path: {UPLOAD_DIR}")
+            
+            # Test if directory is writable
+            test_file = UPLOAD_DIR / 'test.txt'
+            try:
+                with open(test_file, 'w') as f:
+                    f.write('test')
+                test_file.unlink()  # Delete the test file
+                logger.info("Upload directory is writable")
+            except Exception as e:
+                logger.error(f"Upload directory is not writable: {str(e)}")
+                return JsonResponse(
+                    {"error": f"Upload directory is not writable: {str(e)}"},
+                    status=500
+                )
+        except Exception as e:
+            logger.error(f"Error creating upload directory: {str(e)}")
             return JsonResponse(
-                {"error": "A document with this title already exists"},
-                status=400
+                {"error": f"Error creating upload directory: {str(e)}"},
+                status=500
             )
 
         # Process the file
@@ -377,7 +421,8 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
         response_data = {
             'success': True,
             'message': 'Document processed successfully',
-            'document_id': document.id
+            'document_id': document.id,
+            'title': title
         }
         logger.info(f"Returning success response: {response_data}")
         return JsonResponse(response_data)
@@ -585,3 +630,85 @@ def test_page_view(request: HttpRequest) -> HttpResponse:
         HttpResponse with rendered template
     """
     return render(request, 'indexer_app/test.html')
+
+
+@require_http_methods(["GET"])
+def test_upload_view(request: HttpRequest) -> JsonResponse:
+    """
+    A simple test endpoint to verify that the server is working correctly.
+    
+    Args:
+        request: The HTTP request
+        
+    Returns:
+        JsonResponse with test data
+    """
+    logger.info("Test upload view called")
+    
+    # Check if the upload directory exists
+    try:
+        UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+        upload_dir_exists = UPLOAD_DIR.exists()
+        upload_dir_absolute = UPLOAD_DIR.is_absolute()
+        upload_dir_path = str(UPLOAD_DIR)
+        
+        # Try to create a test file to verify write permissions
+        test_file_path = UPLOAD_DIR / 'test.txt'
+        with open(test_file_path, 'w') as f:
+            f.write('Test file')
+        test_file_created = test_file_path.exists()
+        if test_file_created:
+            test_file_path.unlink()  # Delete the test file
+    except Exception as e:
+        upload_dir_exists = False
+        upload_dir_absolute = False
+        upload_dir_path = str(e)
+        test_file_created = False
+    
+    # Check if the Document model is properly configured
+    try:
+        document_count = Document.objects.count()
+        model_working = True
+    except Exception as e:
+        document_count = 0
+        model_working = False
+        logger.error(f"Error checking Document model: {str(e)}")
+    
+    # Return test data
+    return JsonResponse({
+        'success': True,
+        'message': 'Test upload endpoint working',
+        'timestamp': timezone.now().isoformat(),
+        'upload_dir': {
+            'exists': upload_dir_exists,
+            'is_absolute': upload_dir_absolute,
+            'path': upload_dir_path,
+            'writable': test_file_created
+        },
+        'database': {
+            'working': model_working,
+            'document_count': document_count
+        }
+    })
+
+
+def test_upload_page_view(request):
+    """
+    View function for the test upload page.
+    This page provides diagnostic information and a simple file upload form.
+    """
+    return render(request, 'indexer_app/test_upload.html')
+
+
+@require_http_methods(["GET"])
+def test_plain_view(request: HttpRequest) -> HttpResponse:
+    """
+    A simple test view that returns a plain text response.
+    
+    Args:
+        request: The HTTP request
+        
+    Returns:
+        HttpResponse with plain text
+    """
+    return HttpResponse("Test view is working!", content_type="text/plain")

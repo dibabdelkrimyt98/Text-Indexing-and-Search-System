@@ -2,6 +2,7 @@
 
 from pathlib import Path
 from typing import List, Dict, Any
+import os
 
 # Base directory
 BASE_DIR: Path = Path(__file__).resolve().parent.parent
@@ -102,7 +103,10 @@ USE_TZ: bool = True
 
 # Static files
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD: str = 'django.db.models.BigAutoField'
@@ -145,3 +149,9 @@ LOGGING: Dict[str, Any] = {
 FILE_UPLOAD_MAX_MEMORY_SIZE: int = 5 * 1024 * 1024  # 5MB
 FILE_UPLOAD_PERMISSIONS: int = 0o644
 FILE_UPLOAD_DIRECTORY_PERMISSIONS: int = 0o755
+
+# Ensure media directories exist
+os.makedirs(MEDIA_ROOT, exist_ok=True)
+os.makedirs(MEDIA_ROOT / 'documents', exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
+os.makedirs(BASE_DIR / 'static', exist_ok=True)

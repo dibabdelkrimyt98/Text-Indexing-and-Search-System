@@ -1,0 +1,182 @@
+{% extends 'indexer_app/base.html' %}
+
+{% block title %}Test Upload - Document Indexer{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Test Upload Page</h1>
+    
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Server Status</h5>
+                </div>
+                <div class="card-body">
+                    <div id="serverStatus">
+                        <p class="text-center">Checking server status...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Test File Upload</h5>
+                </div>
+                <div class="card-body">
+                    <form id="testUploadForm" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="testFile" class="form-label">Select a test file</label>
+                            <input type="file" class="form-control" id="testFile" name="document">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload Test File</button>
+                    </form>
+                    <div id="uploadResult" class="mt-3"></div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Diagnostic Information</h5>
+                </div>
+                <div class="card-body">
+                    <div id="diagnosticInfo">
+                        <p class="text-center">Loading diagnostic information...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Check server status
+    fetch('/indexer_app/test-upload/')
+        .then(response => response.json())
+        .then(data => {
+            const serverStatus = document.getElementById('serverStatus');
+            if (data.success) {
+                serverStatus.innerHTML = `
+                    <div class="alert alert-success">
+                        <h6>Server is running</h6>
+                        <p>Upload directory: ${data.upload_dir.path}</p>
+                        <p>Directory exists: ${data.upload_dir.exists}</p>
+                        <p>Directory is writable: ${data.upload_dir.writable}</p>
+                        <p>Database is working: ${data.database.working}</p>
+                        <p>Document count: ${data.database.document_count}</p>
+                    </div>
+                `;
+            } else {
+                serverStatus.innerHTML = `
+                    <div class="alert alert-danger">
+                        <h6>Server Error</h6>
+                        <p>${data.message}</p>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            document.getElementById('serverStatus').innerHTML = `
+                <div class="alert alert-danger">
+                    <h6>Connection Error</h6>
+                    <p>Could not connect to server: ${error.message}</p>
+                </div>
+            `;
+        });
+
+    // Handle test file upload
+    const form = document.getElementById('testUploadForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const uploadResult = document.getElementById('uploadResult');
+        
+        uploadResult.innerHTML = '<div class="alert alert-info">Uploading file...</div>';
+        
+        fetch('/indexer_app/process/', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                uploadResult.innerHTML = `
+                    <div class="alert alert-success">
+                        <h6>Upload Successful</h6>
+                        <p>${data.message}</p>
+                    </div>
+                `;
+            } else {
+                uploadResult.innerHTML = `
+                    <div class="alert alert-danger">
+                        <h6>Upload Failed</h6>
+                        <p>${data.message}</p>
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            uploadResult.innerHTML = `
+                <div class="alert alert-danger">
+                    <h6>Upload Error</h6>
+                    <p>${error.message}</p>
+                </div>
+            `;
+        });
+    });
+
+    // Get diagnostic information
+    fetch('/indexer_app/test-upload/')
+        .then(response => response.json())
+        .then(data => {
+            const diagnosticInfo = document.getElementById('diagnosticInfo');
+            diagnosticInfo.innerHTML = `
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th>Server Time</th>
+                                <td>${data.timestamp}</td>
+                            </tr>
+                            <tr>
+                                <th>Upload Directory Path</th>
+                                <td>${data.upload_dir.path}</td>
+                            </tr>
+                            <tr>
+                                <th>Directory Exists</th>
+                                <td>${data.upload_dir.exists}</td>
+                            </tr>
+                            <tr>
+                                <th>Directory is Writable</th>
+                                <td>${data.upload_dir.writable}</td>
+                            </tr>
+                            <tr>
+                                <th>Database Working</th>
+                                <td>${data.database.working}</td>
+                            </tr>
+                            <tr>
+                                <th>Document Count</th>
+                                <td>${data.database.document_count}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        })
+        .catch(error => {
+            document.getElementById('diagnosticInfo').innerHTML = `
+                <div class="alert alert-danger">
+                    <h6>Error Loading Diagnostic Information</h6>
+                    <p>${error.message}</p>
+                </div>
+            `;
+        });
+});
+</script>
+{% endblock %} 

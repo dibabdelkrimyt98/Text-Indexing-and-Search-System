@@ -105,10 +105,14 @@ body {
   .upload-hero {
     flex: 1;
     position: relative;
-    background: url('indexer_app/static/indexer_app/assets/images/background_pic.jpg') center/cover no-repeat;
+    background-image: url('../assets/images/background_pic.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
   }
   
   .overlay {
@@ -201,16 +205,14 @@ body {
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.6);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
     z-index: 100;
   }
   
   .dialog-backdrop.show {
+    display: flex;
     opacity: 1;
     pointer-events: all;
   }
@@ -263,4 +265,30 @@ body {
     }
   }
 
+  /* Add dragover effect */
+  .upload-box.dragover {
+    border-color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+  }
+
+  /* Add animation for file items */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .file-item {
+    animation: slideIn 0.3s ease;
+  }
+
+  /* Add animation for success/error states */
+  .success-icon, .error-icon {
+    animation: popIn 0.3s ease;
+  }
   

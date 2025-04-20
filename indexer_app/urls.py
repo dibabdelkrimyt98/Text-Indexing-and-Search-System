@@ -15,4 +15,7 @@ urlpatterns = [
     path('results/', views.process_results, name='process_results'),
     path('test-json/', views.test_json_view, name='test_json'),
     path('test/', views.test_page_view, name='test_page'),
+    path('test-upload/', views.test_upload_view, name='test_upload'),
+    path('test-upload-page/', views.test_upload_page_view, name='test_upload_page'),
+    path('test-plain/', views.test_plain_view, name='test_plain'),
 ]
