@@ -117,8 +117,11 @@ class Document(models.Model):
     
     def save(self, *args: Any, **kwargs: Any) -> None:
         """Save the model with validation."""
-        self.full_clean()
-        super().save(*args, **kwargs)
+        try:
+            self.full_clean()
+            super().save(*args, **kwargs)
+        except Exception as e:
+            raise ValidationError(f"Error saving document: {str(e)}")
     
     def get_vector_data(self) -> Dict[str, Any]:
         """Get the TF-IDF vector data."""

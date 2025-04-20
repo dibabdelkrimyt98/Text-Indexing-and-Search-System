@@ -13,7 +13,7 @@ MEDIA_ROOT: Path = BASE_DIR / 'media'
 # Security
 SECRET_KEY: str = 'your-secret-key'
 DEBUG: bool = True
-ALLOWED_HOSTS: List[str] = []
+ALLOWED_HOSTS: List[str] = ['*']  # Allow all hosts in development
 
 # Installed apps
 INSTALLED_APPS: List[str] = [
@@ -111,18 +111,33 @@ DEFAULT_AUTO_FIELD: str = 'django.db.models.BigAutoField'
 LOGGING: Dict[str, Any] = {
     'version': 1,
     'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
         },
         'file': {
             'class': 'logging.FileHandler',
             'filename': BASE_DIR / 'debug.log',
+            'formatter': 'verbose',
         },
     },
     'root': {
         'handlers': ['console', 'file'],
-        'level': 'INFO',
+        'level': 'DEBUG',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
     },
 }
 

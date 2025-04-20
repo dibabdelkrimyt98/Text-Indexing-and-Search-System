@@ -13,3 +13,481 @@ Not Found: /indexer_app/static/indexer_app/js/upload.js
 Not Found: /indexer_app/static/indexer_app/js/app.js
 Not Found: /indexer_app/static/indexer_app/js/upload.js
 Not Found: /upload/upload.html
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Test JSON view called
+Not Found: /upload/upload.html
+Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 165, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+Not Found: /indexer_app/static/images/bg_image.jpg
+Not Found: /indexer_app/process/
+Watching for file changes with StatReloader
+Not Found: /indexer_app/process/
+Not Found: /indexer_app/process/
+Process document view called
+Request method: POST
+Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: CV IT Support -DIB Abdelkrim Y T-1.pdf (application/pdf)>]}>
+Request POST: <QueryDict: {'title': ['CV IT Support -DIB Abdelkrim Y T-1.pdf']}>
+Error processing document: no such table: indexer_app_document
+Internal Server Error: /process/
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Process document view called
+Request method: POST
+Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: CV IT Support -DIB Abdelkrim Y T-1.pdf (application/pdf)>]}>
+Request POST: <QueryDict: {'title': ['CV IT Support -DIB Abdelkrim Y T-1.pdf']}>
+Processing file: CV IT Support -DIB Abdelkrim Y T-1.pdf
+Processing document with title: CV IT Support -DIB Abdelkrim Y T-1.pdf
+Unexpected error in process_document_view: no such table: indexer_app_document
+Internal Server Error: /process/
+Process document view called
+Request method: POST
+Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: CV IT Support -DIB Abdelkrim Y T-1.pdf (application/pdf)>]}>
+Request POST: <QueryDict: {'title': ['CV IT Support -DIB Abdelkrim Y T-1.pdf']}>
+Processing file: CV IT Support -DIB Abdelkrim Y T-1.pdf
+Processing document with title: CV IT Support -DIB Abdelkrim Y T-1.pdf
+Unexpected error in process_document_view: no such table: indexer_app_document
+Internal Server Error: /process/
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Process document view called
+Request method: POST
+Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: CV junior -DIB Abdelkrim Y T -.pdf (application/pdf)>]}>
+Request POST: <QueryDict: {'title': ['CV junior -DIB Abdelkrim Y T -.pdf']}>
+Processing file: CV junior -DIB Abdelkrim Y T -.pdf
+Processing document with title: CV junior -DIB Abdelkrim Y T -.pdf
+Unexpected error in process_document_view: no such table: indexer_app_document
+Internal Server Error: /process/
+Process document view called
+Request method: POST
+Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: tp_dss_commandes.txt (text/plain)>]}>
+Request POST: <QueryDict: {'title': ['tp_dss_commandes.txt']}>
+Processing file: tp_dss_commandes.txt
+Processing document with title: tp_dss_commandes.txt
+Unexpected error in process_document_view: no such table: indexer_app_document
+Internal Server Error: /process/
+C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 09:47:32,251 autoreload 13432 19096 Watching for file changes with StatReloader
+INFO 2025-04-20 09:47:32,251 autoreload 13432 19096 Watching for file changes with StatReloader
+INFO 2025-04-20 09:47:39,598 views 13432 20716 Process document view called
+INFO 2025-04-20 09:47:39,603 views 13432 20716 Request method: POST
+INFO 2025-04-20 09:47:39,604 views 13432 20716 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: tp_dss_commandes.txt (text/plain)>]}>
+INFO 2025-04-20 09:47:39,605 views 13432 20716 Request POST: <QueryDict: {'title': ['tp_dss_commandes.txt']}>
+INFO 2025-04-20 09:47:39,605 views 13432 20716 Processing file: tp_dss_commandes.txt
+INFO 2025-04-20 09:47:39,608 views 13432 20716 Processing document with title: tp_dss_commandes.txt
+ERROR 2025-04-20 09:47:39,611 views 13432 20716 Unexpected error in process_document_view: no such table: indexer_app_document
+ERROR 2025-04-20 09:47:39,614 log 13432 20716 Internal Server Error: /process/
+ERROR 2025-04-20 09:47:39,614 log 13432 20716 Internal Server Error: /process/
+ERROR 2025-04-20 09:47:39,615 basehttp 13432 20716 "POST /process/ HTTP/1.1" 500 71
+ERROR 2025-04-20 09:47:39,615 basehttp 13432 20716 "POST /process/ HTTP/1.1" 500 71
+INFO 2025-04-20 09:47:39,842 autoreload 13432 19096 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 09:47:39,842 autoreload 13432 19096 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 09:47:41,576 autoreload 12172 10716 Watching for file changes with StatReloader
+INFO 2025-04-20 09:47:41,576 autoreload 12172 10716 Watching for file changes with StatReloader
+INFO 2025-04-20 09:48:20,894 autoreload 12172 10716 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 09:48:20,894 autoreload 12172 10716 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 09:48:22,666 autoreload 18096 16652 Watching for file changes with StatReloader
+INFO 2025-04-20 09:48:22,666 autoreload 18096 16652 Watching for file changes with StatReloader
+INFO 2025-04-20 09:48:25,883 basehttp 18096 1832 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 09:48:25,883 basehttp 18096 1832 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 09:48:26,094 basehttp 18096 7808 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 09:48:26,094 basehttp 18096 7808 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 09:48:31,018 autoreload 18096 16652 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 09:48:31,018 autoreload 18096 16652 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 09:48:32,852 autoreload 18788 11080 Watching for file changes with StatReloader
+INFO 2025-04-20 09:48:32,852 autoreload 18788 11080 Watching for file changes with StatReloader
+INFO 2025-04-20 09:48:35,524 views 18788 17916 Process document view called
+INFO 2025-04-20 09:48:35,524 views 18788 17916 Request method: POST
+INFO 2025-04-20 09:48:35,526 views 18788 17916 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: tp_dss_commandes.txt (text/plain)>]}>
+INFO 2025-04-20 09:48:35,526 views 18788 17916 Request POST: <QueryDict: {'title': ['tp_dss_commandes.txt']}>
+INFO 2025-04-20 09:48:35,526 views 18788 17916 Processing file: tp_dss_commandes.txt
+INFO 2025-04-20 09:48:35,526 views 18788 17916 Processing document with title: tp_dss_commandes.txt
+ERROR 2025-04-20 09:48:35,526 views 18788 17916 Unexpected error in process_document_view: no such table: indexer_app_document
+ERROR 2025-04-20 09:48:35,526 log 18788 17916 Internal Server Error: /process/
+ERROR 2025-04-20 09:48:35,526 log 18788 17916 Internal Server Error: /process/
+ERROR 2025-04-20 09:48:35,535 basehttp 18788 17916 "POST /process/ HTTP/1.1" 500 71
+ERROR 2025-04-20 09:48:35,535 basehttp 18788 17916 "POST /process/ HTTP/1.1" 500 71
+INFO 2025-04-20 09:54:07,413 autoreload 19112 15432 Watching for file changes with StatReloader
+INFO 2025-04-20 09:54:07,413 autoreload 19112 15432 Watching for file changes with StatReloader
+INFO 2025-04-20 09:54:13,527 basehttp 19112 9972 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 09:54:13,527 basehttp 19112 9972 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 09:54:13,619 basehttp 19112 9972 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 09:54:13,619 basehttp 19112 9972 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 09:54:18,302 views 19112 9972 Process document view called
+INFO 2025-04-20 09:54:18,302 views 19112 9972 Request method: POST
+INFO 2025-04-20 09:54:18,312 views 19112 9972 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: tp_dss_commandes.txt (text/plain)>]}>
+INFO 2025-04-20 09:54:18,312 views 19112 9972 Request POST: <QueryDict: {'title': ['tp_dss_commandes.txt']}>
+INFO 2025-04-20 09:54:18,313 views 19112 9972 Processing file: tp_dss_commandes.txt
+INFO 2025-04-20 09:54:18,313 views 19112 9972 Processing document with title: tp_dss_commandes.txt
+INFO 2025-04-20 09:54:18,318 views 19112 9972 Starting to handle uploaded file: tp_dss_commandes.txt
+INFO 2025-04-20 09:54:18,318 views 19112 9972 File path: C:\Users\HP\Downloads\aos system\media\documents\tp_dss_commandes.txt
+INFO 2025-04-20 09:54:18,318 views 19112 9972 File extension: .txt
+INFO 2025-04-20 09:54:18,318 views 19112 9972 Upload directory exists: True
+INFO 2025-04-20 09:54:18,318 views 19112 9972 File saved successfully to disk
+INFO 2025-04-20 09:54:18,318 views 19112 9972 Text file read successfully with UTF-8 encoding
+INFO 2025-04-20 09:54:18,318 views 19112 9972 File processing completed successfully. MIME type: text/plain
+INFO 2025-04-20 09:54:18,318 views 19112 9972 File processed successfully. MIME type: text/plain
+ERROR 2025-04-20 09:54:18,334 views 19112 9972 Error preprocessing text: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\HP/nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\share\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\lib\\nltk_data'
+    - 'C:\\Users\\HP\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+ERROR 2025-04-20 09:54:18,334 log 19112 9972 Internal Server Error: /process/
+ERROR 2025-04-20 09:54:18,334 log 19112 9972 Internal Server Error: /process/
+ERROR 2025-04-20 09:54:18,334 basehttp 19112 9972 "POST /process/ HTTP/1.1" 500 37
+ERROR 2025-04-20 09:54:18,334 basehttp 19112 9972 "POST /process/ HTTP/1.1" 500 37
+INFO 2025-04-20 09:55:19,335 views 19112 9972 Process document view called
+INFO 2025-04-20 09:55:19,335 views 19112 9972 Request method: POST
+INFO 2025-04-20 09:55:19,566 views 19112 9972 File extension: .pdf
+INFO 2025-04-20 09:55:19,567 views 19112 9972 Upload directory exists: True
+INFO 2025-04-20 09:55:19,569 views 19112 9972 File saved successfully to disk
+INFO 2025-04-20 09:55:19,571 views 19112 9972 PDF document placeholder content created
+INFO 2025-04-20 09:55:19,571 views 19112 9972 File processing completed successfully. MIME type: application/pdf
+INFO 2025-04-20 09:55:19,573 views 19112 9972 File processed successfully. MIME type: application/pdf
+ERROR 2025-04-20 09:55:19,578 views 19112 9972 Error preprocessing text: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\HP/nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\share\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\lib\\nltk_data'
+    - 'C:\\Users\\HP\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+ERROR 2025-04-20 09:55:19,582 log 19112 9972 Internal Server Error: /process/
+ERROR 2025-04-20 09:55:19,582 log 19112 9972 Internal Server Error: /process/
+ERROR 2025-04-20 09:55:19,582 basehttp 19112 9972 "POST /process/ HTTP/1.1" 500 37
+ERROR 2025-04-20 09:55:19,582 basehttp 19112 9972 "POST /process/ HTTP/1.1" 500 37
+INFO 2025-04-20 09:56:17,039 autoreload 19112 15432 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 09:56:17,039 autoreload 19112 15432 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 09:56:18,997 autoreload 8568 20900 Watching for file changes with StatReloader
+INFO 2025-04-20 09:56:18,997 autoreload 8568 20900 Watching for file changes with StatReloader
+INFO 2025-04-20 09:56:26,581 autoreload 8568 20900 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 09:56:26,581 autoreload 8568 20900 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 09:56:27,943 autoreload 15472 13428 Watching for file changes with StatReloader
+INFO 2025-04-20 09:56:27,943 autoreload 15472 13428 Watching for file changes with StatReloader
+INFO 2025-04-20 09:57:27,207 autoreload 15472 13428 C:\Users\HP\Downloads\aos system\indexer_app\models.py changed, reloading.
+INFO 2025-04-20 09:57:27,207 autoreload 15472 13428 C:\Users\HP\Downloads\aos system\indexer_app\models.py changed, reloading.
+INFO 2025-04-20 09:57:29,063 autoreload 19036 12324 Watching for file changes with StatReloader
+INFO 2025-04-20 09:57:29,063 autoreload 19036 12324 Watching for file changes with StatReloader
+INFO 2025-04-20 09:57:50,692 autoreload 19036 12324 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 09:57:50,692 autoreload 19036 12324 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 09:57:52,391 autoreload 9680 10920 Watching for file changes with StatReloader
+INFO 2025-04-20 09:57:52,391 autoreload 9680 10920 Watching for file changes with StatReloader
+INFO 2025-04-20 09:58:47,207 views 9680 13572 Process document view called
+INFO 2025-04-20 09:58:47,207 views 9680 13572 Request method: POST
+INFO 2025-04-20 09:58:47,589 views 9680 13572 File extension: .pdf
+INFO 2025-04-20 09:58:47,591 views 9680 13572 Upload directory exists: True
+INFO 2025-04-20 09:58:47,594 views 9680 13572 File saved successfully to disk
+INFO 2025-04-20 09:58:47,594 views 9680 13572 PDF document placeholder content created
+INFO 2025-04-20 09:58:47,598 views 9680 13572 File processing completed successfully. MIME type: application/pdf
+INFO 2025-04-20 09:58:47,598 views 9680 13572 File processed successfully. MIME type: application/pdf
+ERROR 2025-04-20 09:58:47,608 views 9680 13572 Error preprocessing text: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\HP/nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\share\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\lib\\nltk_data'
+    - 'C:\\Users\\HP\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+ERROR 2025-04-20 09:58:47,611 log 9680 13572 Internal Server Error: /process/
+ERROR 2025-04-20 09:58:47,611 log 9680 13572 Internal Server Error: /process/
+ERROR 2025-04-20 09:58:47,615 basehttp 9680 13572 "POST /process/ HTTP/1.1" 500 37
+ERROR 2025-04-20 09:58:47,615 basehttp 9680 13572 "POST /process/ HTTP/1.1" 500 37
+INFO 2025-04-20 10:00:07,419 basehttp 9680 13572 "GET /search/ HTTP/1.1" 200 3315
+INFO 2025-04-20 10:00:07,419 basehttp 9680 13572 "GET /search/ HTTP/1.1" 200 3315
+WARNING 2025-04-20 10:00:07,511 log 9680 13572 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:07,511 log 9680 13572 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:07,528 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:07,528 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:07,528 basehttp 9680 13572 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:07,530 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:07,528 basehttp 9680 13572 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:07,530 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:07,576 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:07,576 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:07,580 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:07,580 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+INFO 2025-04-20 10:00:11,092 basehttp 9680 13572 "GET /search/? HTTP/1.1" 200 3315
+INFO 2025-04-20 10:00:11,092 basehttp 9680 13572 "GET /search/? HTTP/1.1" 200 3315
+WARNING 2025-04-20 10:00:11,194 log 9680 18388 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:11,200 log 9680 11576 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:11,194 log 9680 18388 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:11,200 log 9680 11576 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:11,206 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:11,206 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:11,207 basehttp 9680 11576 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:11,207 basehttp 9680 11576 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:11,246 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:11,246 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:11,250 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:11,250 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+INFO 2025-04-20 10:00:18,388 basehttp 9680 13572 "GET /search/? HTTP/1.1" 200 3315
+INFO 2025-04-20 10:00:18,388 basehttp 9680 13572 "GET /search/? HTTP/1.1" 200 3315
+WARNING 2025-04-20 10:00:18,448 log 9680 18388 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:18,448 log 9680 18388 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:18,460 log 9680 11576 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:18,460 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:18,460 log 9680 11576 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:18,460 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:18,464 basehttp 9680 11576 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:18,464 basehttp 9680 11576 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+INFO 2025-04-20 10:00:23,185 basehttp 9680 13572 "GET /search/? HTTP/1.1" 200 3315
+INFO 2025-04-20 10:00:23,185 basehttp 9680 13572 "GET /search/? HTTP/1.1" 200 3315
+WARNING 2025-04-20 10:00:23,258 log 9680 11576 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:23,266 log 9680 18388 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:23,258 log 9680 11576 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:23,266 log 9680 18388 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 10:00:23,269 basehttp 9680 11576 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:23,269 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:23,269 basehttp 9680 11576 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:23,269 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 4803
+WARNING 2025-04-20 10:00:23,300 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:23,300 log 9680 18388 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 10:00:23,302 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+WARNING 2025-04-20 10:00:23,302 basehttp 9680 18388 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 4797
+INFO 2025-04-20 10:00:25,921 basehttp 9680 13572 "GET /test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 10:00:25,921 basehttp 9680 13572 "GET /test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 10:00:27,432 views 9680 18388 Test JSON view called
+INFO 2025-04-20 10:00:27,435 basehttp 9680 18388 "GET /test-json/ HTTP/1.1" 200 99
+INFO 2025-04-20 10:00:27,435 basehttp 9680 18388 "GET /test-json/ HTTP/1.1" 200 99
+INFO 2025-04-20 10:01:20,281 autoreload 9680 10920 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 10:01:20,281 autoreload 9680 10920 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 10:01:22,182 autoreload 10748 21480 Watching for file changes with StatReloader
+INFO 2025-04-20 10:01:22,182 autoreload 10748 21480 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:14,151 autoreload 10748 21480 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:14,151 autoreload 10748 21480 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:16,052 autoreload 17796 8516 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:16,052 autoreload 17796 8516 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:24,326 autoreload 17796 8516 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:24,326 autoreload 17796 8516 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:25,833 autoreload 16684 19988 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:25,833 autoreload 16684 19988 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:34,589 autoreload 16684 19988 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:34,589 autoreload 16684 19988 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:36,295 autoreload 5072 9868 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:36,295 autoreload 5072 9868 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:42,635 autoreload 5072 9868 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:42,635 autoreload 5072 9868 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 10:02:44,037 autoreload 20596 12476 Watching for file changes with StatReloader
+INFO 2025-04-20 10:02:44,037 autoreload 20596 12476 Watching for file changes with StatReloader
+INFO 2025-04-20 10:05:41,709 autoreload 2688 17660 Watching for file changes with StatReloader
+INFO 2025-04-20 10:05:41,709 autoreload 2688 17660 Watching for file changes with StatReloader
+INFO 2025-04-20 10:06:00,636 basehttp 2688 18696 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 10:06:00,636 basehttp 2688 18696 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 10:06:00,708 basehttp 2688 18696 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 10:06:00,708 basehttp 2688 18696 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 10:06:05,296 views 2688 18696 Process document view called
+INFO 2025-04-20 10:06:05,308 views 2688 18696 Request method: POST
+INFO 2025-04-20 10:06:05,308 views 2688 18696 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: tp_dss_commandes.txt (text/plain)>]}>
+INFO 2025-04-20 10:06:05,308 views 2688 18696 Request POST: <QueryDict: {'title': ['tp_dss_commandes.txt']}>
+INFO 2025-04-20 10:06:05,308 views 2688 18696 Request META: {'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\HP\\AppData\\Roaming', 'BUNDLED_DEBUGPY_PATH': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundled\\libs\\debugpy', 'CHOCOLATEYINSTALL': 'C:\\ProgramData\\chocolatey', 'CHOCOLATEYLASTPATHUPDATE': '133675076924179776', 'CHROME_CRASHPAD_PIPE_NAME': '\\\\.\\pipe\\crashpad_14136_ZSMTIIVPWRZDMVMM', 'COLORTERM': 'truecolor', 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-MIJNC2U', 'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 'CURSOR_TRACE_ID': '5f33619456cc46c389d20ca753650534', 'DJANGO_SETTINGS_MODULE': 'aos_project.settings', 'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'EFC_10140': '1', 'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'GIT_ASKPASS': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass.sh', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\HP', 'JAVA_HOME': 'C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21', 'LANG': 'en_US.UTF-8', 'LOCALAPPDATA': 'C:\\Users\\HP\\AppData\\Local', 'LOGONSERVER': '\\\\DESKTOP-MIJNC2U', 'NUMBER_OF_PROCESSORS': '8', 'ONEDRIVE': 'C:\\Users\\HP\\OneDrive', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'undefined', 'OS': 'Windows_NT', 'PATH': 'c:\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot\\bin;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\HP\\Downloads\\php-8.3.3-nts-Win32-vs16-x64;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\HP\\Downloads\\nginx-1.26.2\\nginx-1.26.2;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Java\\jdk1.8.0_202\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\HP\\.cargo\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-17.0.10.7-hotspot\\bin;C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\Users\\HP\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\HP\\AppData\\Roaming\\npm;search-ms:displayname=Search%20Results%20in%20Local%20Disk%20(C%3A)&crumb=location:C%3A%5C\\php;C:\\Users\\HP\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\HP\\Downloads;C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 142 Stepping 12, GenuineIntel', 'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '8e0c', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSMODULEPATH': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PT8HOME': 'C:\\Program Files\\Cisco Packet Tracer 8.2.1', 'PUBLIC': 'C:\\Users\\Public', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'RUN_MAIN': 'true', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 'SYSTEMROOT': 'C:\\Windows', 'TEMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'TERM_PROGRAM': 'vscode', 'TERM_PROGRAM_VERSION': '0.48.9', 'TMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'USERDOMAIN': 'DESKTOP-MIJNC2U', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-MIJNC2U', 'USERNAME': 'HP', 'USERPROFILE': 'C:\\Users\\HP', 'VS140COMNTOOLS': 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-43aca5be0de423cc.txt', 'VSCODE_ENV_PREPEND': 'PATH=c\\x3a\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'VSCODE_GIT_ASKPASS_MAIN': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': 'C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\Cursor.exe', 'VSCODE_GIT_IPC_HANDLE': '\\\\.\\pipe\\vscode-git-2924d4b4e2-sock', 'WINDIR': 'C:\\Windows', 'ZES_ENABLE_SYSMAN': '1', 'SERVER_NAME': 'DESKTOP-MIJNC2U', 'GATEWAY_INTERFACE': 'CGI/1.1', 'SERVER_PORT': '8000', 'REMOTE_HOST': '', 'CONTENT_LENGTH': '508', 'SCRIPT_NAME': '', 'SERVER_PROTOCOL': 'HTTP/1.1', 'SERVER_SOFTWARE': 'WSGIServer/0.2', 'REQUEST_METHOD': 'POST', 'PATH_INFO': '/process/', 'QUERY_STRING': '', 'REMOTE_ADDR': '127.0.0.1', 'CONTENT_TYPE': 'multipart/form-data; boundary=----geckoformboundary250f3d60a78d58e1cee79431e784421f', 'HTTP_HOST': '127.0.0.1:8000', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'HTTP_ACCEPT': '*/*', 'HTTP_ACCEPT_LANGUAGE': 'en-US,en;q=0.5', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br, zstd', 'HTTP_REFERER': 'http://127.0.0.1:8000/upload/', 'HTTP_X_CSRFTOKEN': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_ORIGIN': 'http://127.0.0.1:8000', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_SEC_FETCH_DEST': 'empty', 'HTTP_SEC_FETCH_MODE': 'cors', 'HTTP_SEC_FETCH_SITE': 'same-origin', 'HTTP_PRIORITY': 'u=0', 'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x00000272E2AD7730>, 'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 'wsgi.version': (1, 0), 'wsgi.run_once': False, 'wsgi.url_scheme': 'http', 'wsgi.multithread': True, 'wsgi.multiprocess': False, 'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 'CSRF_COOKIE': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H'}
+INFO 2025-04-20 10:06:05,325 views 2688 18696 Processing file: tp_dss_commandes.txt
+INFO 2025-04-20 10:06:05,325 views 2688 18696 File size: 153
+INFO 2025-04-20 10:06:05,325 views 2688 18696 Content type: text/plain
+INFO 2025-04-20 10:06:05,329 views 2688 18696 Processing document with title: tp_dss_commandes.txt
+INFO 2025-04-20 10:06:05,332 views 2688 18696 Starting to handle uploaded file: tp_dss_commandes.txt
+INFO 2025-04-20 10:06:05,332 views 2688 18696 File size: 153 bytes
+INFO 2025-04-20 10:06:05,332 views 2688 18696 Content type: text/plain
+INFO 2025-04-20 10:06:05,336 views 2688 18696 File path: C:\Users\HP\Downloads\aos system\media\documents\tp_dss_commandes.txt
+INFO 2025-04-20 10:06:05,336 views 2688 18696 File extension: .txt
+INFO 2025-04-20 10:06:05,338 views 2688 18696 UPLOAD_DIR absolute path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 10:06:05,339 views 2688 18696 Upload directory exists: True
+INFO 2025-04-20 10:06:05,340 views 2688 18696 Upload directory is absolute: True
+INFO 2025-04-20 10:06:05,340 views 2688 18696 File saved successfully to disk at: C:\Users\HP\Downloads\aos system\media\documents\tp_dss_commandes.txt
+INFO 2025-04-20 10:06:05,346 views 2688 18696 File exists after save: True
+INFO 2025-04-20 10:06:05,347 views 2688 18696 Text file read successfully with UTF-8 encoding
+INFO 2025-04-20 10:06:05,348 views 2688 18696 File processing completed successfully. MIME type: text/plain
+INFO 2025-04-20 10:06:05,348 views 2688 18696 File processed successfully. MIME type: text/plain
+ERROR 2025-04-20 10:06:05,357 views 2688 18696 Error preprocessing text: 
+**********************************************************************
+  Resource [93mpunkt_tab[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('punkt_tab')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtokenizers/punkt_tab/english/[0m
+
+  Searched in:
+    - 'C:\\Users\\HP/nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\share\\nltk_data'
+    - 'c:\\Users\\HP\\Downloads\\aos system\\venv\\lib\\nltk_data'
+    - 'C:\\Users\\HP\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+ERROR 2025-04-20 10:06:05,357 log 2688 18696 Internal Server Error: /process/
+ERROR 2025-04-20 10:06:05,357 log 2688 18696 Internal Server Error: /process/
+ERROR 2025-04-20 10:06:05,367 basehttp 2688 18696 "POST /process/ HTTP/1.1" 500 37
+ERROR 2025-04-20 10:06:05,367 basehttp 2688 18696 "POST /process/ HTTP/1.1" 500 37
+INFO 2025-04-20 10:08:03,010 autoreload 6292 8852 Watching for file changes with StatReloader
+INFO 2025-04-20 10:08:03,010 autoreload 6292 8852 Watching for file changes with StatReloader
+INFO 2025-04-20 10:08:09,404 basehttp 6292 19292 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 10:08:09,404 basehttp 6292 19292 "GET /upload/ HTTP/1.1" 200 2949
+INFO 2025-04-20 10:08:17,897 views 6292 19292 Process document view called
+INFO 2025-04-20 10:08:17,897 views 6292 19292 Request method: POST
+INFO 2025-04-20 10:08:17,913 views 6292 19292 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: attestation de classement L2.pdf (application/pdf)>]}>
+INFO 2025-04-20 10:08:17,914 views 6292 19292 Request POST: <QueryDict: {'title': ['attestation de classement L2.pdf']}>
+INFO 2025-04-20 10:08:17,914 views 6292 19292 Request META: {'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\HP\\AppData\\Roaming', 'BUNDLED_DEBUGPY_PATH': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundled\\libs\\debugpy', 'CHOCOLATEYINSTALL': 'C:\\ProgramData\\chocolatey', 'CHOCOLATEYLASTPATHUPDATE': '133675076924179776', 'CHROME_CRASHPAD_PIPE_NAME': '\\\\.\\pipe\\crashpad_14136_ZSMTIIVPWRZDMVMM', 'COLORTERM': 'truecolor', 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-MIJNC2U', 'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 'CURSOR_TRACE_ID': '5f33619456cc46c389d20ca753650534', 'DJANGO_SETTINGS_MODULE': 'aos_project.settings', 'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'EFC_10140': '1', 'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'GIT_ASKPASS': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass.sh', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\HP', 'JAVA_HOME': 'C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21', 'LANG': 'en_US.UTF-8', 'LOCALAPPDATA': 'C:\\Users\\HP\\AppData\\Local', 'LOGONSERVER': '\\\\DESKTOP-MIJNC2U', 'NUMBER_OF_PROCESSORS': '8', 'ONEDRIVE': 'C:\\Users\\HP\\OneDrive', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'undefined', 'OS': 'Windows_NT', 'PATH': 'c:\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot\\bin;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\HP\\Downloads\\php-8.3.3-nts-Win32-vs16-x64;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\HP\\Downloads\\nginx-1.26.2\\nginx-1.26.2;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Java\\jdk1.8.0_202\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\HP\\.cargo\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-17.0.10.7-hotspot\\bin;C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\Users\\HP\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\HP\\AppData\\Roaming\\npm;search-ms:displayname=Search%20Results%20in%20Local%20Disk%20(C%3A)&crumb=location:C%3A%5C\\php;C:\\Users\\HP\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\HP\\Downloads;C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 142 Stepping 12, GenuineIntel', 'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '8e0c', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSMODULEPATH': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PT8HOME': 'C:\\Program Files\\Cisco Packet Tracer 8.2.1', 'PUBLIC': 'C:\\Users\\Public', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'RUN_MAIN': 'true', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 'SYSTEMROOT': 'C:\\Windows', 'TEMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'TERM_PROGRAM': 'vscode', 'TERM_PROGRAM_VERSION': '0.48.9', 'TMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'USERDOMAIN': 'DESKTOP-MIJNC2U', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-MIJNC2U', 'USERNAME': 'HP', 'USERPROFILE': 'C:\\Users\\HP', 'VS140COMNTOOLS': 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-43aca5be0de423cc.txt', 'VSCODE_ENV_PREPEND': 'PATH=c\\x3a\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'VSCODE_GIT_ASKPASS_MAIN': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': 'C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\Cursor.exe', 'VSCODE_GIT_IPC_HANDLE': '\\\\.\\pipe\\vscode-git-2924d4b4e2-sock', 'WINDIR': 'C:\\Windows', 'ZES_ENABLE_SYSMAN': '1', 'SERVER_NAME': 'DESKTOP-MIJNC2U', 'GATEWAY_INTERFACE': 'CGI/1.1', 'SERVER_PORT': '8000', 'REMOTE_HOST': '', 'CONTENT_LENGTH': '311860', 'SCRIPT_NAME': '', 'SERVER_PROTOCOL': 'HTTP/1.1', 'SERVER_SOFTWARE': 'WSGIServer/0.2', 'REQUEST_METHOD': 'POST', 'PATH_INFO': '/process/', 'QUERY_STRING': '', 'REMOTE_ADDR': '127.0.0.1', 'CONTENT_TYPE': 'multipart/form-data; boundary=----geckoformboundary57c1cbab7f3ac5ec4f3a699bc8925dfc', 'HTTP_HOST': '127.0.0.1:8000', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'HTTP_ACCEPT': '*/*', 'HTTP_ACCEPT_LANGUAGE': 'en-US,en;q=0.5', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br, zstd', 'HTTP_REFERER': 'http://127.0.0.1:8000/upload/', 'HTTP_X_CSRFTOKEN': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_ORIGIN': 'http://127.0.0.1:8000', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_SEC_FETCH_DEST': 'empty', 'HTTP_SEC_FETCH_MODE': 'cors', 'HTTP_SEC_FETCH_SITE': 'same-origin', 'HTTP_PRIORITY': 'u=0', 'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x00000134B36679D0>, 'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 'wsgi.version': (1, 0), 'wsgi.run_once': False, 'wsgi.url_scheme': 'http', 'wsgi.multithread': True, 'wsgi.multiprocess': False, 'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 'CSRF_COOKIE': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H'}
+INFO 2025-04-20 10:08:17,929 views 6292 19292 Processing file: attestation de classement L2.pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 File size: 311476
+INFO 2025-04-20 10:08:17,929 views 6292 19292 Content type: application/pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 Processing document with title: attestation de classement L2.pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 Starting to handle uploaded file: attestation de classement L2.pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 File size: 311476 bytes
+INFO 2025-04-20 10:08:17,929 views 6292 19292 Content type: application/pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 File path: C:\Users\HP\Downloads\aos system\media\documents\attestation de classement L2.pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 File extension: .pdf
+INFO 2025-04-20 10:08:17,929 views 6292 19292 UPLOAD_DIR absolute path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 10:08:17,944 views 6292 19292 Upload directory exists: True
+INFO 2025-04-20 10:08:17,944 views 6292 19292 Upload directory is absolute: True
+INFO 2025-04-20 10:08:17,944 views 6292 19292 File saved successfully to disk at: C:\Users\HP\Downloads\aos system\media\documents\attestation de classement L2.pdf
+INFO 2025-04-20 10:08:17,944 views 6292 19292 File exists after save: True
+INFO 2025-04-20 10:08:17,944 views 6292 19292 PDF document placeholder content created
+INFO 2025-04-20 10:08:17,944 views 6292 19292 File processing completed successfully. MIME type: application/pdf
+INFO 2025-04-20 10:08:17,954 views 6292 19292 File processed successfully. MIME type: application/pdf
+INFO 2025-04-20 10:08:18,056 views 6292 19292 Text preprocessing completed
+INFO 2025-04-20 10:08:18,071 views 6292 19292 File type: pdf
+INFO 2025-04-20 10:08:18,073 views 6292 19292 Document created with ID: 1
+ERROR 2025-04-20 10:08:18,081 views 6292 19292 Error updating TF-IDF vectors: max_df corresponds to < documents than min_df
+ERROR 2025-04-20 10:08:18,085 views 6292 19292 Error updating TF-IDF vectors: ['Failed to update TF-IDF vectors']
+INFO 2025-04-20 10:08:18,086 views 6292 19292 Returning success response: {'success': True, 'message': 'Document processed successfully', 'document_id': 1}
+INFO 2025-04-20 10:08:18,104 basehttp 6292 19292 "POST /process/ HTTP/1.1" 200 81
+INFO 2025-04-20 10:08:18,104 basehttp 6292 19292 "POST /process/ HTTP/1.1" 200 81
+INFO 2025-04-20 10:08:19,767 basehttp 6292 19292 "GET /results/?id=1 HTTP/1.1" 200 2037
+INFO 2025-04-20 10:08:19,767 basehttp 6292 19292 "GET /results/?id=1 HTTP/1.1" 200 2037
+WARNING 2025-04-20 10:08:19,915 log 6292 19292 Not Found: /indexer_app/static/indexer_app/css/process_results.css
+WARNING 2025-04-20 10:08:19,915 log 6292 19292 Not Found: /indexer_app/static/indexer_app/css/process_results.css
+WARNING 2025-04-20 10:08:19,923 basehttp 6292 19292 "GET /indexer_app/static/indexer_app/css/process_results.css HTTP/1.1" 404 4830
+WARNING 2025-04-20 10:08:19,923 basehttp 6292 19292 "GET /indexer_app/static/indexer_app/css/process_results.css HTTP/1.1" 404 4830
+INFO 2025-04-20 10:08:49,359 basehttp 6292 19292 "GET /test/ HTTP/1.1" 200 1653
+INFO 2025-04-20 10:08:49,359 basehttp 6292 19292 "GET /test/ HTTP/1.1" 200 1653

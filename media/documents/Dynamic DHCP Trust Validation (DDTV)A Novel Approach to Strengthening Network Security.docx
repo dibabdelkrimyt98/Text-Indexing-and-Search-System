@@ -1,0 +1,108 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+
+\title{Dynamic DHCP Trust Validation (DDTV): A Novel Approach to Strengthening Network Security}
+\author{
+DIB Abdelkrim Yassine Taki-Eddine \\
+Department of Computer Science, \\ University of Djillali Liabes, \\ Sidi Bel Abbes, Algeria \\
+Email: \texttt{dibabdelkrimyt98@gmail.com}
+}
+\date{February 23, 2025}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dynamic Host Configuration Protocol (DHCP) is fundamental for automating IP address allocation but is vulnerable to attacks such as DHCP starvation, rogue DHCP servers, and VPN decloaking exploits like TunnelVision (CVE-2024-3661). Existing security mechanisms offer partial protection but are complex to implement. This paper introduces Dynamic DHCP Trust Validation (DDTV), a novel cryptographic challenge-response framework that dynamically verifies clients before assigning IP addresses, ensuring authenticated network access. We explore DDTV’s architecture, operational principles, security impact, and practical deployment.
+\end{abstract}
+
+\textbf{Keywords}: DHCP Security, Cybersecurity, Network Protection, Cryptographic Authentication, Trust Validation
+
+\section{Introduction}
+\subsection{Background and Motivation}
+The rise of cyber threats necessitates robust security measures for DHCP, a critical networking protocol. DHCP is prone to:
+\begin{itemize}
+    \item \textbf{DHCP Starvation Attacks} – Attackers flood servers with fake requests, depleting available IP addresses.
+    \item \textbf{Rogue DHCP Servers} – Malicious servers issue fraudulent configurations, intercepting network traffic.
+    \item \textbf{TunnelVision Exploit} – Manipulating DHCP routing options to bypass VPN security.
+\end{itemize}
+This paper proposes DDTV, a proactive security mechanism that dynamically validates clients before granting IP leases.
+
+\section{Related Work}
+\subsection{Existing DHCP Security Measures}
+Current countermeasures include:
+\begin{itemize}
+    \item \textbf{DHCP Snooping} – Filters unauthorized DHCP responses but requires managed switches.
+    \item \textbf{802.1X Authentication} – Requires RADIUS servers, adding deployment complexity.
+    \item \textbf{Static Routing for VPNs} – Helps prevent traffic manipulation but does not secure DHCP leases.
+\end{itemize}
+DDTV overcomes these limitations by integrating a real-time cryptographic challenge-response mechanism.
+
+\section{Proposed Solution: Dynamic DHCP Trust Validation (DDTV)}
+\subsection{Overview of DDTV Architecture}
+DDTV implements three security layers:
+\begin{enumerate}
+    \item \textbf{Client Pre-Validation:} When a client requests an IP, the DHCP server issues a cryptographic challenge. Clients respond using their MAC address, hardware signature, and a time-based token.
+    \item \textbf{Challenge-Response Authentication for Lease Renewals:} DDTV requires periodic client re-authentication, preventing unauthorized persistence.
+    \item \textbf{Blacklisting and Logging of Malicious Clients:} Clients failing authentication multiple times are blacklisted.
+\end{enumerate}
+
+\section{Implementation Strategy}
+\subsection{Deployment Model}
+DDTV can be integrated into:
+\begin{itemize}
+    \item \textbf{Standalone DHCP security modules} for Linux servers (ISC-DHCP, Kea DHCP).
+    \item \textbf{Enterprise firewall features} (pfSense, OPNsense, Cisco Firepower).
+    \item \textbf{Middleware solutions} for enforcing trust validation between DHCP servers and clients.
+\end{itemize}
+
+\subsection{Cryptographic Validation Mechanism}
+\begin{itemize}
+    \item Uses SHA-256 hashing and asymmetric cryptographic signatures.
+    \item Minimal computational overhead, ensuring high-speed processing.
+    \item Compatible with both IPv4 and IPv6 DHCP environments.
+\end{itemize}
+
+\section{Results and Discussion}
+\subsection{Security Evaluation Against DHCP Attacks}
+DDTV significantly enhances security by:
+\begin{itemize}
+    \item Preventing DHCP Starvation – Attackers cannot flood requests without authentication.
+    \item Blocking Rogue DHCP Servers – Unauthorized servers fail challenge-response authentication.
+    \item Preventing VPN Hijacking – Protects against DHCP option 121 manipulation.
+\end{itemize}
+
+\subsection{Comparative Analysis with Existing Solutions}
+\begin{table}[h!]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{lcccc}
+        \toprule
+        Feature & DHCP Snooping & 802.1X Auth & Static VPN Routing & DDTV \\
+        \midrule
+        Prevents DHCP Starvation & Partial & Yes & No & Yes \\
+        Blocks Rogue DHCP Servers & Yes & Yes & No & Yes \\
+        Mitigates VPN Bypass & No & No & Partial & Yes \\
+        Requires Additional Hardware & Yes & Yes & No & No \\
+        Scalability & Low & Medium & No & High \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Comparative analysis of DHCP security solutions.}
+\end{table}
+
+\section{Conclusion and Future Work}
+DDTV introduces an innovative approach to DHCP security using cryptographic challenge-response authentication. Unlike existing solutions, DDTV is proactive, lightweight, and scalable. Future research will explore optimizing performance, integrating with modern security frameworks, and enhancing deployment in cloud environments.
+
+\begin{thebibliography}{9}
+    \bibitem{cisco} Cisco Systems, “DHCP Snooping Configuration Guide.” Available: \url{https://www.cisco.com}
+    \bibitem{hackmag} A. Mikhailov, “Attacks on the DHCP Protocol: Starvation, Spoofing, and Protection,” HackMag, 2023.
+    \bibitem{leviathan} L. Moratti and D. Cronce, “TunnelVision (CVE-2024-3661): VPN Decloaking via DHCP,” Leviathan Security, 2024.
+    \bibitem{nist} National Institute of Standards and Technology (NIST), “Guidelines for Network Security,” 2023.
+\end{thebibliography}
+
+\end{document}

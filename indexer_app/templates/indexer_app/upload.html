@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upload & Index - AOS System</title>
+  {% csrf_token %}
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
@@ -12,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="/indexer_app/static/indexer_app/css/upload.css" />
+  <link rel="stylesheet" href="{% static 'indexer_app/css/upload.css' %}" />
 </head>
 <body class="light-mode">
   <div class="layout">
@@ -24,10 +26,9 @@
       </div>
       <div class="nav-group">
         <nav class="nav-menu">
-          <a href="index.html"><i class="fas fa-home"></i><span class="label">Home</span></a>
-          <a href="upload.html"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
-          <a href="search.html"><i class="fas fa-search"></i><span class="label">Search</span></a>
-          
+          <a href="{% url 'indexer_app:index' %}"><i class="fas fa-home"></i><span class="label">Home</span></a>
+          <a href="{% url 'indexer_app:upload' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="{% url 'indexer_app:search' %}"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
     
         <div class="lang-switcher">
@@ -41,7 +42,6 @@
       </div>
     </aside>
     
-
     <!-- Upload Section -->
     <section class="upload-hero">
       <div class="overlay"></div>
@@ -69,7 +69,10 @@
     </div>
   </div>
 
-  <script src="/indexer_app/static/indexer_app/js/app.js"></script>
-  <script src="/indexer_app/static/indexer_app/js/upload.js"></script>
+  <!-- Scripts -->
+  <script src="{% static 'indexer_app/js/theme.js' %}"></script>
+  <script src="{% static 'indexer_app/js/lang.js' %}"></script>
+  <script src="{% static 'indexer_app/js/app.js' %}"></script>
+  <script src="{% static 'indexer_app/js/upload.js' %}"></script>
 </body>
 </html>

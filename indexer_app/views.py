@@ -69,42 +69,79 @@ def handle_uploaded_file(uploaded_file: UploadedFile) -> Tuple[str, str]:
     Raises:
         ValidationError: If file type is not supported
     """
-    content = ''
-    file_path = UPLOAD_DIR / str(uploaded_file.name)
-    file_ext = Path(str(uploaded_file.name)).suffix.lower()
+    try:
+        logger.info(f"Starting to handle uploaded file: {uploaded_file.name}")
+        logger.info(f"File size: {uploaded_file.size} bytes")
+        logger.info(f"Content type: {uploaded_file.content_type}")
+        
+        content = ''
+        file_path = UPLOAD_DIR / str(uploaded_file.name)
+        file_ext = Path(str(uploaded_file.name)).suffix.lower()
+        
+        logger.info(f"File path: {file_path}")
+        logger.info(f"File extension: {file_ext}")
+        logger.info(f"UPLOAD_DIR absolute path: {UPLOAD_DIR.absolute()}")
 
-    # Save the file to disk
-    with open(file_path, 'wb+') as destination:
-        for chunk in uploaded_file.chunks():
-            destination.write(chunk)
-
-    # Determine mime type based on file extension
-    if file_ext == '.txt':
-        mime_type = 'text/plain'
-        # Read text file content
+        # Ensure upload directory exists
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-        except UnicodeDecodeError:
-            # Try with a different encoding if UTF-8 fails
-            with open(file_path, 'r', encoding='latin-1') as f:
-                content = f.read()
-    elif file_ext in ['.doc', '.docx']:
-        mime_type = 'application/msword'
-        # For now, just extract text from the beginning of the file
-        # In a real app, you'd use a library like python-docx
-        content = f"[DOCUMENT CONTENT: {uploaded_file.name}]"
-    elif file_ext == '.pdf':
-        mime_type = 'application/pdf'
-        # For now, just extract text from the beginning of the file
-        # In a real app, you'd use a library like PyPDF2
-        content = f"[PDF CONTENT: {uploaded_file.name}]"
-    else:
-        raise ValidationError(
-            f"File type {file_ext} processing not implemented yet"
-        )
+            UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Upload directory exists: {UPLOAD_DIR.exists()}")
+            logger.info(f"Upload directory is absolute: {UPLOAD_DIR.is_absolute()}")
+        except Exception as e:
+            logger.error(f"Error creating upload directory: {str(e)}")
+            raise
 
-    return content, mime_type
+        # Save the file to disk
+        try:
+            with open(file_path, 'wb+') as destination:
+                for chunk in uploaded_file.chunks():
+                    destination.write(chunk)
+            logger.info(f"File saved successfully to disk at: {file_path}")
+            logger.info(f"File exists after save: {file_path.exists()}")
+        except Exception as e:
+            logger.error(f"Error saving file to disk: {str(e)}")
+            logger.error(f"File path that failed: {file_path}")
+            raise
+
+        # Determine mime type based on file extension
+        if file_ext == '.txt':
+            mime_type = 'text/plain'
+            # Read text file content
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                logger.info("Text file read successfully with UTF-8 encoding")
+            except UnicodeDecodeError:
+                logger.info("UTF-8 encoding failed, trying latin-1")
+                # Try with a different encoding if UTF-8 fails
+                with open(file_path, 'r', encoding='latin-1') as f:
+                    content = f.read()
+                logger.info("Text file read successfully with latin-1 encoding")
+        elif file_ext in ['.doc', '.docx']:
+            mime_type = 'application/msword'
+            # For now, just extract text from the beginning of the file
+            # In a real app, you'd use a library like python-docx
+            content = f"[DOCUMENT CONTENT: {uploaded_file.name}]"
+            logger.info("Word document placeholder content created")
+        elif file_ext == '.pdf':
+            mime_type = 'application/pdf'
+            # For now, just extract text from the beginning of the file
+            # In a real app, you'd use a library like PyPDF2
+            content = f"[PDF CONTENT: {uploaded_file.name}]"
+            logger.info("PDF document placeholder content created")
+        else:
+            error_msg = f"File type {file_ext} processing not implemented yet"
+            logger.error(error_msg)
+            raise ValidationError(error_msg)
+
+        logger.info(f"File processing completed successfully. MIME type: {mime_type}")
+        return content, mime_type
+
+    except Exception as e:
+        logger.error(f"Unexpected error in handle_uploaded_file: {str(e)}")
+        logger.error(f"Error type: {type(e)}")
+        logger.error(f"Error args: {e.args}")
+        raise
 
 
 @csrf_protect
@@ -210,6 +247,7 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
     logger.info(f"Request method: {request.method}")
     logger.info(f"Request FILES: {request.FILES}")
     logger.info(f"Request POST: {request.POST}")
+    logger.info(f"Request META: {request.META}")
     
     try:
         # Check if a document was uploaded
@@ -222,9 +260,13 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
 
         # Get the uploaded file
         uploaded_file = request.FILES['document']
+        logger.info(f"Processing file: {uploaded_file.name}")
+        logger.info(f"File size: {uploaded_file.size}")
+        logger.info(f"Content type: {uploaded_file.content_type}")
         
         # Validate that it's a proper UploadedFile
         if not isinstance(uploaded_file, UploadedFile):
+            logger.error(f"Invalid file upload type: {type(uploaded_file)}")
             return JsonResponse(
                 {"error": "Invalid file upload"},
                 status=400
@@ -234,6 +276,7 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
         file_size = uploaded_file.size
         if file_size is None or file_size > MAX_FILE_SIZE:
             size_mb = MAX_FILE_SIZE / (1024 * 1024)
+            logger.error(f"File size {file_size} exceeds limit of {size_mb}MB")
             return JsonResponse(
                 {"error": f"File size exceeds {size_mb}MB limit"},
                 status=400
@@ -243,6 +286,7 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
         file_ext = Path(str(uploaded_file.name)).suffix.lower()
         if file_ext not in ALLOWED_EXTENSIONS:
             ext_list = ', '.join(ALLOWED_EXTENSIONS)
+            logger.error(f"Invalid file extension: {file_ext}")
             return JsonResponse(
                 {
                     "error": (
@@ -255,9 +299,11 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
 
         # Get the title from the form or use the filename
         title = request.POST.get('title', uploaded_file.name)
+        logger.info(f"Processing document with title: {title}")
 
         # Check if a document with this title already exists
         if Document.objects.filter(title=title).exists():
+            logger.error(f"Document with title '{title}' already exists")
             return JsonResponse(
                 {"error": "A document with this title already exists"},
                 status=400
@@ -265,46 +311,84 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
 
         # Process the file
         try:
-            content, _ = handle_uploaded_file(uploaded_file)
+            content, mime_type = handle_uploaded_file(uploaded_file)
+            logger.info(f"File processed successfully. MIME type: {mime_type}")
         except ValidationError as e:
+            logger.error(f"Validation error: {str(e)}")
             return JsonResponse({"error": str(e)}, status=400)
         except UnicodeDecodeError:
+            logger.error("File encoding error")
             return JsonResponse(
                 {"error": "File encoding not supported. Use UTF-8."},
                 status=400
             )
+        except Exception as e:
+            logger.error(f"Error processing file: {str(e)}")
+            logger.error(f"Error type: {type(e)}")
+            logger.error(f"Error args: {e.args}")
+            return JsonResponse(
+                {"error": f"Error processing file: {str(e)}"},
+                status=500
+            )
 
         # Preprocess the text
-        processed_content = preprocess_text(content)
+        try:
+            processed_content = preprocess_text(content)
+            logger.info("Text preprocessing completed")
+        except Exception as e:
+            logger.error(f"Error preprocessing text: {str(e)}")
+            return JsonResponse(
+                {"error": "Error preprocessing text"},
+                status=500
+            )
+
+        # Get file type without the dot
+        file_type = file_ext[1:] if file_ext.startswith('.') else file_ext
+        logger.info(f"File type: {file_type}")
 
         # Create the document in the database
-        document = Document.objects.create(
-            title=title,
-            content=content,
-            processed_content=processed_content,
-            file_type=file_ext[1:],
-            file_size=file_size
-        )
+        try:
+            document = Document.objects.create(
+                title=title,
+                content=content,
+                processed_content=processed_content,
+                file_type=file_type,
+                file_size=file_size
+            )
+            logger.info(f"Document created with ID: {document.id}")
+        except Exception as e:
+            logger.error(f"Error creating document: {str(e)}")
+            logger.error(f"Error type: {type(e)}")
+            logger.error(f"Error args: {e.args}")
+            return JsonResponse(
+                {"error": f"Error saving document to database: {str(e)}"},
+                status=500
+            )
 
         # Update TF-IDF vectors for all documents
-        update_tfidf_vectors()
+        try:
+            update_tfidf_vectors()
+            logger.info("TF-IDF vectors updated successfully")
+        except Exception as e:
+            logger.error(f"Error updating TF-IDF vectors: {str(e)}")
+            # Don't return error here, as the document was already saved
 
-        # Log the response for debugging
+        # Return success response
         response_data = {
             'success': True,
             'message': 'Document processed successfully',
             'document_id': document.id
         }
-        logger.info(f"Returning JSON response: {response_data}")
-        
-        # Return success response
+        logger.info(f"Returning success response: {response_data}")
         return JsonResponse(response_data)
 
     except Exception as e:
         # Log the error and return a generic error message
-        logger.error("Error processing document: %s", str(e))
+        logger.error(f"Unexpected error in process_document_view: {str(e)}")
+        logger.error(f"Error type: {type(e)}")
+        logger.error(f"Error args: {e.args}")
         return JsonResponse(
-            {"error": "An error occurred while processing the document"},
+            {"error": f"An unexpected error occurred: {str(e)}"},
             status=500
         )
 

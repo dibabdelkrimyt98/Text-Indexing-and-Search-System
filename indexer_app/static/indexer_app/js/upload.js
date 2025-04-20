@@ -28,52 +28,35 @@ document.getElementById('indexButton').addEventListener('click', async () => {
 
     try {
         const csrfToken = getCookie('csrftoken');
-        console.log('CSRF Token:', csrfToken);
-        
-        // Log the form data for debugging
-        console.log('Form data entries:');
-        for (let pair of formData.entries()) {
-            console.log(pair[0] + ': ' + pair[1]);
+        if (!csrfToken) {
+            throw new Error('CSRF token not found. Please refresh the page and try again.');
         }
-        
+
         const response = await fetch('/process/', {
             method: 'POST',
             body: formData,
-            // Temporarily disable CSRF for testing
-            // headers: {
-            //     'X-CSRFToken': csrfToken
             headers: {
                 'X-CSRFToken': csrfToken
-            }
+            },
+            credentials: 'same-origin'
         });
 
-        // Debug: Log the response text
-        const responseText = await response.text();
-        console.log('Server response:', responseText);
-        
-        // Try to parse as JSON
-        let result;
-        try {
-            result = JSON.parse(responseText);
-        } catch (e) {
-            console.error('JSON parse error:', e);
-            throw new Error('Server returned invalid JSON: ' + responseText.substring(0, 100));
-        }
-
         if (!response.ok) {
-            throw new Error(result.error || 'Upload failed');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
+        const result = await response.json();
+        
         if (result.success) {
             const dialog = document.getElementById('successDialog');
             dialog.classList.add('show');
-            // Store the document ID for redirection
             dialog.dataset.documentId = result.document_id;
         } else {
-            throw new Error('Upload failed');
+            throw new Error(result.error || 'Upload failed');
         }
     } catch (error) {
-        alert(error.message);
+        console.error('Upload error:', error);
+        alert('Error uploading files: ' + error.message);
     }
 });
 
@@ -81,9 +64,10 @@ document.getElementById('indexButton').addEventListener('click', async () => {
 document.getElementById('closeDialog').addEventListener('click', () => {
     const dialog = document.getElementById('successDialog');
     dialog.classList.remove('show');
-    // Redirect to results page with document ID
     const documentId = dialog.dataset.documentId;
-    window.location.href = `/results/?id=${documentId}`;
+    if (documentId) {
+        window.location.href = `/results/?id=${documentId}`;
+    }
 });
 
 // Helper function to get CSRF token
