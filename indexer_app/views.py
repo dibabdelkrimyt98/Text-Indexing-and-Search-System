@@ -3,7 +3,7 @@ Views for the document indexing application.
 """
 import logging
 from pathlib import Path
-from typing import Tuple
+from typing import Tuple, Dict, Any
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -268,15 +268,11 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
         update_tfidf_vectors()
 
         # Return success response
-        return render(
-            request,
-            "indexer_app/process_results.html",
-            {
-                'document': document,
-                'success': True,
-                'message': 'Document processed successfully'
-            }
-        )
+        return JsonResponse({
+            'success': True,
+            'message': 'Document processed successfully',
+            'document_id': document.id
+        })
 
     except Exception as e:
         # Log the error and return a generic error message

@@ -52,6 +52,7 @@ class Document(models.Model):
     ]
     
     # Fields
+    id: models.AutoField = models.AutoField(primary_key=True)
     title: CharField = models.CharField(
         max_length=255,
         unique=True,

@@ -44,6 +44,8 @@ document.getElementById('indexButton').addEventListener('click', async () => {
         if (result.success) {
             const dialog = document.getElementById('successDialog');
             dialog.classList.add('show');
+            // Store the document ID for redirection
+            dialog.dataset.documentId = result.document_id;
         } else {
             throw new Error('Upload failed');
         }
@@ -56,7 +58,9 @@ document.getElementById('indexButton').addEventListener('click', async () => {
 document.getElementById('closeDialog').addEventListener('click', () => {
     const dialog = document.getElementById('successDialog');
     dialog.classList.remove('show');
-    window.location.href = '/results/';
+    // Redirect to results page with document ID
+    const documentId = dialog.dataset.documentId;
+    window.location.href = `/results/?id=${documentId}`;
 });
 
 // Helper function to get CSRF token
