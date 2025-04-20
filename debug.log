@@ -3,3 +3,13 @@ Watching for file changes with StatReloader
 C:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\__init__.py changed, reloading.
 Watching for file changes with StatReloader
 C:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\conf\__init__.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Test JSON view called
+Not Found: /indexer_app/static/indexer_app/css/upload.css
+Not Found: /indexer_app/static/indexer_app/js/app.js
+Not Found: /indexer_app/static/indexer_app/js/upload.js
+Not Found: /indexer_app/static/indexer_app/js/app.js
+Not Found: /indexer_app/static/indexer_app/js/upload.js
+Not Found: /upload/upload.html

@@ -13,4 +13,6 @@ urlpatterns = [
     path('search/', views.search_view, name='search'),
     path('similarity/', views.tfidf_similarity_view, name='similarity'),
     path('results/', views.process_results, name='process_results'),
+    path('test-json/', views.test_json_view, name='test_json'),
+    path('test/', views.test_page_view, name='test_page'),
 ]

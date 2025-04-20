@@ -2,24 +2,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Test Render - AOS System</title>
-  <link rel="stylesheet" href="/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test JSON - AOS System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+  </style>
 </head>
 <body>
-  <div class="test-container">
-    <h1>Testing Render</h1>
-    {% if success %}
-      <p class="success">Document processed successfully!</p>
-      <div class="doc-info">
-        <strong>Title:</strong> {{ document.title }}<br>
-        <strong>Size:</strong> {{ document.file_size }} bytes<br>
-        <strong>Type:</strong> {{ document.file_type }}<br>
-      </div>
-    {% else %}
-      <p class="error">Something went wrong.</p>
-    {% endif %}
-  </div>
-  <script src="/static/indexer_app/js/process_results.js"></script>
+  <h1>Test JSON Endpoint</h1>
+  <p>This page tests if the JSON endpoint is working correctly.</p>
+  
+  <button id="testButton">Test JSON Endpoint</button>
+  
+  <h2>Result:</h2>
+  <pre id="result">No result yet</pre>
+  
+  <script>
+    document.getElementById('testButton').addEventListener('click', async () => {
+      try {
+        const response = await fetch('/test-json/');
+        const responseText = await response.text();
+        console.log('Raw response:', responseText);
+        
+        try {
+          const data = JSON.parse(responseText);
+          document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+        } catch (e) {
+          document.getElementById('result').textContent = `Error parsing JSON: ${e.message}\n\nRaw response: ${responseText}`;
+        }
+      } catch (error) {
+        document.getElementById('result').textContent = `Error: ${error.message}`;
+      }
+    });
+  </script>
 </body>
 </html>

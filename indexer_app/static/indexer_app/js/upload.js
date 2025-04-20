@@ -27,20 +27,43 @@ document.getElementById('indexButton').addEventListener('click', async () => {
     }
 
     try {
+        const csrfToken = getCookie('csrftoken');
+        console.log('CSRF Token:', csrfToken);
+        
+        // Log the form data for debugging
+        console.log('Form data entries:');
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+        
         const response = await fetch('/process/', {
             method: 'POST',
             body: formData,
+            // Temporarily disable CSRF for testing
+            // headers: {
+            //     'X-CSRFToken': csrfToken
             headers: {
-                'X-CSRFToken': getCookie('csrftoken')
+                'X-CSRFToken': csrfToken
             }
         });
 
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.error || 'Upload failed');
+        // Debug: Log the response text
+        const responseText = await response.text();
+        console.log('Server response:', responseText);
+        
+        // Try to parse as JSON
+        let result;
+        try {
+            result = JSON.parse(responseText);
+        } catch (e) {
+            console.error('JSON parse error:', e);
+            throw new Error('Server returned invalid JSON: ' + responseText.substring(0, 100));
         }
 
-        const result = await response.json();
+        if (!response.ok) {
+            throw new Error(result.error || 'Upload failed');
+        }
+
         if (result.success) {
             const dialog = document.getElementById('successDialog');
             dialog.classList.add('show');

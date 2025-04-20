@@ -18,6 +18,7 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_protect
 from django.db import transaction
 from django.core.files.uploadedfile import UploadedFile
+from django.utils import timezone
 
 from .models import Document
 
@@ -70,22 +71,37 @@ def handle_uploaded_file(uploaded_file: UploadedFile) -> Tuple[str, str]:
     """
     content = ''
     file_path = UPLOAD_DIR / str(uploaded_file.name)
+    file_ext = Path(str(uploaded_file.name)).suffix.lower()
 
     # Save the file to disk
     with open(file_path, 'wb+') as destination:
         for chunk in uploaded_file.chunks():
             destination.write(chunk)
 
-    # For simplicity, we'll just handle text files for now
-    mime_type = 'text/plain'
-
-    # Read the file content
-    if mime_type == 'text/plain':
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
+    # Determine mime type based on file extension
+    if file_ext == '.txt':
+        mime_type = 'text/plain'
+        # Read text file content
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except UnicodeDecodeError:
+            # Try with a different encoding if UTF-8 fails
+            with open(file_path, 'r', encoding='latin-1') as f:
+                content = f.read()
+    elif file_ext in ['.doc', '.docx']:
+        mime_type = 'application/msword'
+        # For now, just extract text from the beginning of the file
+        # In a real app, you'd use a library like python-docx
+        content = f"[DOCUMENT CONTENT: {uploaded_file.name}]"
+    elif file_ext == '.pdf':
+        mime_type = 'application/pdf'
+        # For now, just extract text from the beginning of the file
+        # In a real app, you'd use a library like PyPDF2
+        content = f"[PDF CONTENT: {uploaded_file.name}]"
     else:
         raise ValidationError(
-            f"File type {mime_type} processing not implemented yet"
+            f"File type {file_ext} processing not implemented yet"
         )
 
     return content, mime_type
@@ -190,9 +206,15 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
     Returns:
         HttpResponse with rendered template or JsonResponse with error
     """
+    logger.info("Process document view called")
+    logger.info(f"Request method: {request.method}")
+    logger.info(f"Request FILES: {request.FILES}")
+    logger.info(f"Request POST: {request.POST}")
+    
     try:
         # Check if a document was uploaded
         if 'document' not in request.FILES:
+            logger.error("No document provided in request.FILES")
             return JsonResponse(
                 {"error": "No document provided"},
                 status=400
@@ -267,12 +289,16 @@ def process_document_view(request: HttpRequest) -> HttpResponse:
         # Update TF-IDF vectors for all documents
         update_tfidf_vectors()
 
-        # Return success response
-        return JsonResponse({
+        # Log the response for debugging
+        response_data = {
             'success': True,
             'message': 'Document processed successfully',
             'document_id': document.id
-        })
+        }
+        logger.info(f"Returning JSON response: {response_data}")
+        
+        # Return success response
+        return JsonResponse(response_data)
 
     except Exception as e:
         # Log the error and return a generic error message
@@ -414,7 +440,7 @@ def update_tfidf_vectors() -> None:
 
 def process_results(request: HttpRequest) -> HttpResponse:
     """
-    Handle document processing results.
+    Display the results of document processing.
     
     Args:
         request: The HTTP request
@@ -422,40 +448,56 @@ def process_results(request: HttpRequest) -> HttpResponse:
     Returns:
         HttpResponse with rendered template
     """
-    # Get the document ID from the query parameters
     document_id = request.GET.get('id')
     
-    # Check if the ID is valid
-    if not document_id or not document_id.isdigit():
+    if not document_id:
         return render(
             request,
-            "indexer_app/process_results.html",
-            {
-                'success': False,
-                'error_message': 'Invalid or missing document ID.',
-            }
+            'indexer_app/process_results.html',
+            {'error': 'No document ID provided'}
+        )
+    
+    try:
+        document = Document.objects.get(id=document_id)
+        return render(
+            request,
+            'indexer_app/process_results.html',
+            {'document': document}
+        )
+    except Document.DoesNotExist:
+        return render(
+            request,
+            'indexer_app/process_results.html',
+            {'error': 'Document not found'}
         )
 
-    try:
-        # Get the document
-        document = Document.objects.get(id=document_id)
+
+def test_json_view(request: HttpRequest) -> JsonResponse:
+    """
+    A simple view that returns a JSON response for testing.
+    
+    Args:
+        request: The HTTP request
         
-        # Return success response
-        return render(
-            request,
-            'indexer_app/process_results.html',
-            {
-                'success': True,
-                'document': document,
-            }
-        )
-    except ObjectDoesNotExist:
-        # Document not found
-        return render(
-            request,
-            'indexer_app/process_results.html',
-            {
-                'success': False,
-                'error_message': 'Document not found.',
-            }
-        )
+    Returns:
+        JsonResponse with test data
+    """
+    logger.info("Test JSON view called")
+    return JsonResponse({
+        'success': True,
+        'message': 'Test JSON response',
+        'timestamp': timezone.now().isoformat()
+    })
+
+
+def test_page_view(request: HttpRequest) -> HttpResponse:
+    """
+    Render the test page.
+    
+    Args:
+        request: The HTTP request
+        
+    Returns:
+        HttpResponse with rendered template
+    """
+    return render(request, 'indexer_app/test.html')
