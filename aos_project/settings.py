@@ -3,6 +3,7 @@
 from pathlib import Path
 from typing import List, Dict, Any
 import os
+import dj_database_url
 
 # Base directory
 BASE_DIR: Path = Path(__file__).resolve().parent.parent
@@ -12,9 +13,9 @@ MEDIA_URL: str = '/media/'
 MEDIA_ROOT: Path = BASE_DIR / 'media'
 
 # Security
-SECRET_KEY: str = 'your-secret-key'
-DEBUG: bool = True
-ALLOWED_HOSTS: List[str] = ['*']  # Allow all hosts in development
+SECRET_KEY: str = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key')
+DEBUG: bool = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
+ALLOWED_HOSTS: List[str] = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')
 
 # Installed apps
 INSTALLED_APPS: List[str] = [
@@ -25,11 +26,13 @@ INSTALLED_APPS: List[str] = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'indexer_app',
+    'whitenoise.runserver_nostatic',
 ]
 
 # Middleware
 MIDDLEWARE: List[str] = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -59,47 +62,11 @@ TEMPLATES: List[Dict[str, Any]] = [
 
 WSGI_APPLICATION: str = 'aos_project.wsgi.application'
 
-# Database
-DATABASES: Dict[str, Dict[str, Any]] = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# Password validation
-AUTH_PASSWORD_VALIDATORS: List[Dict[str, str]] = [
-    {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'UserAttributeSimilarityValidator'
-        ),
-    },
-    {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'MinimumLengthValidator'
-        ),
-    },
-    {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'CommonPasswordValidator'
-        ),
-    },
-    {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'NumericPasswordValidator'
-        ),
-    },
-]
-
-# Internationalization
-LANGUAGE_CODE: str = 'en-us'
-TIME_ZONE: str = 'UTC'
-USE_I18N: bool = True
-USE_TZ: bool = True
+# Security settings
+SECURE_SSL_REDIRECT = os.environ.get('DJANGO_SECURE_SSL_REDIRECT', 'True') == 'True'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
 
 # Static files
 STATIC_URL = '/static/'
@@ -107,6 +74,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD: str = 'django.db.models.BigAutoField'
@@ -158,3 +126,55 @@ os.makedirs(MEDIA_ROOT, exist_ok=True)
 os.makedirs(MEDIA_ROOT / 'documents', exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
 os.makedirs(BASE_DIR / 'static', exist_ok=True)
+
+# Database
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+
+# Password validation
+AUTH_PASSWORD_VALIDATORS: List[Dict[str, str]] = [
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
+    },
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
+    },
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
+    },
+    {
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
+    },
+]
+
+# Internationalization
+LANGUAGE_CODE: str = 'en-us'
+TIME_ZONE: str = 'UTC'
+USE_I18N: bool = True
+USE_TZ: bool = True

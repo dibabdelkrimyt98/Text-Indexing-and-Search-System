@@ -1,0 +1,1 @@
+web: gunicorn aos_project.wsgi --log-file - 

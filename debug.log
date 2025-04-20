@@ -2875,3 +2875,5 @@ INFO 2025-04-20 18:47:18,914 basehttp 20664 12980 "POST /indexer_app/api/search/
 INFO 2025-04-20 18:47:49,494 views 20664 12980 Rendering try page
 INFO 2025-04-20 18:47:49,504 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2717
 INFO 2025-04-20 18:47:49,504 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2717
+INFO 2025-04-20 18:55:47,892 autoreload 20664 16392 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 18:55:47,892 autoreload 20664 16392 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
