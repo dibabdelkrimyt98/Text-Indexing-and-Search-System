@@ -43,9 +43,6 @@ class Document(models.Model):
         file_size (int): Size of the document in bytes
     """
     
-    # Type hint for the objects manager
-    objects: ClassVar[models.Manager]
-    
     # File type choices
     FILE_TYPES = [
         ('txt', 'Text File'),
