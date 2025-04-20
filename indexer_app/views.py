@@ -712,3 +712,17 @@ def test_plain_view(request: HttpRequest) -> HttpResponse:
         HttpResponse with plain text
     """
     return HttpResponse("Test view is working!", content_type="text/plain")
+
+
+def test_bg_view(request: HttpRequest) -> HttpResponse:
+    """
+    View function for the background image test page.
+    This page provides a simple test to verify that the background image is loading correctly.
+    
+    Args:
+        request: The HTTP request
+        
+    Returns:
+        HttpResponse with rendered template
+    """
+    return render(request, 'indexer_app/test_bg.html')

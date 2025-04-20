@@ -110,7 +110,7 @@
       <div class="nav-group">
         <nav class="nav-menu">
           <a href="{% url 'indexer_app:index' %}"><i class="fas fa-home"></i><span class="label">Home</span></a>
-          <a href="{% url 'indexer_app:upload' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
+          <a href="{% url 'indexer_app:upload_document' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
           <a href="{% url 'indexer_app:search' %}"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
     
@@ -126,7 +126,7 @@
     </aside>
     
     <!-- Upload Section -->
-    <section class="upload-hero">
+    <section class="upload-hero" style="background-image: url('{% static 'indexer_app/assets/images/background_pic.jpg' %}');">
       <div class="overlay"></div>
       <div class="upload-boxes">
         <div class="upload-box" id="uploadBox">

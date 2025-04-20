@@ -1317,3 +1317,865 @@ INFO 2025-04-20 13:04:26,139 basehttp 9744 15908 "GET /upload/ HTTP/1.1" 200 472
 INFO 2025-04-20 13:04:26,139 basehttp 9744 15908 "GET /upload/ HTTP/1.1" 200 4728
 INFO 2025-04-20 13:04:26,737 basehttp 9744 15908 "GET /upload/ HTTP/1.1" 200 4728
 INFO 2025-04-20 13:04:26,737 basehttp 9744 15908 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:01,119 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:01,119 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:24,026 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:24,026 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:24,102 basehttp 9744 3128 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 13:08:24,102 basehttp 9744 3128 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 13:08:24,817 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:24,817 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:25,475 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:25,475 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:26,157 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:08:26,157 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:09:25,048 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:09:25,048 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:10:19,824 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:10:19,824 basehttp 9744 3128 "GET /upload/ HTTP/1.1" 200 4728
+INFO 2025-04-20 13:10:32,379 autoreload 9744 3472 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 13:10:32,379 autoreload 9744 3472 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 13:10:34,020 autoreload 13176 6028 Watching for file changes with StatReloader
+INFO 2025-04-20 13:10:34,020 autoreload 13176 6028 Watching for file changes with StatReloader
+INFO 2025-04-20 13:10:46,833 autoreload 13176 6028 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:10:46,833 autoreload 13176 6028 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:10:48,280 autoreload 15656 21180 Watching for file changes with StatReloader
+INFO 2025-04-20 13:10:48,280 autoreload 15656 21180 Watching for file changes with StatReloader
+INFO 2025-04-20 13:11:07,953 basehttp 15656 5680 "GET /upload/ HTTP/1.1" 200 4902
+INFO 2025-04-20 13:11:07,953 basehttp 15656 5680 "GET /upload/ HTTP/1.1" 200 4902
+INFO 2025-04-20 13:11:08,197 basehttp 15656 5680 "GET /static/indexer_app/assets/images/background_pic.jpg HTTP/1.1" 200 145983
+INFO 2025-04-20 13:11:08,197 basehttp 15656 5680 "GET /static/indexer_app/assets/images/background_pic.jpg HTTP/1.1" 200 145983
+ERROR 2025-04-20 13:20:38,565 log 15656 11644 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: indexer_app/base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: indexer_app/base.html
+ERROR 2025-04-20 13:20:38,565 log 15656 11644 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: indexer_app/base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: indexer_app/base.html
+ERROR 2025-04-20 13:20:38,606 basehttp 15656 11644 "GET /upload/ HTTP/1.1" 500 141300
+ERROR 2025-04-20 13:20:38,606 basehttp 15656 11644 "GET /upload/ HTTP/1.1" 500 141300
+INFO 2025-04-20 13:21:43,506 autoreload 15656 21180 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 13:21:43,506 autoreload 15656 21180 C:\Users\HP\Downloads\aos system\indexer_app\urls.py changed, reloading.
+INFO 2025-04-20 13:21:44,896 autoreload 5468 19732 Watching for file changes with StatReloader
+INFO 2025-04-20 13:21:44,896 autoreload 5468 19732 Watching for file changes with StatReloader
+INFO 2025-04-20 13:21:53,610 basehttp 5468 5096 "GET /upload/ HTTP/1.1" 200 4855
+INFO 2025-04-20 13:21:53,610 basehttp 5468 5096 "GET /upload/ HTTP/1.1" 200 4855
+INFO 2025-04-20 13:21:53,906 basehttp 5468 5096 "GET /static/indexer_app/css/file-management.css HTTP/1.1" 200 3336
+INFO 2025-04-20 13:21:53,906 basehttp 5468 5096 "GET /static/indexer_app/css/file-management.css HTTP/1.1" 200 3336
+INFO 2025-04-20 13:21:53,913 basehttp 5468 13728 "GET /static/indexer_app/js/upload.js HTTP/1.1" 200 4208
+INFO 2025-04-20 13:21:53,913 basehttp 5468 13728 "GET /static/indexer_app/js/upload.js HTTP/1.1" 200 4208
+WARNING 2025-04-20 13:22:45,894 log 5468 5096 Not Found: /base/
+WARNING 2025-04-20 13:22:45,894 log 5468 5096 Not Found: /base/
+WARNING 2025-04-20 13:22:45,895 basehttp 5468 5096 "GET /base/ HTTP/1.1" 404 6388
+WARNING 2025-04-20 13:22:45,895 basehttp 5468 5096 "GET /base/ HTTP/1.1" 404 6388
+INFO 2025-04-20 13:23:10,499 views 5468 5096 Process document view called
+INFO 2025-04-20 13:23:10,499 views 5468 5096 Request method: POST
+INFO 2025-04-20 13:23:10,499 views 5468 5096 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: 6-Documente-Dosar-candidatura-2025-2026.docx (application/vnd.openxmlformats-officedocument.wordprocessingml.document)>]}>
+INFO 2025-04-20 13:23:10,499 views 5468 5096 Request POST: <QueryDict: {}>
+INFO 2025-04-20 13:23:10,499 views 5468 5096 Request META: {'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\HP\\AppData\\Roaming', 'BUNDLED_DEBUGPY_PATH': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundled\\libs\\debugpy', 'CHOCOLATEYINSTALL': 'C:\\ProgramData\\chocolatey', 'CHOCOLATEYLASTPATHUPDATE': '133675076924179776', 'CHROME_CRASHPAD_PIPE_NAME': '\\\\.\\pipe\\crashpad_14136_ZSMTIIVPWRZDMVMM', 'COLORTERM': 'truecolor', 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-MIJNC2U', 'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 'CURSOR_TRACE_ID': '5f33619456cc46c389d20ca753650534', 'DJANGO_SETTINGS_MODULE': 'aos_project.settings', 'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'EFC_10140': '1', 'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'GIT_ASKPASS': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass.sh', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\HP', 'JAVA_HOME': 'C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21', 'LANG': 'en_US.UTF-8', 'LOCALAPPDATA': 'C:\\Users\\HP\\AppData\\Local', 'LOGONSERVER': '\\\\DESKTOP-MIJNC2U', 'NUMBER_OF_PROCESSORS': '8', 'ONEDRIVE': 'C:\\Users\\HP\\OneDrive', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'undefined', 'OS': 'Windows_NT', 'PATH': 'c:\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot\\bin;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\HP\\Downloads\\php-8.3.3-nts-Win32-vs16-x64;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\HP\\Downloads\\nginx-1.26.2\\nginx-1.26.2;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Java\\jdk1.8.0_202\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\HP\\.cargo\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-17.0.10.7-hotspot\\bin;C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\Users\\HP\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\HP\\AppData\\Roaming\\npm;search-ms:displayname=Search%20Results%20in%20Local%20Disk%20(C%3A)&crumb=location:C%3A%5C\\php;C:\\Users\\HP\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\HP\\Downloads;C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 142 Stepping 12, GenuineIntel', 'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '8e0c', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSMODULEPATH': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PT8HOME': 'C:\\Program Files\\Cisco Packet Tracer 8.2.1', 'PUBLIC': 'C:\\Users\\Public', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'RUN_MAIN': 'true', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 'SYSTEMROOT': 'C:\\Windows', 'TEMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'TERM_PROGRAM': 'vscode', 'TERM_PROGRAM_VERSION': '0.48.9', 'TMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'USERDOMAIN': 'DESKTOP-MIJNC2U', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-MIJNC2U', 'USERNAME': 'HP', 'USERPROFILE': 'C:\\Users\\HP', 'VS140COMNTOOLS': 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-43aca5be0de423cc.txt', 'VSCODE_ENV_PREPEND': 'PATH=c\\x3a\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'VSCODE_GIT_ASKPASS_MAIN': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': 'C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\Cursor.exe', 'VSCODE_GIT_IPC_HANDLE': '\\\\.\\pipe\\vscode-git-2924d4b4e2-sock', 'WINDIR': 'C:\\Windows', 'ZES_ENABLE_SYSMAN': '1', 'SERVER_NAME': 'DESKTOP-MIJNC2U', 'GATEWAY_INTERFACE': 'CGI/1.1', 'SERVER_PORT': '8000', 'REMOTE_HOST': '', 'CONTENT_LENGTH': '28218', 'SCRIPT_NAME': '', 'SERVER_PROTOCOL': 'HTTP/1.1', 'SERVER_SOFTWARE': 'WSGIServer/0.2', 'REQUEST_METHOD': 'POST', 'PATH_INFO': '/indexer_app/process/', 'QUERY_STRING': '', 'REMOTE_ADDR': '127.0.0.1', 'CONTENT_TYPE': 'multipart/form-data; boundary=----geckoformboundarye4315f4c1ebdb259da3dbb4d7a66b4cc', 'HTTP_HOST': '127.0.0.1:8000', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'HTTP_ACCEPT': '*/*', 'HTTP_ACCEPT_LANGUAGE': 'en-US,en;q=0.5', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br, zstd', 'HTTP_REFERER': 'http://127.0.0.1:8000/upload/', 'HTTP_X_CSRFTOKEN': '1pJyrPA6lFL4wClbIT5QkWepe4RUj5fZvh3t6cyvEmECjMWKeArVKhYsNswUmS6w', 'HTTP_ORIGIN': 'http://127.0.0.1:8000', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_SEC_FETCH_DEST': 'empty', 'HTTP_SEC_FETCH_MODE': 'cors', 'HTTP_SEC_FETCH_SITE': 'same-origin', 'HTTP_PRIORITY': 'u=0', 'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x0000024830EB8970>, 'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 'wsgi.version': (1, 0), 'wsgi.run_once': False, 'wsgi.url_scheme': 'http', 'wsgi.multithread': True, 'wsgi.multiprocess': False, 'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 'CSRF_COOKIE': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H'}
+INFO 2025-04-20 13:23:10,517 views 5468 5096 Request headers: {'Content-Length': '28218', 'Content-Type': 'multipart/form-data; boundary=----geckoformboundarye4315f4c1ebdb259da3dbb4d7a66b4cc', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/upload/', 'X-Csrftoken': '1pJyrPA6lFL4wClbIT5QkWepe4RUj5fZvh3t6cyvEmECjMWKeArVKhYsNswUmS6w', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'}
+INFO 2025-04-20 13:23:10,522 views 5468 5096 Processing file: 6-Documente-Dosar-candidatura-2025-2026.docx
+INFO 2025-04-20 13:23:10,522 views 5468 5096 File size: 27905
+INFO 2025-04-20 13:23:10,526 views 5468 5096 Content type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+INFO 2025-04-20 13:23:10,528 views 5468 5096 Processing document with base title: 6-Documente-Dosar-candidatura-2025-2026.docx
+INFO 2025-04-20 13:23:10,532 views 5468 5096 Title already exists, using new title: 6-Documente-Dosar-candidatura-2025-2026_20250420_122310.docx
+INFO 2025-04-20 13:23:10,532 views 5468 5096 Upload directory exists: True
+INFO 2025-04-20 13:23:10,532 views 5468 5096 Upload directory is absolute: True
+INFO 2025-04-20 13:23:10,532 views 5468 5096 Upload directory path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 13:23:10,540 views 5468 5096 Upload directory is writable
+INFO 2025-04-20 13:23:10,540 views 5468 5096 Starting to handle uploaded file: 6-Documente-Dosar-candidatura-2025-2026.docx
+INFO 2025-04-20 13:23:10,540 views 5468 5096 File size: 27905 bytes
+INFO 2025-04-20 13:23:10,540 views 5468 5096 Content type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+INFO 2025-04-20 13:23:10,540 views 5468 5096 File path: C:\Users\HP\Downloads\aos system\media\documents\6-Documente-Dosar-candidatura-2025-2026.docx
+INFO 2025-04-20 13:23:10,546 views 5468 5096 File extension: .docx
+INFO 2025-04-20 13:23:10,546 views 5468 5096 UPLOAD_DIR absolute path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 13:23:10,546 views 5468 5096 Upload directory exists: True
+INFO 2025-04-20 13:23:10,546 views 5468 5096 Upload directory is absolute: True
+INFO 2025-04-20 13:23:10,546 views 5468 5096 File saved successfully to disk at: C:\Users\HP\Downloads\aos system\media\documents\6-Documente-Dosar-candidatura-2025-2026.docx
+INFO 2025-04-20 13:23:10,554 views 5468 5096 File exists after save: True
+INFO 2025-04-20 13:23:10,556 views 5468 5096 Saved file size: 27905 bytes
+INFO 2025-04-20 13:23:10,556 views 5468 5096 Word document placeholder content created
+INFO 2025-04-20 13:23:10,556 views 5468 5096 File processing completed successfully. MIME type: application/msword
+INFO 2025-04-20 13:23:10,556 views 5468 5096 File processed successfully. MIME type: application/msword
+INFO 2025-04-20 13:23:10,631 views 5468 5096 Text preprocessing completed
+INFO 2025-04-20 13:23:10,631 views 5468 5096 File type: docx
+INFO 2025-04-20 13:23:10,667 views 5468 5096 Document created with ID: 10
+INFO 2025-04-20 13:23:10,701 views 5468 5096 TF-IDF vectors updated successfully
+INFO 2025-04-20 13:23:10,701 views 5468 5096 Returning success response: {'success': True, 'message': 'Document processed successfully', 'document_id': 10, 'title': '6-Documente-Dosar-candidatura-2025-2026_20250420_122310.docx'}
+INFO 2025-04-20 13:23:10,722 basehttp 5468 5096 "POST /indexer_app/process/ HTTP/1.1" 200 155
+INFO 2025-04-20 13:23:10,722 basehttp 5468 5096 "POST /indexer_app/process/ HTTP/1.1" 200 155
+INFO 2025-04-20 13:23:13,909 basehttp 5468 5096 "GET /indexer_app/home/ HTTP/1.1" 200 2332
+INFO 2025-04-20 13:23:13,909 basehttp 5468 5096 "GET /indexer_app/home/ HTTP/1.1" 200 2332
+WARNING 2025-04-20 13:23:13,998 log 5468 13728 Not Found: /indexer_app/static/indexer_app/css/styles.css
+WARNING 2025-04-20 13:23:13,998 log 5468 13728 Not Found: /indexer_app/static/indexer_app/css/styles.css
+WARNING 2025-04-20 13:23:14,014 log 5468 5096 Not Found: /indexer_app/static/indexer_app/js/app.js
+WARNING 2025-04-20 13:23:14,014 basehttp 5468 13728 "GET /indexer_app/static/indexer_app/css/styles.css HTTP/1.1" 404 9875
+WARNING 2025-04-20 13:23:14,014 log 5468 5096 Not Found: /indexer_app/static/indexer_app/js/app.js
+WARNING 2025-04-20 13:23:14,014 basehttp 5468 13728 "GET /indexer_app/static/indexer_app/css/styles.css HTTP/1.1" 404 9875
+WARNING 2025-04-20 13:23:14,019 basehttp 5468 5096 "GET /indexer_app/static/indexer_app/js/app.js HTTP/1.1" 404 9860
+WARNING 2025-04-20 13:23:14,019 basehttp 5468 5096 "GET /indexer_app/static/indexer_app/js/app.js HTTP/1.1" 404 9860
+INFO 2025-04-20 13:27:45,632 autoreload 5468 19732 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:27:45,632 autoreload 5468 19732 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:27:47,902 autoreload 13676 10040 Watching for file changes with StatReloader
+INFO 2025-04-20 13:27:47,902 autoreload 13676 10040 Watching for file changes with StatReloader
+INFO 2025-04-20 13:31:26,731 autoreload 13676 10040 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:31:26,731 autoreload 13676 10040 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:31:27,774 autoreload 13436 16968 Watching for file changes with StatReloader
+INFO 2025-04-20 13:31:27,774 autoreload 13436 16968 Watching for file changes with StatReloader
+INFO 2025-04-20 13:31:39,603 autoreload 13436 16968 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:31:39,603 autoreload 13436 16968 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:31:40,499 autoreload 9636 16920 Watching for file changes with StatReloader
+INFO 2025-04-20 13:31:40,499 autoreload 9636 16920 Watching for file changes with StatReloader
+INFO 2025-04-20 13:31:51,740 autoreload 9636 16920 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:31:51,740 autoreload 9636 16920 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:31:52,817 autoreload 8160 13020 Watching for file changes with StatReloader
+INFO 2025-04-20 13:31:52,817 autoreload 8160 13020 Watching for file changes with StatReloader
+INFO 2025-04-20 13:32:05,362 autoreload 8160 13020 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:32:05,362 autoreload 8160 13020 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:32:06,454 autoreload 6500 19412 Watching for file changes with StatReloader
+INFO 2025-04-20 13:32:06,454 autoreload 6500 19412 Watching for file changes with StatReloader
+INFO 2025-04-20 13:45:44,296 autoreload 1396 9956 Watching for file changes with StatReloader
+INFO 2025-04-20 13:45:44,296 autoreload 1396 9956 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:05,057 autoreload 1396 9956 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:05,057 autoreload 1396 9956 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:05,316 autoreload 6500 19412 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:05,316 autoreload 6500 19412 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:06,421 autoreload 19096 18544 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:06,421 autoreload 19096 18544 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:06,731 autoreload 16976 11300 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:06,731 autoreload 16976 11300 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:18,104 autoreload 19096 18544 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:18,104 autoreload 19096 18544 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:18,350 autoreload 16976 11300 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:18,350 autoreload 16976 11300 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:47:19,250 autoreload 17876 12244 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:19,250 autoreload 17876 12244 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:19,472 autoreload 20740 11852 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:19,472 autoreload 20740 11852 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:40,652 autoreload 12184 13556 Watching for file changes with StatReloader
+INFO 2025-04-20 13:47:40,652 autoreload 12184 13556 Watching for file changes with StatReloader
+INFO 2025-04-20 13:48:49,412 autoreload 20740 11852 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:48:49,412 autoreload 20740 11852 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:48:50,117 autoreload 12184 13556 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:48:50,117 autoreload 12184 13556 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:48:50,700 autoreload 16184 12832 Watching for file changes with StatReloader
+INFO 2025-04-20 13:48:50,700 autoreload 16184 12832 Watching for file changes with StatReloader
+INFO 2025-04-20 13:48:51,387 autoreload 18752 17444 Watching for file changes with StatReloader
+INFO 2025-04-20 13:48:51,387 autoreload 18752 17444 Watching for file changes with StatReloader
+INFO 2025-04-20 13:49:02,916 autoreload 18752 17444 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:49:02,916 autoreload 18752 17444 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:49:03,184 autoreload 16184 12832 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:49:03,184 autoreload 16184 12832 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:49:04,147 autoreload 20492 11204 Watching for file changes with StatReloader
+INFO 2025-04-20 13:49:04,147 autoreload 20492 11204 Watching for file changes with StatReloader
+INFO 2025-04-20 13:49:04,360 autoreload 15600 12676 Watching for file changes with StatReloader
+INFO 2025-04-20 13:49:04,360 autoreload 15600 12676 Watching for file changes with StatReloader
+INFO 2025-04-20 13:50:11,406 autoreload 4964 11124 Watching for file changes with StatReloader
+INFO 2025-04-20 13:50:11,406 autoreload 4964 11124 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:26,067 autoreload 15600 12676 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:26,067 autoreload 15600 12676 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:26,096 autoreload 4964 11124 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:26,096 autoreload 4964 11124 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:27,603 autoreload 13500 10192 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:27,603 autoreload 13500 10192 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:27,603 autoreload 20964 3388 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:27,603 autoreload 20964 3388 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:30,457 autoreload 20964 3388 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:30,457 autoreload 20964 3388 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:30,480 autoreload 13500 10192 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:30,480 autoreload 13500 10192 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:52:31,734 autoreload 19468 18512 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:31,734 autoreload 19468 18512 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:31,757 autoreload 20568 19604 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:31,757 autoreload 20568 19604 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:48,249 autoreload 10888 13668 Watching for file changes with StatReloader
+INFO 2025-04-20 13:52:48,249 autoreload 10888 13668 Watching for file changes with StatReloader
+INFO 2025-04-20 13:54:07,198 autoreload 19468 18512 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:54:07,207 autoreload 10888 13668 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:54:07,198 autoreload 19468 18512 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:54:07,207 autoreload 10888 13668 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:54:07,268 autoreload 20568 19604 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:54:07,268 autoreload 20568 19604 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 13:54:08,949 autoreload 17040 16848 Watching for file changes with StatReloader
+INFO 2025-04-20 13:54:08,949 autoreload 17040 16848 Watching for file changes with StatReloader
+INFO 2025-04-20 13:54:08,963 autoreload 17744 17552 Watching for file changes with StatReloader
+INFO 2025-04-20 13:54:08,963 autoreload 17744 17552 Watching for file changes with StatReloader
+INFO 2025-04-20 13:54:09,015 autoreload 10776 7004 Watching for file changes with StatReloader
+INFO 2025-04-20 13:54:09,015 autoreload 10776 7004 Watching for file changes with StatReloader
+INFO 2025-04-20 14:02:54,057 autoreload 17040 16848 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:02:54,057 autoreload 17040 16848 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:02:54,115 autoreload 10776 7004 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:02:54,115 autoreload 10776 7004 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:02:54,122 autoreload 17744 17552 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:02:54,122 autoreload 17744 17552 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:02:56,064 autoreload 15908 13412 Watching for file changes with StatReloader
+INFO 2025-04-20 14:02:56,064 autoreload 15908 13412 Watching for file changes with StatReloader
+INFO 2025-04-20 14:02:56,083 autoreload 18552 11228 Watching for file changes with StatReloader
+INFO 2025-04-20 14:02:56,083 autoreload 18552 11228 Watching for file changes with StatReloader
+INFO 2025-04-20 14:02:56,118 autoreload 20768 14148 Watching for file changes with StatReloader
+INFO 2025-04-20 14:02:56,118 autoreload 20768 14148 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:30,862 autoreload 18552 11228 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:30,862 autoreload 18552 11228 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:30,866 autoreload 15908 13412 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:30,866 autoreload 15908 13412 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:30,898 autoreload 20768 14148 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:30,898 autoreload 20768 14148 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:32,256 autoreload 284 20276 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:32,256 autoreload 284 20276 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:32,260 autoreload 21500 2128 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:32,260 autoreload 21500 2128 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:32,264 autoreload 20500 10428 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:32,264 autoreload 20500 10428 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:34,277 autoreload 20500 10428 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:34,277 autoreload 20500 10428 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:34,309 autoreload 21500 2128 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:34,309 autoreload 21500 2128 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:06:35,533 autoreload 2192 19064 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:35,533 autoreload 2192 19064 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:35,567 autoreload 11320 788 Watching for file changes with StatReloader
+INFO 2025-04-20 14:06:35,567 autoreload 11320 788 Watching for file changes with StatReloader
+INFO 2025-04-20 14:19:58,496 autoreload 11320 788 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 14:19:58,496 autoreload 11320 788 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 14:19:58,516 autoreload 2192 19064 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 14:19:58,516 autoreload 2192 19064 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 14:19:58,533 autoreload 284 20276 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 14:19:58,533 autoreload 284 20276 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 14:20:00,642 autoreload 8968 17068 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:00,642 autoreload 8968 17068 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:00,703 autoreload 16128 11628 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:00,703 autoreload 16128 11628 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:00,735 autoreload 19568 6028 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:00,735 autoreload 19568 6028 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:18,230 autoreload 8968 17068 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:20:18,230 autoreload 8968 17068 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:20:18,278 autoreload 19568 6028 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:20:18,278 autoreload 19568 6028 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:20:18,286 autoreload 16128 11628 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:20:18,286 autoreload 16128 11628 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:20:19,557 autoreload 20972 1000 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:19,557 autoreload 20972 1000 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:19,618 autoreload 20908 9236 Watching for file changes with StatReloader
+
+INFO 2025-04-20 14:20:19,606 autoreload 21464 15932 Watching for file changes with StatReloader
+INFO 2025-04-20 14:20:19,618 autoreload 20908 9236 Watching for file changes with StatReloader
+INFO 2025-04-20 14:22:50,346 autoreload 20908 9236 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:22:50,346 autoreload 20908 9236 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:22:50,393 autoreload 20972 1000 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:22:50,393 autoreload 20972 1000 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:22:50,406 autoreload 21464 15932 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:22:50,406 autoreload 21464 15932 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:22:51,852 autoreload 14672 19184 Watching for file changes with StatReloader
+INFO 2025-04-20 14:22:51,852 autoreload 14672 19184 Watching for file changes with StatReloader
+INFO 2025-04-20 14:22:51,918 autoreload 13688 11392 Watching for file changes with StatReloader
+INFO 2025-04-20 14:22:51,918 autoreload 13688 11392 Watching for file changes with StatReloader
+INFO 2025-04-20 14:22:51,925 autoreload 18284 13068 Watching for file changes with StatReloader
+INFO 2025-04-20 14:22:51,925 autoreload 18284 13068 Watching for file changes with StatReloader
+INFO 2025-04-20 14:25:07,754 autoreload 13688 11392 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:25:07,754 autoreload 13688 11392 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:25:08,286 autoreload 14672 19184 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:25:08,286 autoreload 14672 19184 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:25:08,375 autoreload 18284 13068 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:25:08,375 autoreload 18284 13068 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:25:10,083 autoreload 9060 18528 Watching for file changes with StatReloader
+INFO 2025-04-20 14:25:10,083 autoreload 9060 18528 Watching for file changes with StatReloader
+INFO 2025-04-20 14:25:10,093 autoreload 13944 17992 Watching for file changes with StatReloader
+INFO 2025-04-20 14:25:10,093 autoreload 13944 17992 Watching for file changes with StatReloader
+INFO 2025-04-20 14:25:10,210 autoreload 12756 13580 Watching for file changes with StatReloader
+INFO 2025-04-20 14:25:10,210 autoreload 12756 13580 Watching for file changes with StatReloader
+INFO 2025-04-20 14:55:52,985 autoreload 9060 18528 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:55:52,985 autoreload 9060 18528 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:55:54,048 autoreload 15040 13352 Watching for file changes with StatReloader
+INFO 2025-04-20 14:55:54,048 autoreload 15040 13352 Watching for file changes with StatReloader
+INFO 2025-04-20 14:55:58,530 autoreload 15040 13352 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:55:58,530 autoreload 15040 13352 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 14:55:59,194 autoreload 9684 19552 Watching for file changes with StatReloader
+INFO 2025-04-20 14:55:59,194 autoreload 9684 19552 Watching for file changes with StatReloader
+INFO 2025-04-20 15:00:36,913 autoreload 20136 21276 Watching for file changes with StatReloader
+INFO 2025-04-20 15:00:36,913 autoreload 20136 21276 Watching for file changes with StatReloader
+INFO 2025-04-20 15:01:54,665 autoreload 13196 17456 Watching for file changes with StatReloader
+INFO 2025-04-20 15:01:54,665 autoreload 13196 17456 Watching for file changes with StatReloader
+INFO 2025-04-20 15:02:22,720 autoreload 13196 17456 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 15:02:22,720 autoreload 13196 17456 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 15:02:23,522 autoreload 15696 20828 Watching for file changes with StatReloader
+INFO 2025-04-20 15:02:23,522 autoreload 15696 20828 Watching for file changes with StatReloader
+INFO 2025-04-20 15:02:36,442 autoreload 15696 20828 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 15:02:36,442 autoreload 15696 20828 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 15:02:37,363 autoreload 12700 14076 Watching for file changes with StatReloader
+INFO 2025-04-20 15:02:37,363 autoreload 12700 14076 Watching for file changes with StatReloader
+ERROR 2025-04-20 15:02:39,626 log 12700 7724 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:02:39,626 log 12700 7724 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:02:39,652 basehttp 12700 7724 "GET /upload/ HTTP/1.1" 500 133196
+ERROR 2025-04-20 15:02:39,652 basehttp 12700 7724 "GET /upload/ HTTP/1.1" 500 133196
+ERROR 2025-04-20 15:02:45,941 log 12700 7724 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:02:45,941 log 12700 7724 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:02:45,959 basehttp 12700 7724 "GET /upload/ HTTP/1.1" 500 133196
+ERROR 2025-04-20 15:02:45,959 basehttp 12700 7724 "GET /upload/ HTTP/1.1" 500 133196
+ERROR 2025-04-20 15:03:20,896 log 12700 7724 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:03:20,896 log 12700 7724 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:03:20,913 basehttp 12700 7724 "GET /upload/ HTTP/1.1" 500 133196
+ERROR 2025-04-20 15:03:20,913 basehttp 12700 7724 "GET /upload/ HTTP/1.1" 500 133196
+INFO 2025-04-20 15:03:29,819 autoreload 12700 14076 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 15:03:29,819 autoreload 12700 14076 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 15:03:30,686 autoreload 14608 20600 Watching for file changes with StatReloader
+INFO 2025-04-20 15:03:30,686 autoreload 14608 20600 Watching for file changes with StatReloader
+INFO 2025-04-20 15:04:30,716 autoreload 2348 17308 Watching for file changes with StatReloader
+INFO 2025-04-20 15:04:30,716 autoreload 2348 17308 Watching for file changes with StatReloader
+ERROR 2025-04-20 15:05:00,497 log 2348 18344 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:05:00,497 log 2348 18344 Internal Server Error: /upload/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 210, in upload_document_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'upload' not found. 'upload' is not a valid view function or pattern name.
+ERROR 2025-04-20 15:05:00,519 basehttp 2348 18344 "GET /upload/ HTTP/1.1" 500 133196
+ERROR 2025-04-20 15:05:00,519 basehttp 2348 18344 "GET /upload/ HTTP/1.1" 500 133196
+INFO 2025-04-20 15:06:09,262 basehttp 2348 18344 "GET /upload/ HTTP/1.1" 200 4727
+INFO 2025-04-20 15:06:09,262 basehttp 2348 18344 "GET /upload/ HTTP/1.1" 200 4727
+WARNING 2025-04-20 15:06:09,357 log 2348 18368 Not Found: /indexer_app/static/images/bg_image.jpg
+WARNING 2025-04-20 15:06:09,357 log 2348 18368 Not Found: /indexer_app/static/images/bg_image.jpg
+WARNING 2025-04-20 15:06:09,359 basehttp 2348 18368 "GET /indexer_app/static/images/bg_image.jpg HTTP/1.1" 404 9854
+WARNING 2025-04-20 15:06:09,359 basehttp 2348 18368 "GET /indexer_app/static/images/bg_image.jpg HTTP/1.1" 404 9854
+INFO 2025-04-20 15:06:09,427 basehttp 2348 18344 "GET /static/indexer_app/js/upload.js HTTP/1.1" 200 7170
+INFO 2025-04-20 15:06:09,427 basehttp 2348 18344 "GET /static/indexer_app/js/upload.js HTTP/1.1" 200 7170
+INFO 2025-04-20 15:06:13,370 views 2348 18344 Process document view called
+INFO 2025-04-20 15:06:13,370 views 2348 18344 Request method: POST
+INFO 2025-04-20 15:06:13,370 views 2348 18344 Request FILES: <MultiValueDict: {'document': [<InMemoryUploadedFile: Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026.docx (application/vnd.openxmlformats-officedocument.wordprocessingml.document)>]}>
+INFO 2025-04-20 15:06:13,374 views 2348 18344 Request POST: <QueryDict: {}>
+INFO 2025-04-20 15:06:13,375 views 2348 18344 Request META: {'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\HP\\AppData\\Roaming', 'BUNDLED_DEBUGPY_PATH': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\bundled\\libs\\debugpy', 'CHOCOLATEYINSTALL': 'C:\\ProgramData\\chocolatey', 'CHOCOLATEYLASTPATHUPDATE': '133675076924179776', 'CHROME_CRASHPAD_PIPE_NAME': '\\\\.\\pipe\\crashpad_14136_ZSMTIIVPWRZDMVMM', 'COLORTERM': 'truecolor', 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-MIJNC2U', 'COMSPEC': 'C:\\Windows\\system32\\cmd.exe', 'CURSOR_TRACE_ID': '5f33619456cc46c389d20ca753650534', 'DJANGO_SETTINGS_MODULE': 'aos_project.settings', 'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'EFC_10140': '1', 'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'GIT_ASKPASS': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass.sh', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\HP', 'JAVA_HOME': 'C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21', 'LANG': 'en_US.UTF-8', 'LOCALAPPDATA': 'C:\\Users\\HP\\AppData\\Local', 'LOGONSERVER': '\\\\DESKTOP-MIJNC2U', 'NUMBER_OF_PROCESSORS': '8', 'ONEDRIVE': 'C:\\Users\\HP\\OneDrive', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'undefined', 'OS': 'Windows_NT', 'PATH': 'c:\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;C:\\Users\\HP\\AppData\\Roaming\\Code\\User\\globalStorage\\pleiades.java-extension-pack-jdk\\java\\21\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot\\bin;C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\HP\\Downloads\\php-8.3.3-nts-Win32-vs16-x64;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\HP\\Downloads\\nginx-1.26.2\\nginx-1.26.2;C:\\xampp\\php;C:\\composer;C:\\Program Files\\Java\\jdk1.8.0_202\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\HP\\.cargo\\bin;C:\\Users\\HP\\AppData\\Local\\Programs\\Eclipse Adoptium\\jdk-17.0.10.7-hotspot\\bin;C:\\Users\\HP\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\HP\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\Users\\HP\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\HP\\AppData\\Roaming\\npm;search-ms:displayname=Search%20Results%20in%20Local%20Disk%20(C%3A)&crumb=location:C%3A%5C\\php;C:\\Users\\HP\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\HP\\Downloads;C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 Family 6 Model 142 Stepping 12, GenuineIntel', 'PROCESSOR_LEVEL': '6', 'PROCESSOR_REVISION': '8e0c', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSMODULEPATH': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PT8HOME': 'C:\\Program Files\\Cisco Packet Tracer 8.2.1', 'PUBLIC': 'C:\\Users\\Public', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'RUN_MAIN': 'true', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 'SYSTEMROOT': 'C:\\Windows', 'TEMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'TERM_PROGRAM': 'vscode', 'TERM_PROGRAM_VERSION': '0.48.9', 'TMP': 'C:\\Users\\HP\\AppData\\Local\\Temp', 'USERDOMAIN': 'DESKTOP-MIJNC2U', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-MIJNC2U', 'USERNAME': 'HP', 'USERPROFILE': 'C:\\Users\\HP', 'VS140COMNTOOLS': 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\Common7\\Tools\\', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': 'c:\\Users\\HP\\.cursor\\extensions\\ms-python.debugpy-2025.6.0-win32-x64\\.noConfigDebugAdapterEndpoints\\endpoint-43aca5be0de423cc.txt', 'VSCODE_ENV_PREPEND': 'PATH=c\\x3a\\Users\\HP\\Downloads\\aos system\\venv\\Scripts;', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'VSCODE_GIT_ASKPASS_MAIN': 'c:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\resources\\app\\extensions\\git\\dist\\askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': 'C:\\Users\\HP\\AppData\\Local\\Programs\\cursor\\Cursor.exe', 'VSCODE_GIT_IPC_HANDLE': '\\\\.\\pipe\\vscode-git-2924d4b4e2-sock', 'WINDIR': 'C:\\Windows', 'ZES_ENABLE_SYSMAN': '1', 'SERVER_NAME': 'DESKTOP-MIJNC2U', 'GATEWAY_INTERFACE': 'CGI/1.1', 'SERVER_PORT': '8000', 'REMOTE_HOST': '', 'CONTENT_LENGTH': '35933', 'SCRIPT_NAME': '', 'SERVER_PROTOCOL': 'HTTP/1.1', 'SERVER_SOFTWARE': 'WSGIServer/0.2', 'REQUEST_METHOD': 'POST', 'PATH_INFO': '/indexer_app/process/', 'QUERY_STRING': '', 'REMOTE_ADDR': '127.0.0.1', 'CONTENT_TYPE': 'multipart/form-data; boundary=----geckoformboundary296f4ddac35ebd13c46552f6fa87adab', 'HTTP_HOST': '127.0.0.1:8000', 'HTTP_USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'HTTP_ACCEPT': '*/*', 'HTTP_ACCEPT_LANGUAGE': 'en-US,en;q=0.5', 'HTTP_ACCEPT_ENCODING': 'gzip, deflate, br, zstd', 'HTTP_REFERER': 'http://127.0.0.1:8000/upload/', 'HTTP_X_CSRFTOKEN': '0N2qT3w2z5I6NzXYRDi3afoApTM2TJwVuFmlyqurSMBEAJyxnkE8AA8DYhr2Wwns', 'HTTP_ORIGIN': 'http://127.0.0.1:8000', 'HTTP_CONNECTION': 'keep-alive', 'HTTP_COOKIE': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'HTTP_SEC_FETCH_DEST': 'empty', 'HTTP_SEC_FETCH_MODE': 'cors', 'HTTP_SEC_FETCH_SITE': 'same-origin', 'HTTP_PRIORITY': 'u=0', 'wsgi.input': <django.core.handlers.wsgi.LimitedStream object at 0x000001FD64872D40>, 'wsgi.errors': <_io.TextIOWrapper name='<stderr>' mode='w' encoding='utf-8'>, 'wsgi.version': (1, 0), 'wsgi.run_once': False, 'wsgi.url_scheme': 'http', 'wsgi.multithread': True, 'wsgi.multiprocess': False, 'wsgi.file_wrapper': <class 'wsgiref.util.FileWrapper'>, 'CSRF_COOKIE': 'E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H'}
+INFO 2025-04-20 15:06:13,386 views 2348 18344 Request headers: {'Content-Length': '35933', 'Content-Type': 'multipart/form-data; boundary=----geckoformboundary296f4ddac35ebd13c46552f6fa87adab', 'Host': '127.0.0.1:8000', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0', 'Accept': '*/*', 'Accept-Language': 'en-US,en;q=0.5', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Referer': 'http://127.0.0.1:8000/upload/', 'X-Csrftoken': '0N2qT3w2z5I6NzXYRDi3afoApTM2TJwVuFmlyqurSMBEAJyxnkE8AA8DYhr2Wwns', 'Origin': 'http://127.0.0.1:8000', 'Connection': 'keep-alive', 'Cookie': 'csrftoken=E2u5Px8ztR3IXkLJGRwfAvUdJyPadX1H', 'Sec-Fetch-Dest': 'empty', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Site': 'same-origin', 'Priority': 'u=0'}
+INFO 2025-04-20 15:06:13,392 views 2348 18344 Processing file: Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026.docx
+INFO 2025-04-20 15:06:13,395 views 2348 18344 File size: 35542
+INFO 2025-04-20 15:06:13,395 views 2348 18344 Content type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+INFO 2025-04-20 15:06:13,397 views 2348 18344 Processing document with base title: Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026.docx
+INFO 2025-04-20 15:06:13,400 views 2348 18344 Title already exists, using new title: Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026_20250420_140613.docx
+INFO 2025-04-20 15:06:13,402 views 2348 18344 Upload directory exists: True
+INFO 2025-04-20 15:06:13,403 views 2348 18344 Upload directory is absolute: True
+INFO 2025-04-20 15:06:13,404 views 2348 18344 Upload directory path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 15:06:13,406 views 2348 18344 Upload directory is writable
+INFO 2025-04-20 15:06:13,407 views 2348 18344 Starting to handle uploaded file: Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026.docx
+INFO 2025-04-20 15:06:13,407 views 2348 18344 File size: 35542 bytes
+INFO 2025-04-20 15:06:13,407 views 2348 18344 Content type: application/vnd.openxmlformats-officedocument.wordprocessingml.document
+INFO 2025-04-20 15:06:13,413 views 2348 18344 File path: C:\Users\HP\Downloads\aos system\media\documents\Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026.docx
+INFO 2025-04-20 15:06:13,413 views 2348 18344 File extension: .docx
+INFO 2025-04-20 15:06:13,413 views 2348 18344 UPLOAD_DIR absolute path: C:\Users\HP\Downloads\aos system\media\documents
+INFO 2025-04-20 15:06:13,413 views 2348 18344 Upload directory exists: True
+INFO 2025-04-20 15:06:13,413 views 2348 18344 Upload directory is absolute: True
+INFO 2025-04-20 15:06:13,413 views 2348 18344 File saved successfully to disk at: C:\Users\HP\Downloads\aos system\media\documents\Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026.docx
+INFO 2025-04-20 15:06:13,418 views 2348 18344 File exists after save: True
+INFO 2025-04-20 15:06:13,419 views 2348 18344 Saved file size: 35542 bytes
+INFO 2025-04-20 15:06:13,419 views 2348 18344 Word document placeholder content created
+INFO 2025-04-20 15:06:13,419 views 2348 18344 File processing completed successfully. MIME type: application/msword
+INFO 2025-04-20 15:06:13,419 views 2348 18344 File processed successfully. MIME type: application/msword
+INFO 2025-04-20 15:06:13,529 views 2348 18344 Text preprocessing completed
+INFO 2025-04-20 15:06:13,529 views 2348 18344 File type: docx
+INFO 2025-04-20 15:06:13,529 views 2348 18344 Document created with ID: 11
+INFO 2025-04-20 15:06:13,578 views 2348 18344 TF-IDF vectors updated successfully
+INFO 2025-04-20 15:06:13,578 views 2348 18344 Returning success response: {'success': True, 'message': 'Document processed successfully', 'document_id': 11, 'title': 'Short-English-presentation-regarding-the-Selection-process-for-granting-40-scholarships-to-foreign-citizens-2025-2026_20250420_140613.docx'}
+INFO 2025-04-20 15:06:13,593 basehttp 2348 18344 "POST /indexer_app/process/ HTTP/1.1" 200 233
+INFO 2025-04-20 15:06:13,593 basehttp 2348 18344 "POST /indexer_app/process/ HTTP/1.1" 200 233
+INFO 2025-04-20 15:06:17,651 basehttp 2348 18344 "GET /indexer_app/search/ HTTP/1.1" 200 3315
+INFO 2025-04-20 15:06:17,651 basehttp 2348 18344 "GET /indexer_app/search/ HTTP/1.1" 200 3315
+WARNING 2025-04-20 15:06:17,711 log 2348 18368 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 15:06:17,711 log 2348 18368 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 15:06:17,715 log 2348 18344 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 15:06:17,715 basehttp 2348 18368 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 9875
+WARNING 2025-04-20 15:06:17,715 log 2348 18344 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 15:06:17,715 basehttp 2348 18368 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 9875
+WARNING 2025-04-20 15:06:17,715 basehttp 2348 18344 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 9869
+WARNING 2025-04-20 15:06:17,715 basehttp 2348 18344 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 9869
+WARNING 2025-04-20 15:06:17,745 log 2348 18368 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 15:06:17,745 log 2348 18368 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 15:06:17,745 basehttp 2348 18368 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 9869
+WARNING 2025-04-20 15:06:17,745 basehttp 2348 18368 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 9869
+INFO 2025-04-20 15:06:22,444 basehttp 2348 18344 "GET /indexer_app/search/? HTTP/1.1" 200 3315
+INFO 2025-04-20 15:06:22,444 basehttp 2348 18344 "GET /indexer_app/search/? HTTP/1.1" 200 3315
+WARNING 2025-04-20 15:06:22,495 log 2348 18368 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 15:06:22,495 log 2348 18368 Not Found: /indexer_app/static/indexer_app/css/search.css
+WARNING 2025-04-20 15:06:22,505 log 2348 18344 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 15:06:22,505 basehttp 2348 18368 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 9875
+WARNING 2025-04-20 15:06:22,505 log 2348 18344 Not Found: /indexer_app/static/indexer_app/js/search.js
+WARNING 2025-04-20 15:06:22,505 basehttp 2348 18368 "GET /indexer_app/static/indexer_app/css/search.css HTTP/1.1" 404 9875
+WARNING 2025-04-20 15:06:22,509 basehttp 2348 18344 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 9869
+WARNING 2025-04-20 15:06:22,509 basehttp 2348 18344 "GET /indexer_app/static/indexer_app/js/search.js HTTP/1.1" 404 9869
+INFO 2025-04-20 15:11:23,322 basehttp 2348 13196 "GET /upload/ HTTP/1.1" 200 4727
+INFO 2025-04-20 15:11:23,322 basehttp 2348 13196 "GET /upload/ HTTP/1.1" 200 4727
+INFO 2025-04-20 15:11:23,377 basehttp 2348 13196 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 15:11:23,377 basehttp 2348 13196 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 15:12:26,799 basehttp 2348 13196 "GET /upload/ HTTP/1.1" 200 4814
+INFO 2025-04-20 15:12:26,799 basehttp 2348 13196 "GET /upload/ HTTP/1.1" 200 4814
+INFO 2025-04-20 15:12:26,832 basehttp 2348 13196 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 15:12:26,832 basehttp 2348 13196 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0

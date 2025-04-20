@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: #1b4d3e;
+  color: white;
+  width: 80px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar.collapsed .label {
+  display: none;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.results-area {
+  flex: 1;
+  background: url('/indexer_app/static/images/bg_image.jpg') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.results-content {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.animated-title {
+  color: #1b4d3e;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.results-table-wrapper {
+  overflow-x: auto;
+}
+
+#results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#results-table th,
+#results-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+#results-table th {
+  background-color: #1b4d3e;
+  color: white;
+}
+
+.actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.action-btn {
+  background-color: #1b4d3e;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.action-btn:hover {
+  background-color: #163f32;
+}
+.processed-content {
+  background-color: #f4f4f4;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  max-height: 400px;
+  overflow-y: auto;
+}

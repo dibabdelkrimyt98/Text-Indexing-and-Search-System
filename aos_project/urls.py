@@ -22,8 +22,8 @@ from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('indexer_app/', include('indexer_app.urls')),  # Include under indexer_app/ prefix
-    path('', include('indexer_app.urls')),  # Also include at root for compatibility
+    path('indexer_app/', include('indexer_app.urls')),  
+    path('', include('indexer_app.urls')),  
 ]
 
 # Serve static and media files in development
