@@ -2877,3 +2877,766 @@ INFO 2025-04-20 18:47:49,504 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.
 INFO 2025-04-20 18:47:49,504 basehttp 20664 12980 "GET /indexer_app/try/ HTTP/1.1" 200 2717
 INFO 2025-04-20 18:55:47,892 autoreload 20664 16392 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
 INFO 2025-04-20 18:55:47,892 autoreload 20664 16392 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:18:15,827 autoreload 18788 1876 Watching for file changes with StatReloader
+INFO 2025-04-20 22:18:15,827 autoreload 18788 1876 Watching for file changes with StatReloader
+INFO 2025-04-20 22:21:56,555 autoreload 20932 15248 Watching for file changes with StatReloader
+INFO 2025-04-20 22:21:56,555 autoreload 20932 15248 Watching for file changes with StatReloader
+INFO 2025-04-20 22:24:12,168 autoreload 20932 15248 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 22:24:12,168 autoreload 20932 15248 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 22:24:13,778 autoreload 17148 2296 Watching for file changes with StatReloader
+INFO 2025-04-20 22:24:13,778 autoreload 17148 2296 Watching for file changes with StatReloader
+INFO 2025-04-20 22:24:20,322 autoreload 17148 2296 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 22:24:20,322 autoreload 17148 2296 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 22:24:21,764 autoreload 14024 18604 Watching for file changes with StatReloader
+INFO 2025-04-20 22:24:21,764 autoreload 14024 18604 Watching for file changes with StatReloader
+INFO 2025-04-20 22:24:36,649 basehttp 14024 18656 "GET /index/ HTTP/1.1" 301 0
+INFO 2025-04-20 22:24:36,649 basehttp 14024 18656 "GET /index/ HTTP/1.1" 301 0
+INFO 2025-04-20 22:24:36,665 basehttp 14024 17432 code 400, message Bad request version ('³\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:24:36,665 basehttp 14024 17432 code 400, message Bad request version ('³\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:24:36,685 basehttp 14024 17432 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:36,685 basehttp 14024 17432 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:36,701 basehttp 14024 14996 code 400, message Bad request version ('\x12Ç\x00\x93\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:24:36,701 basehttp 14024 14996 code 400, message Bad request version ('\x12Ç\x00\x93\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:24:36,702 basehttp 14024 14996 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:36,702 basehttp 14024 14996 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:37,878 basehttp 14024 19464 code 400, message Bad request version ('ª\x16ó\x13SüQuA')
+INFO 2025-04-20 22:24:37,878 basehttp 14024 19464 code 400, message Bad request version ('ª\x16ó\x13SüQuA')
+ERROR 2025-04-20 22:24:37,880 basehttp 14024 19464 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:37,880 basehttp 14024 19464 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:37,884 basehttp 14024 13828 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03Ea\x14\x99y*£>@\x17\x00\x02\x871ýÙ¿:TóéOS]6Ñ£\x91f\x03~\x04')
+INFO 2025-04-20 22:24:37,884 basehttp 14024 13828 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03Ea\x14\x99y*£>@\x17\x00\x02\x871ýÙ¿:TóéOS]6Ñ£\x91f\x03~\x04')
+ERROR 2025-04-20 22:24:37,891 basehttp 14024 13828 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:37,891 basehttp 14024 13828 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:43,479 basehttp 14024 15736 code 400, message Bad request version ('+måXhqX\'&\x86\x0e\x96ëå&\x88lív¶Ç\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:24:43,479 basehttp 14024 15736 code 400, message Bad request version ('+måXhqX\'&\x86\x0e\x96ëå&\x88lív¶Ç\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:24:43,479 basehttp 14024 15736 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:43,479 basehttp 14024 15736 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:43,492 basehttp 14024 18000 code 400, message Bad request version ('d\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:24:43,492 basehttp 14024 18000 code 400, message Bad request version ('d\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:24:43,492 basehttp 14024 18000 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:43,492 basehttp 14024 18000 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:43,505 basehttp 14024 9232 code 400, message Bad request version ('2cªïÃðÝ\x9fúó\x88ÁjmÙEºlw\x02býóÊË\x14\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:24:43,505 basehttp 14024 9232 code 400, message Bad request version ('2cªïÃðÝ\x9fúó\x88ÁjmÙEºlw\x02býóÊË\x14\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:24:43,506 basehttp 14024 9232 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:24:43,506 basehttp 14024 9232 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:24:56,063 autoreload 17348 21088 Watching for file changes with StatReloader
+INFO 2025-04-20 22:24:56,063 autoreload 17348 21088 Watching for file changes with StatReloader
+INFO 2025-04-20 22:25:08,636 basehttp 17348 8852 code 400, message Bad request syntax ('\x16\x03\x01\x07O\x01\x00\x07K\x03\x03ë0E')
+INFO 2025-04-20 22:25:08,636 basehttp 17348 8852 code 400, message Bad request syntax ('\x16\x03\x01\x07O\x01\x00\x07K\x03\x03ë0E')
+ERROR 2025-04-20 22:25:08,639 basehttp 17348 8852 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:25:08,639 basehttp 17348 8852 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:25:08,650 basehttp 17348 11520 code 400, message Bad request version ('\x9c\x07©,á\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:25:08,650 basehttp 17348 11520 code 400, message Bad request version ('\x9c\x07©,á\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:25:08,653 basehttp 17348 11520 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:25:08,653 basehttp 17348 11520 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:25:13,219 basehttp 17348 13808 "GET /indexer_app/search/ HTTP/1.1" 301 0
+INFO 2025-04-20 22:25:13,219 basehttp 17348 13808 "GET /indexer_app/search/ HTTP/1.1" 301 0
+INFO 2025-04-20 22:25:13,239 basehttp 17348 11128 code 400, message Bad request version ('\x8bC\x7f\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:25:13,239 basehttp 17348 11128 code 400, message Bad request version ('\x8bC\x7f\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:25:13,242 basehttp 17348 11128 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:25:13,242 basehttp 17348 11128 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:25:13,249 basehttp 17348 21136 code 400, message Bad request version ('\'®\x80¤gár¡^RjnÓÁ\\t\x17ûªiÛ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:25:13,249 basehttp 17348 21136 code 400, message Bad request version ('\'®\x80¤gár¡^RjnÓÁ\\t\x17ûªiÛ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:25:13,250 basehttp 17348 21136 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:25:13,250 basehttp 17348 21136 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:25:16,000 basehttp 17348 2588 "GET /indexer_app/upload/ HTTP/1.1" 301 0
+INFO 2025-04-20 22:25:16,000 basehttp 17348 2588 "GET /indexer_app/upload/ HTTP/1.1" 301 0
+INFO 2025-04-20 22:25:16,022 basehttp 17348 6292 code 400, message Bad request version ('¯Y\x8c\x14è\x06è°JA\x9as\x99î\x8bÖ\x11\x16©$#\x00©¤Üvw3\x8b\x0eHî\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:25:16,022 basehttp 17348 6292 code 400, message Bad request version ('¯Y\x8c\x14è\x06è°JA\x9as\x99î\x8bÖ\x11\x16©$#\x00©¤Üvw3\x8b\x0eHî\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:25:16,025 basehttp 17348 6292 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:25:16,025 basehttp 17348 6292 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:25:16,032 basehttp 17348 11428 code 400, message Bad request version ('\x05+ÓõUÂÎ¯\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:25:16,032 basehttp 17348 11428 code 400, message Bad request version ('\x05+ÓõUÂÎ¯\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:25:16,037 basehttp 17348 11428 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:25:16,037 basehttp 17348 11428 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:25:47,668 autoreload 17348 21088 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:25:47,668 autoreload 17348 21088 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:25:49,315 autoreload 12284 20724 Watching for file changes with StatReloader
+INFO 2025-04-20 22:25:49,315 autoreload 12284 20724 Watching for file changes with StatReloader
+INFO 2025-04-20 22:26:09,421 autoreload 12284 20724 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:26:09,421 autoreload 12284 20724 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:26:11,160 autoreload 4184 10160 Watching for file changes with StatReloader
+INFO 2025-04-20 22:26:11,160 autoreload 4184 10160 Watching for file changes with StatReloader
+INFO 2025-04-20 22:26:17,960 basehttp 4184 11764 code 400, message Bad request version ('î¸x\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:26:17,960 basehttp 4184 11764 code 400, message Bad request version ('î¸x\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:26:17,969 basehttp 4184 11764 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:26:17,969 basehttp 4184 11764 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:26:17,979 basehttp 4184 16752 code 400, message Bad request syntax ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03\x01qL¾}@\x0c')
+INFO 2025-04-20 22:26:17,979 basehttp 4184 16752 code 400, message Bad request syntax ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03\x01qL¾}@\x0c')
+ERROR 2025-04-20 22:26:17,981 basehttp 4184 16752 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:26:17,981 basehttp 4184 16752 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:26:24,845 basehttp 4184 17332 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07O\x01\x00\x07K\x03\x03Ò£ÀÜÐø\x8dÇ*Eó>¥0\x03=%&^\x7fíû_Ö\xadd:£\x12"ü\x8f')
+INFO 2025-04-20 22:26:24,845 basehttp 4184 17332 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07O\x01\x00\x07K\x03\x03Ò£ÀÜÐø\x8dÇ*Eó>¥0\x03=%&^\x7fíû_Ö\xadd:£\x12"ü\x8f')
+ERROR 2025-04-20 22:26:24,845 basehttp 4184 17332 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:26:24,845 basehttp 4184 17332 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:26:24,845 basehttp 4184 20340 code 400, message Bad request version ('Zî<\x9cõ®BR\x90ì\x0eý%\x15f\x9a»\x80½w\x86\x8cEì\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:26:24,845 basehttp 4184 20340 code 400, message Bad request version ('Zî<\x9cõ®BR\x90ì\x0eý%\x15f\x9a»\x80½w\x86\x8cEì\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:26:24,855 basehttp 4184 20340 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:26:24,855 basehttp 4184 20340 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:26:24,860 basehttp 4184 14864 code 400, message Bad request version ('3Ù\x8b½åN>\x88Þ[\x14?\\*Ôô~vD¾ýlõ¾ëÖÝ©\x03«P8\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:26:24,860 basehttp 4184 14864 code 400, message Bad request version ('3Ù\x8b½åN>\x88Þ[\x14?\\*Ôô~vD¾ýlõ¾ëÖÝ©\x03«P8\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:26:24,860 basehttp 4184 14864 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:26:24,860 basehttp 4184 14864 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:29:44,520 basehttp 4184 19252 code 400, message Bad request version ('3T?Ýø\x8e\x1aæíéC\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:29:44,520 basehttp 4184 19252 code 400, message Bad request version ('3T?Ýø\x8e\x1aæíéC\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:29:44,523 basehttp 4184 19252 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:29:44,523 basehttp 4184 19252 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:29:44,530 basehttp 4184 9652 code 400, message Bad request syntax ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03LMtVLÊÚ´©\x01\x00Yø\xadÃÓDQÞ')
+INFO 2025-04-20 22:29:44,530 basehttp 4184 9652 code 400, message Bad request syntax ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03LMtVLÊÚ´©\x01\x00Yø\xadÃÓDQÞ')
+ERROR 2025-04-20 22:29:44,532 basehttp 4184 9652 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:29:44,532 basehttp 4184 9652 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:29:45,174 basehttp 4184 10088 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07O\x01\x00\x07K\x03\x03$âÝ\x13ü\x93&Ñ³.\x8e\x00ÿ\xadÜo¼Y\x080ðG#\x06\x86\x03¯=\x99®Bí')
+INFO 2025-04-20 22:29:45,174 basehttp 4184 10088 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x07O\x01\x00\x07K\x03\x03$âÝ\x13ü\x93&Ñ³.\x8e\x00ÿ\xadÜo¼Y\x080ðG#\x06\x86\x03¯=\x99®Bí')
+ERROR 2025-04-20 22:29:45,177 basehttp 4184 10088 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:29:45,177 basehttp 4184 10088 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:29:45,201 basehttp 4184 19052 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03s³¯\x90')
+INFO 2025-04-20 22:29:45,201 basehttp 4184 19052 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x02~\x01\x00\x02z\x03\x03s³¯\x90')
+ERROR 2025-04-20 22:29:45,201 basehttp 4184 19052 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:29:45,201 basehttp 4184 19052 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2025-04-20 22:30:12,918 log 4184 8576 Not Found: /indexer_app/index/
+WARNING 2025-04-20 22:30:12,918 log 4184 8576 Not Found: /indexer_app/index/
+WARNING 2025-04-20 22:30:12,918 basehttp 4184 8576 "GET /indexer_app/index/ HTTP/1.1" 404 6790
+WARNING 2025-04-20 22:30:12,918 basehttp 4184 8576 "GET /indexer_app/index/ HTTP/1.1" 404 6790
+INFO 2025-04-20 22:30:20,985 basehttp 4184 4556 code 400, message Bad request version ('ÐÌ2&eË\x05ý?x+ÝM4\x06¶\x0eÑ\x19ªoÌqj\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:30:20,985 basehttp 4184 4556 code 400, message Bad request version ('ÐÌ2&eË\x05ý?x+ÝM4\x06¶\x0eÑ\x19ªoÌqj\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:30:20,987 basehttp 4184 4556 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:30:20,987 basehttp 4184 4556 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:30:21,018 basehttp 4184 20476 code 400, message Bad request version ('@\x11ÐÌíÀEí\x03%êî0dØ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:30:21,018 basehttp 4184 20476 code 400, message Bad request version ('@\x11ÐÌíÀEí\x03%êî0dØ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:30:21,020 basehttp 4184 20476 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:30:21,020 basehttp 4184 20476 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:30:28,089 basehttp 4184 18928 code 400, message Bad request version ('·n^I\x8b\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:30:28,089 basehttp 4184 18928 code 400, message Bad request version ('·n^I\x8b\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:30:28,091 basehttp 4184 18928 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:30:28,091 basehttp 4184 18928 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:30:28,099 basehttp 4184 16932 code 400, message Bad request version ('\x92(\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:30:28,099 basehttp 4184 16932 code 400, message Bad request version ('\x92(\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:30:28,101 basehttp 4184 16932 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:30:28,101 basehttp 4184 16932 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:30:34,033 basehttp 4184 9688 code 400, message Bad request version ('ÿâg\x91ùþ3\x9ee')
+INFO 2025-04-20 22:30:34,033 basehttp 4184 9688 code 400, message Bad request version ('ÿâg\x91ùþ3\x9ee')
+ERROR 2025-04-20 22:30:34,033 basehttp 4184 9688 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:30:34,033 basehttp 4184 9688 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:30:34,049 basehttp 4184 12472 code 400, message Bad request version ('¯Ê\x80í\x02«\x8a\x05Ì\x84+\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+INFO 2025-04-20 22:30:34,049 basehttp 4184 12472 code 400, message Bad request version ('¯Ê\x80í\x02«\x8a\x05Ì\x84+\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+ERROR 2025-04-20 22:30:34,049 basehttp 4184 12472 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-04-20 22:30:34,049 basehttp 4184 12472 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-04-20 22:31:27,160 autoreload 4184 10160 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:31:27,160 autoreload 4184 10160 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:31:28,947 autoreload 17148 1600 Watching for file changes with StatReloader
+INFO 2025-04-20 22:31:28,947 autoreload 17148 1600 Watching for file changes with StatReloader
+INFO 2025-04-20 22:31:46,422 autoreload 17148 1600 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:31:46,422 autoreload 17148 1600 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 22:31:48,097 autoreload 11896 20420 Watching for file changes with StatReloader
+INFO 2025-04-20 22:31:48,097 autoreload 11896 20420 Watching for file changes with StatReloader
+INFO 2025-04-20 22:33:04,410 autoreload 16460 10380 Watching for file changes with StatReloader
+INFO 2025-04-20 22:33:04,410 autoreload 16460 10380 Watching for file changes with StatReloader
+INFO 2025-04-20 22:33:21,225 basehttp 16460 6776 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 22:33:21,225 basehttp 16460 6776 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 22:33:26,872 views 16460 6776 Rendering try page
+INFO 2025-04-20 22:33:26,876 basehttp 16460 6776 "GET /try/ HTTP/1.1" 200 2657
+INFO 2025-04-20 22:33:26,876 basehttp 16460 6776 "GET /try/ HTTP/1.1" 200 2657
+INFO 2025-04-20 22:33:29,557 basehttp 16460 6776 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 22:33:29,557 basehttp 16460 6776 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 22:33:31,558 basehttp 16460 6776 "GET /search/ HTTP/1.1" 200 6100
+INFO 2025-04-20 22:33:31,558 basehttp 16460 6776 "GET /search/ HTTP/1.1" 200 6100
+INFO 2025-04-20 22:33:31,647 basehttp 16460 6776 "GET /static/indexer_app/js/search.js?v=1745184811 HTTP/1.1" 200 8906
+INFO 2025-04-20 22:33:31,647 basehttp 16460 6776 "GET /static/indexer_app/js/search.js?v=1745184811 HTTP/1.1" 200 8906
+WARNING 2025-04-20 22:33:33,884 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:33:33,884 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:33:33,884 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-20 22:33:33,884 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-20 22:33:42,979 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:33:42,979 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:33:42,979 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-20 22:33:42,979 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+INFO 2025-04-20 22:34:33,802 basehttp 16460 6776 "GET /search/ HTTP/1.1" 200 6100
+INFO 2025-04-20 22:34:33,802 basehttp 16460 6776 "GET /search/ HTTP/1.1" 200 6100
+INFO 2025-04-20 22:34:33,909 basehttp 16460 6776 "GET /static/indexer_app/js/search.js?v=1745184873 HTTP/1.1" 200 8906
+INFO 2025-04-20 22:34:33,909 basehttp 16460 6776 "GET /static/indexer_app/js/search.js?v=1745184873 HTTP/1.1" 200 8906
+WARNING 2025-04-20 22:35:07,058 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:35:07,058 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:35:07,069 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-20 22:35:07,069 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+INFO 2025-04-20 22:36:42,301 basehttp 16460 6776 "GET /search/ HTTP/1.1" 200 6100
+INFO 2025-04-20 22:36:42,301 basehttp 16460 6776 "GET /search/ HTTP/1.1" 200 6100
+INFO 2025-04-20 22:36:42,436 basehttp 16460 6776 "GET /static/indexer_app/js/search.js?v=1745185002 HTTP/1.1" 200 8906
+INFO 2025-04-20 22:36:42,436 basehttp 16460 6776 "GET /static/indexer_app/js/search.js?v=1745185002 HTTP/1.1" 200 8906
+WARNING 2025-04-20 22:36:46,152 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:36:46,152 log 16460 6776 Not Found: /indexer_app/api/search/
+WARNING 2025-04-20 22:36:46,154 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-20 22:36:46,154 basehttp 16460 6776 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+INFO 2025-04-20 22:46:08,281 autoreload 16460 10380 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:46:08,281 autoreload 16460 10380 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:46:10,751 autoreload 7732 12164 Watching for file changes with StatReloader
+INFO 2025-04-20 22:46:10,751 autoreload 7732 12164 Watching for file changes with StatReloader
+INFO 2025-04-20 22:46:48,835 autoreload 7732 12164 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:46:48,835 autoreload 7732 12164 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:46:50,458 autoreload 17912 9012 Watching for file changes with StatReloader
+INFO 2025-04-20 22:46:50,458 autoreload 17912 9012 Watching for file changes with StatReloader
+INFO 2025-04-20 22:47:06,119 autoreload 17912 9012 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:47:06,119 autoreload 17912 9012 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:47:07,798 autoreload 660 11752 Watching for file changes with StatReloader
+INFO 2025-04-20 22:47:07,798 autoreload 660 11752 Watching for file changes with StatReloader
+ERROR 2025-04-20 22:50:14,139 log 660 11744 Internal Server Error: /search/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 206, in search_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-20 22:50:14,139 log 660 11744 Internal Server Error: /search/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 206, in search_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-20 22:50:14,207 basehttp 660 11744 "GET /search/ HTTP/1.1" 500 144724
+ERROR 2025-04-20 22:50:14,207 basehttp 660 11744 "GET /search/ HTTP/1.1" 500 144724
+INFO 2025-04-20 22:50:50,595 autoreload 660 11752 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:50:50,595 autoreload 660 11752 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:50:52,330 autoreload 11296 21452 Watching for file changes with StatReloader
+INFO 2025-04-20 22:50:52,330 autoreload 11296 21452 Watching for file changes with StatReloader
+INFO 2025-04-20 22:50:59,002 autoreload 11296 21452 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:50:59,002 autoreload 11296 21452 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:00,273 autoreload 3500 16664 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:00,273 autoreload 3500 16664 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:15,653 autoreload 3500 16664 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:15,653 autoreload 3500 16664 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:17,655 autoreload 20260 16656 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:17,655 autoreload 20260 16656 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:43,677 autoreload 20260 16656 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:43,677 autoreload 20260 16656 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:45,405 autoreload 20576 11492 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:45,405 autoreload 20576 11492 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:52,253 autoreload 20576 11492 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:52,253 autoreload 20576 11492 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:51:53,687 autoreload 14980 14252 Watching for file changes with StatReloader
+INFO 2025-04-20 22:51:53,687 autoreload 14980 14252 Watching for file changes with StatReloader
+INFO 2025-04-20 22:52:16,393 autoreload 14980 14252 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:52:16,393 autoreload 14980 14252 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:52:18,106 autoreload 13340 10300 Watching for file changes with StatReloader
+INFO 2025-04-20 22:52:18,106 autoreload 13340 10300 Watching for file changes with StatReloader
+INFO 2025-04-20 22:52:25,311 autoreload 13340 10300 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:52:25,311 autoreload 13340 10300 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-20 22:52:26,633 autoreload 18416 20572 Watching for file changes with StatReloader
+INFO 2025-04-20 22:52:26,633 autoreload 18416 20572 Watching for file changes with StatReloader
+ERROR 2025-04-20 22:52:51,543 log 18416 15968 Internal Server Error: /search/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 206, in search_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-20 22:52:51,543 log 18416 15968 Internal Server Error: /search/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 206, in search_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-20 22:52:51,591 basehttp 18416 15968 "GET /search/ HTTP/1.1" 500 144593
+ERROR 2025-04-20 22:52:51,591 basehttp 18416 15968 "GET /search/ HTTP/1.1" 500 144593
+INFO 2025-04-20 22:53:14,419 autoreload 11496 17748 Watching for file changes with StatReloader
+INFO 2025-04-20 22:53:14,419 autoreload 11496 17748 Watching for file changes with StatReloader
+ERROR 2025-04-20 22:53:31,881 log 11496 20032 Internal Server Error: /search/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 206, in search_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-20 22:53:31,881 log 11496 20032 Internal Server Error: /search/
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\Downloads\aos system\indexer_app\views.py", line 206, in search_view
+    return render(
+           ^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+  File "c:\Users\HP\Downloads\aos system\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+ERROR 2025-04-20 22:53:31,926 basehttp 11496 20032 "GET /search/ HTTP/1.1" 500 144724
+ERROR 2025-04-20 22:53:31,926 basehttp 11496 20032 "GET /search/ HTTP/1.1" 500 144724
+INFO 2025-04-20 22:56:19,049 basehttp 11496 18820 "GET /search/ HTTP/1.1" 200 11321
+INFO 2025-04-20 22:56:19,049 basehttp 11496 18820 "GET /search/ HTTP/1.1" 200 11321
+INFO 2025-04-20 22:58:03,542 basehttp 11496 18820 "GET /search/ HTTP/1.1" 200 11321
+INFO 2025-04-20 22:58:03,542 basehttp 11496 18820 "GET /search/ HTTP/1.1" 200 11321
+INFO 2025-04-20 23:00:07,905 basehttp 11496 11820 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:00:07,905 basehttp 11496 11820 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:00:09,616 basehttp 11496 11820 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:00:09,616 basehttp 11496 11820 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:01:04,324 basehttp 11496 11820 "GET /search/ HTTP/1.1" 200 9678
+INFO 2025-04-20 23:01:04,324 basehttp 11496 11820 "GET /search/ HTTP/1.1" 200 9678
+INFO 2025-04-20 23:01:04,393 basehttp 11496 11820 "GET /static/css/styles.css HTTP/1.1" 200 3764
+INFO 2025-04-20 23:01:04,393 basehttp 11496 11820 "GET /static/css/styles.css HTTP/1.1" 200 3764
+WARNING 2025-04-20 23:01:04,409 log 11496 5356 Not Found: /static/js/search.js
+WARNING 2025-04-20 23:01:04,409 log 11496 5356 Not Found: /static/js/search.js
+WARNING 2025-04-20 23:01:04,409 basehttp 11496 5356 "GET /static/js/search.js HTTP/1.1" 404 6507
+WARNING 2025-04-20 23:01:04,409 basehttp 11496 5356 "GET /static/js/search.js HTTP/1.1" 404 6507
+INFO 2025-04-20 23:03:29,063 basehttp 11496 19896 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:03:29,063 basehttp 11496 19896 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:05:09,208 basehttp 11496 19896 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:05:09,208 basehttp 11496 19896 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:07:00,798 basehttp 11496 19896 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:07:00,798 basehttp 11496 19896 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:07:01,525 basehttp 11496 19896 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:07:01,525 basehttp 11496 19896 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:09:36,384 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:09:36,384 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:10:57,998 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7692
+INFO 2025-04-20 23:10:57,998 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7692
+INFO 2025-04-20 23:11:20,188 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:11:20,188 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7622
+INFO 2025-04-20 23:11:24,221 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7692
+INFO 2025-04-20 23:11:24,221 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7692
+INFO 2025-04-20 23:12:17,407 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:12:17,407 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:12:18,287 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:12:18,287 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:12:18,991 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:12:18,991 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:13:55,995 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:13:55,995 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7544
+INFO 2025-04-20 23:15:02,906 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:15:02,906 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:15:42,111 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:15:42,111 basehttp 11496 11928 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:08,938 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:08,938 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:09,682 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:09,682 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:09,840 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:09,840 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:10,554 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:10,554 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7712
+INFO 2025-04-20 23:18:20,422 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7724
+INFO 2025-04-20 23:18:20,422 basehttp 11496 17436 "GET /search/ HTTP/1.1" 200 7724
+INFO 2025-04-20 23:18:34,913 autoreload 21240 19696 Watching for file changes with StatReloader
+INFO 2025-04-20 23:18:34,913 autoreload 21240 19696 Watching for file changes with StatReloader
+INFO 2025-04-20 23:18:39,808 basehttp 21240 7728 "GET /search/ HTTP/1.1" 200 7724
+INFO 2025-04-20 23:18:39,808 basehttp 21240 7728 "GET /search/ HTTP/1.1" 200 7724
+INFO 2025-04-20 23:18:40,468 basehttp 21240 7728 "GET /search/ HTTP/1.1" 200 7724
+INFO 2025-04-20 23:18:40,468 basehttp 21240 7728 "GET /search/ HTTP/1.1" 200 7724
+INFO 2025-04-20 23:18:42,863 basehttp 21240 7728 "GET /upload/ HTTP/1.1" 200 4778
+INFO 2025-04-20 23:18:42,863 basehttp 21240 7728 "GET /upload/ HTTP/1.1" 200 4778
+INFO 2025-04-20 23:18:42,923 basehttp 21240 7728 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 23:18:42,923 basehttp 21240 7728 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-20 23:18:45,628 basehttp 21240 7728 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:18:45,628 basehttp 21240 7728 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:22:30,588 autoreload 21240 19696 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 23:22:30,588 autoreload 21240 19696 C:\Users\HP\Downloads\aos system\aos_project\settings.py changed, reloading.
+INFO 2025-04-20 23:22:31,486 autoreload 19376 17228 Watching for file changes with StatReloader
+INFO 2025-04-20 23:22:31,486 autoreload 19376 17228 Watching for file changes with StatReloader
+INFO 2025-04-20 23:23:21,765 basehttp 19376 10396 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+INFO 2025-04-20 23:23:21,765 basehttp 19376 10396 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+WARNING 2025-04-20 23:23:21,862 log 19376 10396 Not Found: /favicon.ico
+WARNING 2025-04-20 23:23:21,862 log 19376 10396 Not Found: /favicon.ico
+WARNING 2025-04-20 23:23:21,863 basehttp 19376 10396 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-20 23:23:21,863 basehttp 19376 10396 "GET /favicon.ico HTTP/1.1" 404 6769
+INFO 2025-04-20 23:23:30,609 basehttp 19376 10396 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8067
+INFO 2025-04-20 23:23:30,609 basehttp 19376 10396 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8067
+INFO 2025-04-20 23:24:19,853 basehttp 19376 10396 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-20 23:24:19,853 basehttp 19376 10396 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-20 23:25:06,053 basehttp 19376 19544 "GET /search/ HTTP/1.1" 200 7827
+INFO 2025-04-20 23:25:06,053 basehttp 19376 19544 "GET /search/ HTTP/1.1" 200 7827
+INFO 2025-04-20 23:25:27,517 autoreload 19376 17228 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 23:25:27,517 autoreload 19376 17228 C:\Users\HP\Downloads\aos system\aos_project\urls.py changed, reloading.
+INFO 2025-04-20 23:25:28,539 autoreload 17776 5012 Watching for file changes with StatReloader
+INFO 2025-04-20 23:25:28,539 autoreload 17776 5012 Watching for file changes with StatReloader
+INFO 2025-04-20 23:25:53,945 basehttp 17776 16688 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-20 23:25:53,945 basehttp 17776 16688 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-20 23:25:56,974 basehttp 17776 16688 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8067
+INFO 2025-04-20 23:25:56,974 basehttp 17776 16688 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8067
+INFO 2025-04-20 23:30:01,179 basehttp 17776 4424 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:30:01,179 basehttp 17776 4424 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:30:38,339 basehttp 17776 11524 "GET /static/indexer_app/js/lang.js HTTP/1.1" 200 500
+INFO 2025-04-20 23:30:38,339 basehttp 17776 11524 "GET /static/indexer_app/js/lang.js HTTP/1.1" 200 500
+INFO 2025-04-20 23:33:26,731 basehttp 17776 3084 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:33:26,731 basehttp 17776 3084 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:34:36,189 basehttp 17776 3084 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:34:36,189 basehttp 17776 3084 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:36:42,979 basehttp 17776 10408 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:36:42,979 basehttp 17776 10408 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:36:45,962 basehttp 17776 10408 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:36:45,962 basehttp 17776 10408 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:39:18,607 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:39:18,607 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:39:21,676 basehttp 17776 21224 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:39:21,676 basehttp 17776 21224 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-20 23:39:30,176 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:39:30,176 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:40:24,769 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:40:24,769 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:40:25,909 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:40:25,909 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:40:31,159 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-20 23:40:31,159 basehttp 17776 21224 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:25:24,946 basehttp 17776 12692 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:25:24,946 basehttp 17776 12692 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:25:25,024 basehttp 17776 12692 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8500
+INFO 2025-04-21 07:25:25,024 basehttp 17776 12692 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8500
+INFO 2025-04-21 07:27:47,228 basehttp 17776 17416 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:27:47,228 basehttp 17776 17416 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:27:47,316 basehttp 17776 17416 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:47,316 basehttp 17776 17416 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:48,699 basehttp 17776 17416 "GET /upload/ HTTP/1.1" 200 4778
+INFO 2025-04-21 07:27:48,699 basehttp 17776 17416 "GET /upload/ HTTP/1.1" 200 4778
+INFO 2025-04-21 07:27:48,807 basehttp 17776 17416 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:48,807 basehttp 17776 17416 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:48,813 basehttp 17776 10100 "GET /static/indexer_app/css/upload.css HTTP/1.1" 200 4819
+INFO 2025-04-21 07:27:48,813 basehttp 17776 10100 "GET /static/indexer_app/css/upload.css HTTP/1.1" 200 4819
+INFO 2025-04-21 07:27:48,821 basehttp 17776 10640 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:48,821 basehttp 17776 10640 "GET /static/indexer_app/js/upload.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:50,290 basehttp 17776 17416 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:27:50,290 basehttp 17776 17416 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:27:50,372 basehttp 17776 10100 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:50,372 basehttp 17776 10100 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:51,132 views 17776 17416 Rendering try page
+INFO 2025-04-21 07:27:51,141 basehttp 17776 17416 "GET /try/ HTTP/1.1" 200 2657
+INFO 2025-04-21 07:27:51,141 basehttp 17776 17416 "GET /try/ HTTP/1.1" 200 2657
+INFO 2025-04-21 07:27:55,518 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:27:55,518 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:27:55,641 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:55,641 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:57,164 basehttp 17776 17416 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:27:57,164 basehttp 17776 17416 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:27:57,275 basehttp 17776 10100 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:57,275 basehttp 17776 10100 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:58,188 views 17776 17416 Rendering try page
+INFO 2025-04-21 07:27:58,194 basehttp 17776 17416 "GET /try/ HTTP/1.1" 200 2657
+INFO 2025-04-21 07:27:58,194 basehttp 17776 17416 "GET /try/ HTTP/1.1" 200 2657
+INFO 2025-04-21 07:27:58,866 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:27:58,866 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8346
+INFO 2025-04-21 07:27:58,974 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:27:58,974 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:28:29,020 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8438
+INFO 2025-04-21 07:28:29,020 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8438
+INFO 2025-04-21 07:28:29,086 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:28:29,086 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:29:46,822 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8438
+INFO 2025-04-21 07:29:46,822 basehttp 17776 17416 "GET /search/ HTTP/1.1" 200 8438
+INFO 2025-04-21 07:29:46,902 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 10089
+INFO 2025-04-21 07:29:46,902 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 10089
+INFO 2025-04-21 07:31:35,754 basehttp 17776 10100 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:31:35,754 basehttp 17776 10100 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:31:35,827 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:31:35,827 basehttp 17776 10100 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:31:54,617 basehttp 17776 10100 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:31:54,617 basehttp 17776 10100 "GET / HTTP/1.1" 200 2725
+INFO 2025-04-21 07:31:54,702 basehttp 17776 10100 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:31:54,702 basehttp 17776 10100 "GET /static/indexer_app/js/app.js HTTP/1.1" 304 0
+INFO 2025-04-21 07:33:54,904 basehttp 17776 18584 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:33:54,904 basehttp 17776 18584 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:33:54,987 basehttp 17776 18584 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8735
+INFO 2025-04-21 07:33:54,987 basehttp 17776 18584 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8735

@@ -1,27 +1,32 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search - AOS System</title>
+  <title>Search Documents - AOS System</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Custom Styles -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'indexer_app/css/styles.css' %}" />
   <link rel="stylesheet" href="{% static 'indexer_app/css/search.css' %}" />
   
   <style>
-    .search-area {
-      background: url('{% static "indexer_app/assets/images/background_pic.jpg" %}') center/cover no-repeat !important;
+    .search-hero {
+      background-image: url("{% static 'indexer_app/assets/images/background_pic.jpg' %}") !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
     }
   </style>
 </head>
 <body class="light-mode">
+
   <div class="layout">
     <!-- Sidebar -->
     <aside class="navbar collapsed" id="sidebar">
@@ -34,7 +39,7 @@
         <nav class="nav-menu">
           <a href="{% url 'indexer_app:index' %}"><i class="fas fa-home"></i><span class="label">Home</span></a>
           <a href="{% url 'indexer_app:upload_document' %}"><i class="fas fa-upload"></i><span class="label">Upload</span></a>
-          <a href="{% url 'indexer_app:search' %}"><i class="fas fa-search"></i><span class="label">Search</span></a>
+          <a href="{% url 'indexer_app:search' %}" class="active"><i class="fas fa-search"></i><span class="label">Search</span></a>
         </nav>
     
         <div class="lang-switcher">
@@ -50,109 +55,92 @@
     </aside>
 
     <!-- Search Section -->
-    <main class="search-area">
+    <section class="search-hero">
       <div class="overlay"></div>
       <div class="search-content">
-        <h2 class="animated-title">Document Search</h2>
-        <form id="searchForm">
-          {% csrf_token %}
-          <div class="search-row">
-            <input type="text" id="searchInput" name="query" placeholder="Search documents..." required>
-            <button type="submit" id="searchButton">
-              <i class="fas fa-search"></i>
-              Search
-            </button>
-          </div>
-          
-          <div class="method-selector">
-            <label for="similaritySelect">Select Method:</label>
-            <select id="similaritySelect" name="method">
-              <option value="cosine">Cosine Similarity (TF-IDF)</option>
-              <option value="euclidean">Euclidean Distance</option>
-            </select>
-            <span class="tooltip">
-              ⓘ
-              <span class="tooltip-text">
-                Choose a method to compare your query with indexed documents.<br />
-                <strong>Cosine</strong>: angle-based comparison.<br />
-                <strong>Euclidean</strong>: distance-based comparison.
-              </span>
-            </span>
-          </div>
-          
-          <div class="search-options fade-in">
-            <div class="filter-group">
-              <div class="filter-item">
-                <label for="fileType">File Type:</label>
-                <select id="fileType">
-                  <option value="all">All Types</option>
-                  <option value="pdf">PDF</option>
-                  <option value="doc">DOC</option>
-                  <option value="txt">TXT</option>
-                </select>
-                <span class="tooltip">
-                  ⓘ
-                  <span class="tooltip-text">
-                    Filter results by file type:<br />
-                    <strong>All</strong>: Show all document types<br />
-                    <strong>PDF</strong>: Adobe PDF documents<br />
-                    <strong>DOC</strong>: Word documents<br />
-                    <strong>TXT</strong>: Plain text files
-                  </span>
-                </span>
-              </div>
-
-              <div class="filter-item">
-                <label for="dateRange">Time Range:</label>
-                <select id="dateRange">
-                  <option value="all">All Time</option>
-                  <option value="day">Last 24 Hours</option>
-                  <option value="week">Last Week</option>
-                  <option value="month">Last Month</option>
-                  <option value="year">Last Year</option>
-                </select>
-                <span class="tooltip">
-                  ⓘ
-                  <span class="tooltip-text">
-                    Filter by document age:<br />
-                    <strong>All Time</strong>: No time restriction<br />
-                    <strong>24 Hours</strong>: Very recent documents<br />
-                    <strong>Week/Month</strong>: Recent updates<br />
-                    <strong>Year</strong>: Within last year
-                  </span>
-                </span>
+        <h2 id="searchHeading">Search Documents</h2>
+        
+        <!-- Search Form -->
+        <div class="search-box">
+          <form id="searchForm" method="POST">
+            {% csrf_token %}
+            <div class="search-input-wrapper">
+              <input type="text" id="searchInput" name="query" placeholder="Enter your search query..." required>
+              <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+            
+            <!-- Search Options -->
+            <div class="search-options">
+              <div class="options-grid">
+                <div class="option-item">
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" id="exactMatch" name="exactMatch">
+                    <span class="label-text">Exact Match</span>
+                  </label>
+                </div>
+                <div class="option-item">
+                  <select id="fileType" name="fileType">
+                    <option value="all">All File Types</option>
+                    <option value="txt">Text Files</option>
+                    <option value="pdf">PDF Files</option>
+                    <option value="doc">Word Documents</option>
+                    <option value="docx">Word Documents (DOCX)</option>
+                  </select>
+                </div>
+                <div class="option-item">
+                  <select id="dateRange" name="dateRange">
+                    <option value="all">All Time</option>
+                    <option value="day">Last 24 Hours</option>
+                    <option value="week">Last Week</option>
+                    <option value="month">Last Month</option>
+                    <option value="year">Last Year</option>
+                  </select>
+                </div>
+                <div class="option-item">
+                  <select id="similaritySelect" name="method">
+                    <option value="cosine">Cosine Similarity</option>
+                    <option value="euclidean">Euclidean Distance</option>
+                  </select>
+                </div>
               </div>
             </div>
+          </form>
+        </div>
 
-            <label class="checkbox-container">
-              <input type="checkbox" id="exactMatch">
-              <span class="checkmark"></span>
-              Exact Match
-              <span class="tooltip">
-                ⓘ
-                <span class="tooltip-text">
-                  <strong>Exact Match</strong>: Find documents containing the exact phrase<br />
-                  When disabled, matches similar words and variations
-                </span>
-              </span>
-            </label>
-          </div>
-        </form>
+        <!-- Loading Indicator -->
+        <div class="typing-loader"></div>
 
-        <div id="results" class="search-results">
-          <div class="typing-loader" style="display: none;">
-            <div class="spinner"></div>
-            <span class="text">Searching...</span>
-          </div>
-          <div id="searchResults" class="results-container">
-            <!-- Search results will be displayed here -->
-          </div>
+        <!-- Search Results -->
+        <div id="searchResults" class="results-container">
+          <!-- Results will be inserted here -->
         </div>
       </div>
-    </main>
+    </section>
   </div>
 
+  <!-- Search Results Template -->
+  <template id="searchResultTemplate">
+    <div class="result-card">
+      <div class="result-content">
+        <h3 class="result-title">
+          <a href="" class="document-link" target="_blank"></a>
+        </h3>
+        <div class="result-meta">
+          <span class="file-type"><i class="fas fa-file"></i></span>
+          <span class="upload-date"><i class="fas fa-calendar"></i></span>
+          <span class="file-size"><i class="fas fa-weight"></i></span>
+        </div>
+        <p class="preview-text"></p>
+        <span class="score-badge"></span>
+      </div>
+    </div>
+  </template>
+
   <!-- Scripts -->
-  <script src="{% static 'indexer_app/js/search.js' %}?v={% now 'U' %}"></script>
+  <script src="{% static 'indexer_app/js/theme.js' %}" defer></script>
+  <script src="{% static 'indexer_app/js/lang.js' %}" defer></script>
+  <script src="{% static 'indexer_app/js/search.js' %}" defer></script>
 </body>
 </html>

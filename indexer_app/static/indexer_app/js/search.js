@@ -67,18 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const dateRangeSelect = document.getElementById('dateRange');
     const similaritySelect = document.getElementById('similaritySelect');
 
-    // Debug check for elements
-    console.log('Elements found:', {
-        searchForm: !!searchForm,
-        searchInput: !!searchInput,
-        searchResults: !!searchResults,
-        loadingSpinner: !!loadingSpinner,
-        exactMatchCheckbox: !!exactMatchCheckbox,
-        fileTypeSelect: !!fileTypeSelect,
-        dateRangeSelect: !!dateRangeSelect,
-        similaritySelect: !!similaritySelect
-    });
-
     if (!searchForm || !searchResults) {
         console.error('Required elements not found');
         return;
@@ -86,57 +74,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle search form submission
     searchForm.addEventListener('submit', async function(e) {
-  e.preventDefault();
-        console.log('Form submitted'); // Debug log
+        e.preventDefault();
+        console.log('Form submitted');
 
-  const query = searchInput.value.trim();
-  if (!query) {
-            console.log('Empty query, stopping'); // Debug log
-    return;
-  }
+        const query = searchInput.value.trim();
+        if (!query) {
+            console.log('Empty query, stopping');
+            return;
+        }
 
         // Show loading state
         searchResults.innerHTML = '';
         if (loadingSpinner) {
-            loadingSpinner.style.display = 'flex';
-            console.log('Loading spinner shown'); // Debug log
-        } else {
-            console.warn('Loading spinner not found'); // Debug log
+            loadingSpinner.style.display = 'block';
         }
 
         try {
-            const formData = new URLSearchParams({
-                query: query,
-                method: similaritySelect ? similaritySelect.value : 'cosine',
-                exact_match: exactMatchCheckbox ? exactMatchCheckbox.checked : false,
-                file_type: fileTypeSelect ? fileTypeSelect.value : 'all',
-                date_range: dateRangeSelect ? dateRangeSelect.value : 'all'
-            });
-
-            console.log('Sending request with data:', Object.fromEntries(formData)); // Debug log
-
-            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]');
-            console.log('CSRF token found:', !!csrfToken); // Debug log
+            const formData = new FormData(searchForm);
+            console.log('Form data:', Object.fromEntries(formData));
 
             const response = await fetch('/indexer_app/api/search/', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'X-CSRFToken': csrfToken ? csrfToken.value : ''
+                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
                 },
                 body: formData
             });
 
-            console.log('Response status:', response.status); // Debug log
+            console.log('Response status:', response.status);
 
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('Server error:', errorText); // Debug log
+                console.error('Server error:', errorText);
                 throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
             }
 
             const data = await response.json();
-            console.log('Response data:', data); // Debug log
+            console.log('Response data:', data);
             
             // Hide loading state
             if (loadingSpinner) {
@@ -147,9 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResults.innerHTML = '';
 
             if (data.error) {
-                console.error('Server returned error:', data.error); // Debug log
+                console.error('Server returned error:', data.error);
                 searchResults.innerHTML = `
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger">
                         ${data.error}
                     </div>`;
                 return;
@@ -157,65 +131,65 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Add summary
             const summary = document.createElement('div');
-            summary.className = 'search-summary mb-4';
+            summary.className = 'results-summary';
             summary.innerHTML = `
-                <div class="alert alert-info" role="alert">
-                    Found ${data.total} results for "${query}"
-                    ${exactMatchCheckbox && exactMatchCheckbox.checked ? ' (Exact Match)' : ''}
-                    ${fileTypeSelect && fileTypeSelect.value !== 'all' ? ` | Type: ${fileTypeSelect.value.toUpperCase()}` : ''}
-                    ${dateRangeSelect && dateRangeSelect.value !== 'all' ? ` | Period: ${dateRangeSelect.options[dateRangeSelect.selectedIndex].text}` : ''}
+                <h3>Found ${data.total} results for "${query}"</h3>
+                <div class="filters-summary">
+                    ${exactMatchCheckbox.checked ? '<span>Exact Match</span>' : ''}
+                    ${fileTypeSelect.value !== 'all' ? `<span>Type: ${fileTypeSelect.value.toUpperCase()}</span>` : ''}
+                    ${dateRangeSelect.value !== 'all' ? `<span>Period: ${dateRangeSelect.options[dateRangeSelect.selectedIndex].text}</span>` : ''}
                 </div>`;
             searchResults.appendChild(summary);
 
-            // Create results container
             if (!data.results || data.results.length === 0) {
                 searchResults.innerHTML += `
-                    <div class="alert alert-warning" role="alert">
+                    <div class="no-results">
                         No documents found matching your search criteria.
                     </div>`;
                 return;
             }
 
-            const resultsContainer = document.createElement('div');
-            resultsContainer.className = 'results-container';
-
             // Add results
-            data.results.forEach((result, index) => {
+            data.results.forEach(result => {
                 const resultCard = document.createElement('div');
                 resultCard.className = 'result-card';
                 resultCard.innerHTML = `
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <h5 class="card-title">${highlightText(result.title, query, exactMatchCheckbox && exactMatchCheckbox.checked)}</h5>
-                                <span class="badge bg-primary">${result.score}%</span>
-                            </div>
-                            <div class="card-subtitle mb-2 text-muted">
-                                <span class="badge bg-secondary">${result.file_type.toUpperCase()}</span>
-                                <small class="ms-2">${result.uploaded_at}</small>
-                            </div>
-                            ${result.preview ? `
-                                <p class="card-text">
-                                    ${highlightText(result.preview, query, exactMatchCheckbox && exactMatchCheckbox.checked)}
-                                </p>
-                            ` : ''}
-                            <a href="/media/documents/${result.title}" class="btn btn-sm btn-outline-primary" target="_blank">
-                                View Document
-                            </a>
+                    <div class="result-content">
+                        <div class="result-header">
+                            <h3 class="result-title">
+                                <a href="/media/documents/${result.title}" target="_blank">
+                                    ${highlightText(result.title, query, exactMatchCheckbox.checked)}
+                                </a>
+                            </h3>
+                            <span class="score-badge">${result.score}%</span>
                         </div>
+                        <div class="result-meta">
+                            <span class="file-type">
+                                <i class="fas fa-file"></i> ${result.file_type.toUpperCase()}
+                            </span>
+                            <span class="upload-date">
+                                <i class="fas fa-calendar"></i> ${result.uploaded_at}
+                            </span>
+                            <span class="file-size">
+                                <i class="fas fa-weight"></i> ${result.size}
+                            </span>
+                        </div>
+                        ${result.preview ? `
+                            <p class="preview-text">
+                                ${highlightText(result.preview, query, exactMatchCheckbox.checked)}
+                            </p>
+                        ` : ''}
                     </div>`;
-                resultsContainer.appendChild(resultCard);
+                searchResults.appendChild(resultCard);
             });
 
-            searchResults.appendChild(resultsContainer);
-
         } catch (error) {
-            console.error('Search error:', error); // Debug log
+            console.error('Search error:', error);
             if (loadingSpinner) {
                 loadingSpinner.style.display = 'none';
             }
             searchResults.innerHTML = `
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger">
                     An error occurred while searching. Please try again. Error: ${error.message}
                 </div>`;
         }

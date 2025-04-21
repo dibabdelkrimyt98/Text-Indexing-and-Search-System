@@ -14,11 +14,12 @@ MEDIA_ROOT: Path = BASE_DIR / 'media'
 
 # Security
 SECRET_KEY: str = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key')
-DEBUG: bool = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
+DEBUG: bool = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 ALLOWED_HOSTS: List[str] = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')
 
 # Installed apps
 INSTALLED_APPS: List[str] = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -26,7 +27,6 @@ INSTALLED_APPS: List[str] = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'indexer_app',
-    'whitenoise.runserver_nostatic',
 ]
 
 # Middleware
@@ -63,18 +63,34 @@ TEMPLATES: List[Dict[str, Any]] = [
 WSGI_APPLICATION: str = 'aos_project.wsgi.application'
 
 # Security settings
-SECURE_SSL_REDIRECT = os.environ.get('DJANGO_SECURE_SSL_REDIRECT', 'True') == 'True'
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
+if not DEBUG:  # Only enable these security settings in production
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+else:  # Development settings
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
 
-# Static files
+# Static files configuration
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Add app-specific static files directory
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+# Whitenoise configuration
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_MANIFEST_STRICT = False
+WHITENOISE_ALLOW_ALL_ORIGINS = True
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD: str = 'django.db.models.BigAutoField'

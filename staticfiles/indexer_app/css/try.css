@@ -104,7 +104,9 @@ body.dark-mode {
 .upload-hero {
   flex: 1;
   position: relative;
-  background: url('/indexer_app/static/images/bg_image.jpg') center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -58,100 +58,70 @@ UPLOAD_DIR = Path(settings.MEDIA_ROOT) / 'documents'
 
 def handle_uploaded_file(uploaded_file: UploadedFile) -> Tuple[str, str]:
     """
-    Handle file upload and return content and file type.
+    Handle uploaded file and extract its content.
     
     Args:
         uploaded_file: The uploaded file object
         
     Returns:
-        Tuple containing (file_content, mime_type)
-        
-    Raises:
-        ValidationError: If file type is not supported
+        Tuple of (content, mime_type)
     """
+    file_path = UPLOAD_DIR / uploaded_file.name
     try:
-        logger.info(f"Starting to handle uploaded file: {uploaded_file.name}")
-        logger.info(f"File size: {uploaded_file.size} bytes")
-        logger.info(f"Content type: {uploaded_file.content_type}")
+        # Save the file temporarily
+        with open(file_path, 'wb+') as destination:
+            for chunk in uploaded_file.chunks():
+                destination.write(chunk)
         
-        content = ''
-        file_path = UPLOAD_DIR / str(uploaded_file.name)
-        file_ext = Path(str(uploaded_file.name)).suffix.lower()
+        file_ext = Path(uploaded_file.name).suffix.lower()
         
-        logger.info(f"File path: {file_path}")
-        logger.info(f"File extension: {file_ext}")
-        logger.info(f"UPLOAD_DIR absolute path: {UPLOAD_DIR.absolute()}")
-
-        # Ensure upload directory exists
-        try:
-            UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-            logger.info(f"Upload directory exists: {UPLOAD_DIR.exists()}")
-            logger.info(f"Upload directory is absolute: {UPLOAD_DIR.is_absolute()}")
-        except Exception as e:
-            logger.error(f"Error creating upload directory: {str(e)}")
-            raise
-
-        # Save the file to disk
-        try:
-            with open(file_path, 'wb+') as destination:
-                for chunk in uploaded_file.chunks():
-                    destination.write(chunk)
-            logger.info(f"File saved successfully to disk at: {file_path}")
-            logger.info(f"File exists after save: {file_path.exists()}")
-            
-            # Verify file was saved correctly
-            if not file_path.exists():
-                raise Exception(f"File was not saved correctly: {file_path}")
-                
-            # Check file size
-            saved_size = file_path.stat().st_size
-            logger.info(f"Saved file size: {saved_size} bytes")
-            if saved_size != uploaded_file.size:
-                logger.warning(f"File size mismatch: uploaded={uploaded_file.size}, saved={saved_size}")
-        except Exception as e:
-            logger.error(f"Error saving file to disk: {str(e)}")
-            logger.error(f"File path that failed: {file_path}")
-            raise
-
-        # Determine mime type based on file extension
+        # Determine mime type and extract content based on file extension
         if file_ext == '.txt':
             mime_type = 'text/plain'
-            # Read text file content
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()
-                logger.info("Text file read successfully with UTF-8 encoding")
             except UnicodeDecodeError:
-                logger.info("UTF-8 encoding failed, trying latin-1")
-                # Try with a different encoding if UTF-8 fails
                 with open(file_path, 'r', encoding='latin-1') as f:
                     content = f.read()
-                logger.info("Text file read successfully with latin-1 encoding")
+                    
         elif file_ext in ['.doc', '.docx']:
             mime_type = 'application/msword'
-            # For now, just extract text from the beginning of the file
-            # In a real app, you'd use a library like python-docx
-            content = f"[DOCUMENT CONTENT: {uploaded_file.name}]"
-            logger.info("Word document placeholder content created")
+            try:
+                import docx
+                doc = docx.Document(str(file_path))
+                content = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
+            except ImportError:
+                raise ValidationError("python-docx package is required for Word documents")
+                
         elif file_ext == '.pdf':
             mime_type = 'application/pdf'
-            # For now, just extract text from the beginning of the file
-            # In a real app, you'd use a library like PyPDF2
-            content = f"[PDF CONTENT: {uploaded_file.name}]"
-            logger.info("PDF document placeholder content created")
+            try:
+                import PyPDF2
+                with open(file_path, 'rb') as f:
+                    pdf_reader = PyPDF2.PdfReader(f)
+                    content = '\n'.join(
+                        page.extract_text() 
+                        for page in pdf_reader.pages
+                    )
+            except ImportError:
+                raise ValidationError("PyPDF2 package is required for PDF documents")
         else:
-            error_msg = f"File type {file_ext} processing not implemented yet"
-            logger.error(error_msg)
-            raise ValidationError(error_msg)
+            raise ValidationError(f"File type {file_ext} not supported")
 
-        logger.info(f"File processing completed successfully. MIME type: {mime_type}")
+        # Clean up temporary file
+        file_path.unlink()
+        
+        # Clean and normalize the content
+        content = ' '.join(content.split())  # Normalize whitespace
+        
         return content, mime_type
 
     except Exception as e:
-        logger.error(f"Unexpected error in handle_uploaded_file: {str(e)}")
-        logger.error(f"Error type: {type(e)}")
-        logger.error(f"Error args: {e.args}")
-        raise
+        # Clean up temporary file if it exists
+        if 'file_path' in locals() and file_path.exists():
+            file_path.unlink()
+        raise ValidationError(f"Error processing file: {str(e)}")
 
 
 @csrf_protect
@@ -509,14 +479,19 @@ def find_best_context(content: str, query: str, window_size: int = 100) -> str:
 
 
 @require_http_methods(["POST"])
-@csrf_exempt  # Temporarily exempt from CSRF for testing
+@csrf_exempt
 def search_documents(request: HttpRequest) -> JsonResponse:
-    """Search for documents based on query parameters."""
-    try:
-        # Log the incoming request
-        logger.info(f"Search request received - POST data: {request.POST}")
+    """
+    Search for documents based on query parameters using TF-IDF and similarity metrics.
+    
+    Args:
+        request: The HTTP request containing search parameters
         
-        # Get search parameters from request
+    Returns:
+        JsonResponse with search results
+    """
+    try:
+        # Get search parameters
         data = request.POST
         query = data.get('query', '').strip()
         method = data.get('method', 'cosine')
@@ -524,51 +499,41 @@ def search_documents(request: HttpRequest) -> JsonResponse:
         date_range = data.get('dateRange', 'all')
         exact_match = data.get('exactMatch', 'false').lower() == 'true'
 
-        logger.info(f"Search parameters: query='{query}', method={method}, file_type={file_type}, date_range={date_range}, exact_match={exact_match}")
-
         if not query:
-            return JsonResponse({
-                'error': 'Search query is required'
-            }, status=400)
+            return JsonResponse({'error': 'Search query is required'}, status=400)
 
         # Start with all documents
         documents = Document.objects.all()
-        logger.info(f"Total documents before filtering: {documents.count()}")
 
-        # Apply file type filter
+        # Apply filters
         if file_type != 'all':
             documents = documents.filter(file_type=file_type)
-            logger.info(f"Documents after file type filter: {documents.count()}")
 
-        # Apply date range filter
         if date_range != 'all':
             from django.utils import timezone
             from datetime import timedelta
             now = timezone.now()
-            since = now  # Initialize with default value
             
-            if date_range == 'day':
-                since = now - timedelta(days=1)
-            elif date_range == 'week':
-                since = now - timedelta(weeks=1)
-            elif date_range == 'month':
-                since = now - timedelta(days=30)
-            elif date_range == 'year':
-                since = now - timedelta(days=365)
-            
-            documents = documents.filter(uploaded_at__gte=since)
-            logger.info(f"Documents after date filter: {documents.count()}")
+            date_filters = {
+                'day': timedelta(days=1),
+                'week': timedelta(weeks=1),
+                'month': timedelta(days=30),
+                'year': timedelta(days=365)
+            }
+            if date_range in date_filters:
+                documents = documents.filter(
+                    uploaded_at__gte=now - date_filters[date_range]
+                )
 
         # For exact match search
         if exact_match:
             matching_docs = []
             for doc in documents:
-                # Search in both original content and processed content
-                content_match = query.lower() in doc.content.lower()
-                processed_match = query.lower() in doc.processed_content.lower()
-                
-                if content_match or processed_match:
-                    # Find the best context that shows the match
+                # Search in both original and processed content
+                if (query.lower() in doc.content.lower() or 
+                    query.lower() in doc.processed_content.lower()):
+                    
+                    # Find best context showing the match
                     context = find_best_context(doc.content, query)
                     
                     matching_docs.append({
@@ -578,75 +543,84 @@ def search_documents(request: HttpRequest) -> JsonResponse:
                         'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
                         'score': 100,  # Exact match gets 100%
                         'preview': context,
-                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
+                        'size': doc.get_file_size_display(),
+                        'url': f'/media/documents/{doc.title}'
                     })
-            logger.info(f"Exact match results: {len(matching_docs)}")
         else:
-            # Create TF-IDF vectorizer with better parameters
+            # Create TF-IDF vectorizer with enhanced parameters
             vectorizer = TfidfVectorizer(
                 min_df=1,  # Include all terms
-                max_df=0.9,  # Ignore terms that appear in more than 90% of docs
-                stop_words='english',  # Remove English stop words
-                ngram_range=(1, 2),  # Include both unigrams and bigrams
-                strip_accents='unicode'  # Handle accented characters
+                max_df=0.95,  # Ignore terms that appear in >95% of docs
+                stop_words='english',
+                ngram_range=(1, 2),  # Include unigrams and bigrams
+                strip_accents='unicode',
+                norm='l2',  # L2 normalization
+                use_idf=True,
+                smooth_idf=True,
+                sublinear_tf=True  # Apply sublinear scaling to term frequencies
             )
             
-            # Get all document contents - combine original and processed content
-            doc_contents = [f"{doc.content} {doc.processed_content}" for doc in documents]
-            logger.info(f"Processing {len(doc_contents)} documents for TF-IDF")
+            # Get document contents - combine original and processed
+            doc_contents = [
+                f"{doc.content} {doc.processed_content}" 
+                for doc in documents
+            ]
             
-            # Preprocess the query
-            processed_query = preprocess_text(query)
+            # Add query to documents for vectorization
+            all_texts = doc_contents + [query]
             
-            # Add query to the documents for vectorization
-            all_texts = doc_contents + [processed_query]
+            try:
+                # Create TF-IDF matrix
+                tfidf_matrix = vectorizer.fit_transform(all_texts)
+                
+                # Get query vector (last row) and document vectors
+                query_vector = tfidf_matrix.getrow(-1)
+                doc_vectors = vstack([tfidf_matrix.getrow(i) for i in range(tfidf_matrix.shape[0]-1)])
+                
+                # Calculate similarities based on chosen method
+                if method == 'cosine':
+                    from sklearn.metrics.pairwise import cosine_similarity
+                    similarities = cosine_similarity(doc_vectors.toarray(), query_vector.toarray()).flatten()
+                else:  # euclidean
+                    from sklearn.metrics.pairwise import euclidean_distances
+                    distances = euclidean_distances(doc_vectors.toarray(), query_vector.toarray()).flatten()
+                    # Convert distances to similarities (0 to 1 range)
+                    max_dist = np.max(distances) if len(distances) > 0 else 1
+                    similarities = 1 - (distances / max_dist)
+                
+                # Create results with enhanced context
+                matching_docs = []
+                for doc, score in zip(documents, similarities):
+                    if score > 0.1:  # Only include relevant results
+                        # Find best context showing the match
+                        context = find_best_context(doc.content, query)
+                        
+                        matching_docs.append({
+                            'id': doc.id,
+                            'title': doc.title,
+                            'file_type': doc.file_type,
+                            'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
+                            'score': round(float(score * 100), 1),
+                            'preview': context,
+                            'size': doc.get_file_size_display(),
+                            'url': f'/media/documents/{doc.title}'
+                        })
             
-            # Create TF-IDF matrix
-            tfidf_matrix = vectorizer.fit_transform(all_texts)
-            
-            # Get query vector (last row of the matrix)
-            query_vector = tfidf_matrix.getrow(-1)
-            
-            # Get document vectors (all rows except the last one)
-            doc_vectors = vstack([tfidf_matrix.getrow(i) for i in range(tfidf_matrix.shape[0]-1)])
-            
-            # Calculate similarities
-            if method == 'cosine':
-                from sklearn.metrics.pairwise import cosine_similarity
-                similarities = cosine_similarity(doc_vectors.toarray(), query_vector.toarray())
-            else:  # euclidean
-                from sklearn.metrics.pairwise import euclidean_distances
-                distances = euclidean_distances(doc_vectors.toarray(), query_vector.toarray())
-                similarities = 1 / (1 + distances)  # Convert distance to similarity
-            
-            # Create results list
-            matching_docs = []
-            for doc, score in zip(documents, similarities):
-                score_value = float(score[0])  # Get the score value
-                if score_value > 0.1:  # Only include relevant results
-                    # Find the best context that shows the match
-                    context = find_best_context(doc.content, query)
-                    
-                    matching_docs.append({
-                        'id': doc.id,
-                        'title': doc.title,
-                        'file_type': doc.file_type,
-                        'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
-                        'score': round(score_value * 100, 1),  # Convert to percentage
-                        'preview': context,
-                        'size': f"{doc.file_size / 1024:.1f} KB" if doc.file_size else "N/A"
-                    })
-            logger.info(f"TF-IDF search results: {len(matching_docs)}")
+            except ValueError as e:
+                return JsonResponse({
+                    'error': f'Error processing search: {str(e)}'
+                }, status=500)
 
         # Sort results by score
         matching_docs.sort(key=lambda x: x['score'], reverse=True)
         
+        # Prepare response
         response_data = {
-            'results': matching_docs[:20],  # Limit to top 20 results
+            'results': matching_docs[:20],  # Top 20 results
             'total': len(matching_docs),
             'query': query
         }
-        logger.info(f"Returning {len(response_data['results'])} results")
+        
         return JsonResponse(response_data)
 
     except Exception as e:

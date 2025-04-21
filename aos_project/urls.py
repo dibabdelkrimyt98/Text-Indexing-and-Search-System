@@ -22,17 +22,16 @@ from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('indexer_app/', include('indexer_app.urls')),  
-    path('', include('indexer_app.urls')),  
+    path('', include('indexer_app.urls', namespace='indexer_app')),  
 ]
 
-# Serve static and media files in development
+# Serve static and media files
+urlpatterns += [
+    path('static/<path:path>', serve, {'document_root': settings.STATIC_ROOT}),
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+]
+
+# Add static and media URL patterns in development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    
-    # Add a catch-all pattern for static files
-    urlpatterns += [
-        path('static/<path:path>', serve, {'document_root': settings.STATIC_ROOT}),
-        path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
-    ]
