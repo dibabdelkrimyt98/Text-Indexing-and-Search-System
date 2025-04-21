@@ -16,6 +16,19 @@ fileInput.addEventListener('change', (e) => {
   
   // Add new files to selectedFiles array
   files.forEach(file => {
+    // Validate file type
+    const fileExt = file.name.split('.').pop().toLowerCase();
+    if (!['txt', 'doc', 'docx', 'pdf'].includes(fileExt)) {
+      alert(`File type .${fileExt} not allowed. Supported types: txt, doc, docx, pdf`);
+      return;
+    }
+    
+    // Validate file size (10MB = 10 * 1024 * 1024 bytes)
+    if (file.size > 10 * 1024 * 1024) {
+      alert('File size exceeds 10MB limit');
+      return;
+    }
+    
     // Check if file is already selected
     if (!selectedFiles.some(f => f.name === file.name)) {
       selectedFiles.push(file);
@@ -36,7 +49,7 @@ function updateFileList() {
   selectedFiles.forEach((file, index) => {
     const li = document.createElement('li');
     li.className = 'file-item';
-    li.dataset.filename = file.name; // Add filename as data attribute for easier selection
+    li.dataset.filename = file.name;
     
     const fileName = document.createElement('span');
     fileName.className = 'file-name';
@@ -103,18 +116,18 @@ indexButton.addEventListener('click', async () => {
     failed: 0
   };
   
-  // Process files sequentially to avoid overwhelming the server
+  // Process files sequentially
   for (const file of selectedFiles) {
     const formData = new FormData();
     formData.append('document', file);
+    formData.append('title', file.name);  // Add title to formData
     
     try {
       console.log('Uploading file:', file.name);
       console.log('File size:', file.size);
       console.log('File type:', file.type);
       
-      // Use the correct URL with the app prefix
-      const response = await fetch('/indexer_app/process/', {
+      const response = await fetch('/process/', {
         method: 'POST',
         body: formData,
         headers: {
@@ -124,15 +137,18 @@ indexButton.addEventListener('click', async () => {
       
       console.log('Response status:', response.status);
       
+      // Clone the response before reading it
+      const responseClone = response.clone();
+      
       let data;
       try {
         data = await response.json();
         console.log('Server response:', data);
       } catch (jsonError) {
         console.error('Error parsing JSON response:', jsonError);
-        const textResponse = await response.text();
+        const textResponse = await responseClone.text();
         console.log('Raw response text:', textResponse);
-        throw new Error('Invalid JSON response from server');
+        throw new Error(`Server error: ${textResponse}`);
       }
       
       // Find the file item using the data attribute
@@ -178,7 +194,7 @@ indexButton.addEventListener('click', async () => {
         errorIcon.className = 'fas fa-times error-icon';
         const errorMessage = document.createElement('span');
         errorMessage.className = 'error-message';
-        errorMessage.textContent = 'Network error or server issue';
+        errorMessage.textContent = error.message || 'Network error or server issue';
         fileItem.appendChild(errorIcon);
         fileItem.appendChild(errorMessage);
       }
@@ -219,6 +235,19 @@ uploadBox.addEventListener('drop', (e) => {
   
   const files = Array.from(e.dataTransfer.files);
   files.forEach(file => {
+    // Validate file type
+    const fileExt = file.name.split('.').pop().toLowerCase();
+    if (!['txt', 'doc', 'docx', 'pdf'].includes(fileExt)) {
+      alert(`File type .${fileExt} not allowed. Supported types: txt, doc, docx, pdf`);
+      return;
+    }
+    
+    // Validate file size (10MB = 10 * 1024 * 1024 bytes)
+    if (file.size > 10 * 1024 * 1024) {
+      alert('File size exceeds 10MB limit');
+      return;
+    }
+    
     if (!selectedFiles.some(f => f.name === file.name)) {
       selectedFiles.push(file);
     }

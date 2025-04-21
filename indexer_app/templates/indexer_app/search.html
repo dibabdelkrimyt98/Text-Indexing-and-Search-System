@@ -62,11 +62,11 @@
         
         <!-- Search Form -->
         <div class="search-box">
-          <form id="searchForm" method="POST" action="{% url 'indexer_app:search_documents' %}">
+          <form id="searchForm" method="POST" action="/indexer_app/api/search/">
             {% csrf_token %}
             <div class="search-input-wrapper">
               <input type="text" id="searchInput" name="query" placeholder="Enter your search query..." required>
-              <button type="submit" class="search-btn">
+              <button type="submit" id="searchButton" class="search-btn">
                 <i class="fas fa-search"></i> Search
               </button>
             </div>  
@@ -110,10 +110,10 @@
         </div>
 
         <!-- Loading Indicator -->
-        <div class="typing-loader" style="display: none;">Loading...</div>
+        <div id="loadingSpinner" class="typing-loader" style="display: none;">Loading...</div>
 
         <!-- Search Results -->
-        <div id="searchResults" class="results-container">
+        <div id="resultsList" class="results-container">
           <!-- Results will be inserted here -->
         </div>
       </div>

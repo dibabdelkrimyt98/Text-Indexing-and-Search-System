@@ -10,7 +10,12 @@ from typing import Dict, Any, cast, ClassVar
 from django.db.models.fields import (
     CharField, TextField, DateTimeField, IntegerField
 )
-
+from django.contrib.postgres.fields import ArrayField
+import json
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+import nltk
+from django.db.models import JSONField
 
 def validate_file_size(value: int) -> None:
     """
@@ -41,6 +46,9 @@ class Document(models.Model):
         tfidf_vector (dict): JSON field storing TF-IDF vector data
         file_type (str): Type of the document file
         file_size (int): Size of the document in bytes
+        title_vocabulary (list): List of processed words from the title
+        content_vocabulary (list): List of processed words from the content
+        word_frequencies (dict): Word frequencies in the document
     """
     
     # File type choices
@@ -93,6 +101,24 @@ class Document(models.Model):
         help_text="Size of the document in bytes"
     )
     
+    # Modified vocabulary fields to use JSONField
+    title_vocabulary = models.JSONField(
+        default=list,
+        blank=True,
+        null=True,
+        help_text="Processed words from the title"
+    )
+    content_vocabulary = models.JSONField(
+        default=list,
+        blank=True,
+        null=True,
+        help_text="Processed words from the content"
+    )
+    word_frequencies = models.JSONField(
+        default=dict,
+        help_text="Word frequencies in the document"
+    )
+    
     class Meta:
         ordering = ['-uploaded_at']
         indexes = [
@@ -119,6 +145,8 @@ class Document(models.Model):
         """Save the model with validation."""
         try:
             self.full_clean()
+            # Update vocabulary before saving
+            self.update_vocabulary()
             super().save(*args, **kwargs)
         except Exception as e:
             raise ValidationError(f"Error saving document: {str(e)}")
@@ -160,3 +188,38 @@ class Document(models.Model):
         """Update the TF-IDF vector data."""
         self.tfidf_vector = vector_data
         self.save(update_fields=['tfidf_vector'])
+
+    def extract_vocabulary(self, text: str) -> list:
+        """Extract vocabulary from text, removing stopwords."""
+        try:
+            # Tokenize and clean
+            tokens = word_tokenize(text.lower())
+            stop_words = set(stopwords.words('english'))
+            # Keep only alphanumeric words that aren't stopwords
+            words = [
+                word for word in tokens 
+                if word.isalnum() and word not in stop_words
+            ]
+            return list(set(words))  # Remove duplicates
+        except Exception as e:
+            print(f"Error extracting vocabulary: {e}")
+            return []
+
+    def update_vocabulary(self):
+        """Update document vocabulary fields."""
+        # Process title vocabulary
+        self.title_vocabulary = self.extract_vocabulary(self.title)
+        
+        # Process content vocabulary
+        content_words = self.extract_vocabulary(self.content)
+        self.content_vocabulary = content_words
+        
+        # Update word frequencies
+        from collections import Counter
+        word_counts = Counter(
+            word_tokenize(self.content.lower())
+        )
+        self.word_frequencies = {
+            word: count for word, count in word_counts.items()
+            if word.isalnum()
+        }

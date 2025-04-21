@@ -65,20 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get DOM elements
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-    const loadingSpinner = document.querySelector('.typing-loader');
-    const searchButton = document.querySelector('.search-btn');
+    const resultsList = document.getElementById('resultsList');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const searchButton = document.getElementById('searchButton');
     
     // Debug log for element existence
     console.log('Search Elements:', {
         searchForm: !!searchForm,
         searchInput: !!searchInput,
-        searchResults: !!searchResults,
+        resultsList: !!resultsList,
         loadingSpinner: !!loadingSpinner,
         searchButton: !!searchButton
     });
 
-    if (!searchForm || !searchResults) {
+    if (!searchForm || !resultsList) {
         console.error('Required search elements not found');
         return;
     }
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Show loading state
-            searchResults.innerHTML = '';
+            resultsList.innerHTML = '';
             document.body.classList.add('loading');
             if (loadingSpinner) {
                 loadingSpinner.style.display = 'block';
@@ -168,40 +168,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Display results
             if (data.results && data.results.length > 0) {
-                searchResults.innerHTML = data.results.map(doc => `
+                resultsList.innerHTML = data.results.map(doc => `
                     <div class="search-result">
                         <div class="result-header">
                             <a href="/indexer_app/download/${doc.id}/" class="result-title" download>
                                 ${doc.title}
                             </a>
-                            <span class="result-score">${(doc.score * 100).toFixed(1)}% match</span>
+                            <span class="result-score">${doc.score}% match</span>
                         </div>
                         <div class="result-meta">
                             <span class="result-type">${doc.file_type}</span>
-                            <span class="result-size">${formatFileSize(doc.size)}</span>
+                            <span class="result-size">${doc.size}</span>
                         </div>
                         ${doc.context ? `<div class="result-context">${doc.context}</div>` : ''}
+                        ${doc.matching_terms ? `
+                            <div class="matching-terms">
+                                <small>Matched terms: ${doc.matching_terms.map(term => 
+                                    `${term.term} (${term.count}x, score: ${term.score})</small>`
+                                ).join(', ')}</small>
+                            </div>
+                        ` : ''}
                     </div>
                 `).join('');
                 
-                searchResults.style.display = 'block';
+                resultsList.style.display = 'block';
             } else {
-                searchResults.innerHTML = '<div class="no-results">No documents found matching your search.</div>';
+                resultsList.innerHTML = '<div class="no-results">No documents found matching your search.</div>';
             }
 
         } catch (error) {
             console.error('Search error:', error);
-            searchResults.innerHTML = `
-                <div class="alert alert-danger">
-                    <p>Error performing search: ${error.message}</p>
-                    <p>Please try again or contact support if the problem persists.</p>
-                </div>`;
+            resultsList.innerHTML = `<div class="error-message">An error occurred while searching: ${error.message}</div>`;
         } finally {
-            // Hide loading state
-            document.body.classList.remove('loading');
-            if (loadingSpinner) {
-                loadingSpinner.style.display = 'none';
-            }
             // Re-enable the button
             if (searchButton) {
                 searchButton.disabled = false;
@@ -209,3 +207,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Format file size to human readable format
+function formatFileSize(bytes) {
+    if (!bytes) return '0 B';
+    const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+    let size = parseFloat(bytes);
+    let unitIndex = 0;
+    
+    while (size >= 1024 && unitIndex < units.length - 1) {
+        size /= 1024;
+        unitIndex++;
+    }
+    
+    return `${size.toFixed(1)} ${units[unitIndex]}`;
+}
