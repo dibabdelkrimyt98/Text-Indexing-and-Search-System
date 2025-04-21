@@ -3640,3 +3640,401 @@ INFO 2025-04-21 07:33:54,904 basehttp 17776 18584 "GET /search/ HTTP/1.1" 200 55
 INFO 2025-04-21 07:33:54,904 basehttp 17776 18584 "GET /search/ HTTP/1.1" 200 5564
 INFO 2025-04-21 07:33:54,987 basehttp 17776 18584 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8735
 INFO 2025-04-21 07:33:54,987 basehttp 17776 18584 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8735
+INFO 2025-04-21 07:38:05,153 basehttp 17776 19104 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:38:05,153 basehttp 17776 19104 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:38:05,218 basehttp 17776 19104 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:38:05,218 basehttp 17776 19104 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:40:13,102 basehttp 17776 19536 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:40:13,102 basehttp 17776 19536 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:40:13,170 basehttp 17776 19536 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:40:13,170 basehttp 17776 19536 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:42:10,001 basehttp 17776 20872 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:42:10,001 basehttp 17776 20872 "GET /search/ HTTP/1.1" 200 5564
+INFO 2025-04-21 07:42:10,088 basehttp 17776 20872 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8735
+INFO 2025-04-21 07:42:10,088 basehttp 17776 20872 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8735
+INFO 2025-04-21 07:42:30,099 basehttp 17776 20872 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:42:30,099 basehttp 17776 20872 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:42:30,187 basehttp 17776 20872 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:42:30,187 basehttp 17776 20872 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:42:42,598 basehttp 17776 20872 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:42:42,598 basehttp 17776 20872 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:42:42,679 basehttp 17776 20872 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:42:42,679 basehttp 17776 20872 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:45:47,219 basehttp 17776 12096 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:45:47,219 basehttp 17776 12096 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:45:47,387 basehttp 17776 12096 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:45:47,387 basehttp 17776 12096 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:47:22,412 basehttp 17776 12096 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:47:22,412 basehttp 17776 12096 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:47:22,641 basehttp 17776 12096 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:47:22,641 basehttp 17776 12096 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:56:37,333 autoreload 17776 5012 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 07:56:37,333 autoreload 17776 5012 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 07:56:39,240 autoreload 18620 10840 Watching for file changes with StatReloader
+INFO 2025-04-21 07:56:39,240 autoreload 18620 10840 Watching for file changes with StatReloader
+INFO 2025-04-21 07:56:49,005 basehttp 18620 19732 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:56:49,005 basehttp 18620 19732 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:56:49,089 basehttp 18620 19732 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8683
+INFO 2025-04-21 07:56:49,089 basehttp 18620 19732 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8683
+INFO 2025-04-21 07:58:49,047 autoreload 18620 10840 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 07:58:49,047 autoreload 18620 10840 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 07:58:51,434 autoreload 12404 15576 Watching for file changes with StatReloader
+INFO 2025-04-21 07:58:51,434 autoreload 12404 15576 Watching for file changes with StatReloader
+INFO 2025-04-21 07:58:54,513 basehttp 12404 13596 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:58:54,513 basehttp 12404 13596 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:58:54,585 basehttp 12404 13596 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:58:54,585 basehttp 12404 13596 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:59:42,880 basehttp 12404 13596 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:59:42,880 basehttp 12404 13596 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 07:59:43,033 basehttp 12404 13596 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 07:59:43,033 basehttp 12404 13596 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:00:36,784 autoreload 12404 15576 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 08:00:36,784 autoreload 12404 15576 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 08:00:38,086 autoreload 20528 19796 Watching for file changes with StatReloader
+INFO 2025-04-21 08:00:38,086 autoreload 20528 19796 Watching for file changes with StatReloader
+INFO 2025-04-21 08:00:44,229 autoreload 20528 19796 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 08:00:44,229 autoreload 20528 19796 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 08:00:46,592 autoreload 15380 17580 Watching for file changes with StatReloader
+INFO 2025-04-21 08:00:46,592 autoreload 15380 17580 Watching for file changes with StatReloader
+INFO 2025-04-21 08:00:49,317 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 08:00:49,317 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 08:00:49,469 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:00:49,469 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:02:01,535 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 08:02:01,535 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 08:02:01,656 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:02:01,656 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:02:28,400 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 08:02:28,400 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5599
+INFO 2025-04-21 08:02:28,506 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:02:28,506 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:03:51,922 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:03:51,922 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:03:52,001 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:03:52,001 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:05:30,116 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:05:30,116 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:05:30,225 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:05:30,225 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:05:32,078 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:05:32,078 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:05:32,152 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:05:32,152 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:06:25,322 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:06:25,322 basehttp 15380 9564 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:06:25,383 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:06:25,383 basehttp 15380 21196 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:08:54,564 basehttp 15380 15840 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:08:54,564 basehttp 15380 15840 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:08:54,630 basehttp 15380 15840 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:08:54,630 basehttp 15380 15840 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:09:32,113 autoreload 8384 19440 Watching for file changes with StatReloader
+INFO 2025-04-21 08:09:32,113 autoreload 8384 19440 Watching for file changes with StatReloader
+INFO 2025-04-21 08:09:38,061 basehttp 8384 18488 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:09:38,061 basehttp 8384 18488 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:09:38,137 basehttp 8384 18488 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:09:38,138 basehttp 8384 3324 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+INFO 2025-04-21 08:09:38,137 basehttp 8384 18488 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:09:38,138 basehttp 8384 3324 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+INFO 2025-04-21 08:09:47,355 basehttp 8384 3324 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:09:47,355 basehttp 8384 3324 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:09:47,449 basehttp 8384 3324 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:09:47,449 basehttp 8384 18488 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:09:47,449 basehttp 8384 3324 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:09:47,449 basehttp 8384 18488 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:12:27,211 basehttp 8384 17860 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:12:27,211 basehttp 8384 17860 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:12:27,367 basehttp 8384 17860 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:12:27,367 basehttp 8384 17860 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:12:27,379 basehttp 8384 11744 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:12:27,379 basehttp 8384 11744 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:13:39,040 basehttp 8384 17860 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:13:39,040 basehttp 8384 17860 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:13:39,132 basehttp 8384 11744 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:13:39,132 basehttp 8384 17860 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:13:39,132 basehttp 8384 11744 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:13:39,132 basehttp 8384 17860 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:33,617 autoreload 17164 8612 Watching for file changes with StatReloader
+INFO 2025-04-21 08:14:33,617 autoreload 17164 8612 Watching for file changes with StatReloader
+INFO 2025-04-21 08:14:38,246 basehttp 17164 19792 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:14:38,246 basehttp 17164 19792 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:14:38,338 basehttp 17164 19792 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:38,338 basehttp 17164 16928 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:38,338 basehttp 17164 19792 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:38,338 basehttp 17164 16928 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:39,367 basehttp 17164 19792 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:14:39,367 basehttp 17164 19792 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:14:39,465 basehttp 17164 16992 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:39,465 basehttp 17164 16992 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:39,470 basehttp 17164 19040 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:14:39,470 basehttp 17164 19040 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:26,978 basehttp 17164 19792 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:15:26,978 basehttp 17164 19792 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:15:27,049 basehttp 17164 16928 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:27,049 basehttp 17164 16928 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:27,055 basehttp 17164 16992 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8683
+INFO 2025-04-21 08:15:27,055 basehttp 17164 16992 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 8683
+INFO 2025-04-21 08:15:29,297 basehttp 17164 16992 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:15:29,297 basehttp 17164 16992 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:15:29,378 basehttp 17164 16992 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:29,378 basehttp 17164 19040 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:29,378 basehttp 17164 16992 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:29,378 basehttp 17164 19040 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:41,581 autoreload 8692 11952 Watching for file changes with StatReloader
+INFO 2025-04-21 08:15:41,581 autoreload 8692 11952 Watching for file changes with StatReloader
+INFO 2025-04-21 08:15:44,839 basehttp 8692 10428 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:15:44,839 basehttp 8692 10428 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:15:44,942 basehttp 8692 10428 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:44,942 basehttp 8692 10428 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:44,946 basehttp 8692 20812 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:15:44,946 basehttp 8692 20812 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:20:11,773 basehttp 8692 3732 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:20:11,773 basehttp 8692 3732 "GET /search/ HTTP/1.1" 200 5632
+INFO 2025-04-21 08:20:11,858 basehttp 8692 3732 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:20:11,858 basehttp 8692 3732 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:20:11,858 basehttp 8692 16540 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 9600
+INFO 2025-04-21 08:20:11,858 basehttp 8692 16540 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 9600
+INFO 2025-04-21 08:20:55,601 basehttp 8692 16540 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:20:55,673 basehttp 8692 3732 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:20:55,601 basehttp 8692 16540 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:20:55,673 basehttp 8692 3732 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:20:55,718 basehttp 8692 16540 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:20:55,718 basehttp 8692 16540 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:21:27,752 basehttp 8692 16540 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:21:27,752 basehttp 8692 16540 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:21:27,831 basehttp 8692 16540 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:21:27,831 basehttp 8692 3732 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:21:27,831 basehttp 8692 16540 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:21:27,831 basehttp 8692 3732 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:49,531 basehttp 8692 15172 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:23:49,531 basehttp 8692 15172 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:23:49,864 basehttp 8692 15172 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:49,864 basehttp 8692 15172 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:49,877 basehttp 8692 10088 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:49,877 basehttp 8692 10088 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:55,046 basehttp 8692 15172 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:23:55,046 basehttp 8692 15172 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:23:55,279 basehttp 8692 10088 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:55,279 basehttp 8692 10088 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:23:55,303 basehttp 8692 15172 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 9756
+INFO 2025-04-21 08:23:55,303 basehttp 8692 15172 "GET /static/indexer_app/css/search.css HTTP/1.1" 200 9756
+INFO 2025-04-21 08:31:16,262 basehttp 8692 18740 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:31:16,262 basehttp 8692 18740 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:31:16,356 basehttp 8692 18740 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:31:16,356 basehttp 8692 18740 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:31:16,357 basehttp 8692 15380 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:31:16,357 basehttp 8692 15380 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:31:45,674 autoreload 5072 12176 Watching for file changes with StatReloader
+INFO 2025-04-21 08:31:45,674 autoreload 5072 12176 Watching for file changes with StatReloader
+INFO 2025-04-21 08:32:00,662 basehttp 5072 15944 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:32:00,662 basehttp 5072 15944 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 08:32:00,756 basehttp 5072 15944 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:32:00,756 basehttp 5072 3280 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:32:00,756 basehttp 5072 15944 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 08:32:00,756 basehttp 5072 3280 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:43:17,153 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:43:17,153 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:43:17,314 basehttp 5072 18600 "GET /static/indexer_app/js/theme.js HTTP/1.1" 200 393
+INFO 2025-04-21 10:43:17,314 basehttp 5072 18600 "GET /static/indexer_app/js/theme.js HTTP/1.1" 200 393
+INFO 2025-04-21 10:43:17,338 basehttp 5072 20500 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:43:17,338 basehttp 5072 20500 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:43:17,343 basehttp 5072 13996 "GET /static/indexer_app/js/lang.js HTTP/1.1" 200 1568
+INFO 2025-04-21 10:43:17,347 basehttp 5072 6392 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+INFO 2025-04-21 10:43:17,343 basehttp 5072 13996 "GET /static/indexer_app/js/lang.js HTTP/1.1" 200 1568
+INFO 2025-04-21 10:43:17,347 basehttp 5072 6392 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+WARNING 2025-04-21 10:43:17,731 log 5072 6392 Not Found: /favicon.ico
+WARNING 2025-04-21 10:43:17,731 log 5072 6392 Not Found: /favicon.ico
+WARNING 2025-04-21 10:43:17,734 basehttp 5072 6392 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:43:17,734 basehttp 5072 6392 "GET /favicon.ico HTTP/1.1" 404 6769
+INFO 2025-04-21 10:44:21,444 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:44:21,444 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:44:21,522 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,522 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,526 basehttp 5072 20500 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,526 basehttp 5072 18600 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,527 basehttp 5072 19420 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,526 basehttp 5072 20500 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,526 basehttp 5072 18600 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:44:21,527 basehttp 5072 19420 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,464 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:45:11,464 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:45:11,550 basehttp 5072 19420 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,550 basehttp 5072 20500 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,550 basehttp 5072 18600 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,550 basehttp 5072 19420 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,552 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,550 basehttp 5072 20500 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,550 basehttp 5072 18600 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:11,552 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,284 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:45:30,284 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:45:30,372 basehttp 5072 20500 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 19420 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 18600 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 20500 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 19420 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:30,372 basehttp 5072 18600 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,013 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:45:49,013 basehttp 5072 18600 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:45:49,093 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,093 basehttp 5072 18600 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,093 basehttp 5072 18600 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,095 basehttp 5072 20500 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,093 basehttp 5072 13996 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,095 basehttp 5072 19420 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,095 basehttp 5072 20500 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:45:49,095 basehttp 5072 19420 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:46:00,997 autoreload 10716 12108 Watching for file changes with StatReloader
+INFO 2025-04-21 10:46:00,997 autoreload 10716 12108 Watching for file changes with StatReloader
+INFO 2025-04-21 10:48:19,843 basehttp 10716 11740 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:48:19,843 basehttp 10716 11740 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:48:20,096 basehttp 10716 11740 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,096 basehttp 10716 11740 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,128 basehttp 10716 11740 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,128 basehttp 10716 11740 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,131 basehttp 10716 5388 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,131 basehttp 10716 5388 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,136 basehttp 10716 1980 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:48:20,136 basehttp 10716 1980 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,100 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:53:47,100 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:53:47,218 basehttp 10716 10000 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,218 basehttp 10716 11448 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,218 basehttp 10716 10000 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,218 basehttp 10716 11448 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,222 basehttp 10716 12168 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,222 basehttp 10716 12168 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,229 basehttp 10716 14272 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,229 basehttp 10716 14272 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:53:47,265 basehttp 10716 9816 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 8360
+INFO 2025-04-21 10:53:47,265 basehttp 10716 9816 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 8360
+WARNING 2025-04-21 10:53:47,355 log 10716 9816 Not Found: /favicon.ico
+WARNING 2025-04-21 10:53:47,355 log 10716 9816 Not Found: /favicon.ico
+WARNING 2025-04-21 10:53:47,363 basehttp 10716 9816 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:53:47,363 basehttp 10716 9816 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:53:48,044 log 10716 10000 Not Found: /indexer_app/api/search/
+WARNING 2025-04-21 10:53:48,044 log 10716 10000 Not Found: /indexer_app/api/search/
+WARNING 2025-04-21 10:53:48,050 basehttp 10716 10000 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-21 10:53:48,050 basehttp 10716 10000 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+INFO 2025-04-21 10:55:29,435 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:55:29,435 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:55:29,528 basehttp 10716 10000 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,530 basehttp 10716 11448 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,530 basehttp 10716 14272 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,530 basehttp 10716 12168 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,528 basehttp 10716 10000 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,530 basehttp 10716 11448 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,530 basehttp 10716 14272 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,530 basehttp 10716 12168 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:55:29,569 basehttp 10716 11916 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 8348
+INFO 2025-04-21 10:55:29,569 basehttp 10716 11916 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 8348
+WARNING 2025-04-21 10:55:29,656 log 10716 11916 Not Found: /favicon.ico
+WARNING 2025-04-21 10:55:29,656 log 10716 11916 Not Found: /favicon.ico
+WARNING 2025-04-21 10:55:29,661 basehttp 10716 11916 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:55:29,661 basehttp 10716 11916 "GET /favicon.ico HTTP/1.1" 404 6769
+INFO 2025-04-21 10:55:31,127 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 52
+INFO 2025-04-21 10:55:31,127 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 52
+INFO 2025-04-21 10:55:35,189 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 1898
+INFO 2025-04-21 10:55:35,189 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 1898
+INFO 2025-04-21 10:55:47,391 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 43
+INFO 2025-04-21 10:55:47,391 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 43
+INFO 2025-04-21 10:57:29,477 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 43
+INFO 2025-04-21 10:57:29,477 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 43
+INFO 2025-04-21 10:57:34,161 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 44
+INFO 2025-04-21 10:57:34,161 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 44
+INFO 2025-04-21 10:57:58,706 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 44
+INFO 2025-04-21 10:57:58,706 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 44
+INFO 2025-04-21 10:57:59,966 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:57:59,966 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:58:00,038 basehttp 10716 10000 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,038 basehttp 10716 10000 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,054 basehttp 10716 1740 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,054 basehttp 10716 1740 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,057 basehttp 10716 20392 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,058 basehttp 10716 284 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,057 basehttp 10716 20392 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,058 basehttp 10716 284 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:00,082 basehttp 10716 19216 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 8360
+INFO 2025-04-21 10:58:00,082 basehttp 10716 19216 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 8360
+WARNING 2025-04-21 10:58:00,123 log 10716 19216 Not Found: /favicon.ico
+WARNING 2025-04-21 10:58:00,123 log 10716 19216 Not Found: /favicon.ico
+WARNING 2025-04-21 10:58:00,123 basehttp 10716 19216 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:58:00,123 basehttp 10716 19216 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:58:04,324 log 10716 10000 Not Found: /indexer_app/api/search/
+WARNING 2025-04-21 10:58:04,324 log 10716 10000 Not Found: /indexer_app/api/search/
+WARNING 2025-04-21 10:58:04,336 basehttp 10716 10000 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-21 10:58:04,336 basehttp 10716 10000 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+INFO 2025-04-21 10:58:18,433 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:58:18,433 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:58:18,521 basehttp 10716 1740 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:18,523 basehttp 10716 284 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:18,521 basehttp 10716 1740 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:18,523 basehttp 10716 284 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:18,523 basehttp 10716 10000 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+INFO 2025-04-21 10:58:18,523 basehttp 10716 10000 "GET /static/indexer_app/css/styles.css HTTP/1.1" 200 9533
+INFO 2025-04-21 10:58:18,535 basehttp 10716 10244 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:18,535 basehttp 10716 10244 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:58:18,568 basehttp 10716 20392 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 7259
+INFO 2025-04-21 10:58:18,568 basehttp 10716 20392 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 7259
+WARNING 2025-04-21 10:58:18,642 log 10716 20392 Not Found: /favicon.ico
+WARNING 2025-04-21 10:58:18,642 log 10716 20392 Not Found: /favicon.ico
+WARNING 2025-04-21 10:58:18,642 basehttp 10716 20392 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:58:18,642 basehttp 10716 20392 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:58:19,940 log 10716 10000 Not Found: /indexer_app/api/search/
+WARNING 2025-04-21 10:58:19,940 log 10716 10000 Not Found: /indexer_app/api/search/
+WARNING 2025-04-21 10:58:19,945 basehttp 10716 10000 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+WARNING 2025-04-21 10:58:19,945 basehttp 10716 10000 "POST /indexer_app/api/search/ HTTP/1.1" 404 6806
+INFO 2025-04-21 10:59:11,883 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:59:11,883 basehttp 10716 10000 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 10:59:11,948 basehttp 10716 1740 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,951 basehttp 10716 10000 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,952 basehttp 10716 284 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,948 basehttp 10716 1740 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,951 basehttp 10716 10000 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,952 basehttp 10716 284 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,956 basehttp 10716 3236 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,956 basehttp 10716 3236 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 10:59:11,985 basehttp 10716 10244 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 7247
+INFO 2025-04-21 10:59:11,985 basehttp 10716 10244 "GET /static/indexer_app/js/search.js HTTP/1.1" 200 7247
+WARNING 2025-04-21 10:59:12,050 log 10716 10244 Not Found: /favicon.ico
+WARNING 2025-04-21 10:59:12,050 log 10716 10244 Not Found: /favicon.ico
+WARNING 2025-04-21 10:59:12,055 basehttp 10716 10244 "GET /favicon.ico HTTP/1.1" 404 6769
+WARNING 2025-04-21 10:59:12,055 basehttp 10716 10244 "GET /favicon.ico HTTP/1.1" 404 6769
+INFO 2025-04-21 10:59:12,971 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 52
+INFO 2025-04-21 10:59:12,971 basehttp 10716 10000 "POST /api/search/ HTTP/1.1" 200 52
+INFO 2025-04-21 11:03:22,391 autoreload 10716 12108 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:03:22,391 autoreload 10716 12108 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:03:24,269 autoreload 15932 4768 Watching for file changes with StatReloader
+INFO 2025-04-21 11:03:24,269 autoreload 15932 4768 Watching for file changes with StatReloader
+INFO 2025-04-21 11:03:49,201 autoreload 15932 4768 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:03:49,201 autoreload 15932 4768 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:03:51,201 autoreload 12020 15424 Watching for file changes with StatReloader
+INFO 2025-04-21 11:03:51,201 autoreload 12020 15424 Watching for file changes with StatReloader
+INFO 2025-04-21 11:04:00,460 autoreload 12020 15424 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:04:00,460 autoreload 12020 15424 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:04:02,143 autoreload 10552 20260 Watching for file changes with StatReloader
+INFO 2025-04-21 11:04:02,143 autoreload 10552 20260 Watching for file changes with StatReloader
+INFO 2025-04-21 11:04:16,348 autoreload 10552 20260 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:04:16,348 autoreload 10552 20260 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:04:18,294 autoreload 18844 15696 Watching for file changes with StatReloader
+INFO 2025-04-21 11:04:18,294 autoreload 18844 15696 Watching for file changes with StatReloader
+INFO 2025-04-21 11:05:15,373 autoreload 18844 15696 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:05:15,373 autoreload 18844 15696 C:\Users\HP\Downloads\aos system\indexer_app\views.py changed, reloading.
+INFO 2025-04-21 11:05:17,618 autoreload 18184 16072 Watching for file changes with StatReloader
+INFO 2025-04-21 11:05:17,618 autoreload 18184 16072 Watching for file changes with StatReloader
+INFO 2025-04-21 11:05:20,259 basehttp 18184 8384 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 11:05:20,259 basehttp 18184 8384 "GET /search/ HTTP/1.1" 200 5634
+INFO 2025-04-21 11:05:20,327 basehttp 18184 8384 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,327 basehttp 18184 8384 "GET /static/indexer_app/js/theme.js HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,334 basehttp 18184 1848 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,334 basehttp 18184 1848 "GET /static/indexer_app/js/lang.js HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,342 basehttp 18184 14672 "GET /static/indexer_app/js/search.js HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,342 basehttp 18184 15952 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,344 basehttp 18184 20264 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,342 basehttp 18184 14672 "GET /static/indexer_app/js/search.js HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,342 basehttp 18184 15952 "GET /static/indexer_app/css/styles.css HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:20,344 basehttp 18184 20264 "GET /static/indexer_app/css/search.css HTTP/1.1" 304 0
+INFO 2025-04-21 11:05:23,243 basehttp 18184 8384 "POST /api/search/ HTTP/1.1" 200 52
+INFO 2025-04-21 11:05:23,243 basehttp 18184 8384 "POST /api/search/ HTTP/1.1" 200 52

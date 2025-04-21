@@ -104,6 +104,7 @@ body.dark-mode {
 .upload-hero {
   flex: 1;
   position: relative;
+  background-image: url(../assets/images/background_pic.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

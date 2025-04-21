@@ -62,21 +62,21 @@
         
         <!-- Search Form -->
         <div class="search-box">
-          <form id="searchForm" method="POST">
+          <form id="searchForm" method="POST" action="{% url 'indexer_app:search_documents' %}">
             {% csrf_token %}
             <div class="search-input-wrapper">
               <input type="text" id="searchInput" name="query" placeholder="Enter your search query..." required>
               <button type="submit" class="search-btn">
                 <i class="fas fa-search"></i> Search
               </button>
-            </div>
+            </div>  
             
             <!-- Search Options -->
             <div class="search-options">
               <div class="options-grid">
                 <div class="option-item">
                   <label class="checkbox-wrapper">
-                    <input type="checkbox" id="exactMatch" name="exactMatch">
+                    <input type="checkbox" id="exactMatch" name="exactMatch" value="true">
                     <span class="label-text">Exact Match</span>
                   </label>
                 </div>
@@ -110,7 +110,7 @@
         </div>
 
         <!-- Loading Indicator -->
-        <div class="typing-loader"></div>
+        <div class="typing-loader" style="display: none;">Loading...</div>
 
         <!-- Search Results -->
         <div id="searchResults" class="results-container">

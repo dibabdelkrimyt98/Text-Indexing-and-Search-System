@@ -57,141 +57,155 @@ function highlightText(text, query, exactMatch = false) {
 }
 
 // ========== Submit Search Form ==========
+console.log('Search.js file loaded successfully');
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
+    
+    // Get DOM elements
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
     const searchResults = document.getElementById('searchResults');
     const loadingSpinner = document.querySelector('.typing-loader');
-    const exactMatchCheckbox = document.getElementById('exactMatch');
-    const fileTypeSelect = document.getElementById('fileType');
-    const dateRangeSelect = document.getElementById('dateRange');
-    const similaritySelect = document.getElementById('similaritySelect');
+    const searchButton = document.querySelector('.search-btn');
+    
+    // Debug log for element existence
+    console.log('Search Elements:', {
+        searchForm: !!searchForm,
+        searchInput: !!searchInput,
+        searchResults: !!searchResults,
+        loadingSpinner: !!loadingSpinner,
+        searchButton: !!searchButton
+    });
 
     if (!searchForm || !searchResults) {
-        console.error('Required elements not found');
+        console.error('Required search elements not found');
         return;
+    }
+
+    // Modified button click handler
+    if (searchButton) {
+        searchButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Search button clicked');
+            
+            // Trigger form submission
+            const submitEvent = new Event('submit', {
+                bubbles: true,
+                cancelable: true
+            });
+            searchForm.dispatchEvent(submitEvent);
+        });
     }
 
     // Handle search form submission
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        console.log('Form submitted');
+        console.log('Form submit event triggered');
+
+        // Disable the button to prevent double submission
+        if (searchButton) {
+            searchButton.disabled = true;
+        }
 
         const query = searchInput.value.trim();
         if (!query) {
             console.log('Empty query, stopping');
+            if (searchButton) {
+                searchButton.disabled = false;
+            }
             return;
         }
 
-        // Show loading state
-        searchResults.innerHTML = '';
-        if (loadingSpinner) {
-            loadingSpinner.style.display = 'block';
-        }
-
         try {
+            // Show loading state
+            searchResults.innerHTML = '';
+            document.body.classList.add('loading');
+            if (loadingSpinner) {
+                loadingSpinner.style.display = 'block';
+            }
+
+            // Get form data
             const formData = new FormData(searchForm);
+            console.log('Search query:', query);
             console.log('Form data:', Object.fromEntries(formData));
 
-            const response = await fetch('/indexer_app/api/search/', {
+            // Get CSRF token
+            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            if (!csrftoken) {
+                throw new Error('CSRF token not found');
+            }
+
+            // Make search request
+            const response = await fetch('/api/search/', {
                 method: 'POST',
                 headers: {
-                    'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+                    'X-CSRFToken': csrftoken,
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: formData
             });
 
-            console.log('Response status:', response.status);
+            console.log('Search response:', {
+                status: response.status,
+                ok: response.ok,
+                statusText: response.statusText
+            });
 
             if (!response.ok) {
                 const errorText = await response.text();
-                console.error('Server error:', errorText);
-                throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
+                throw new Error(`Server error: ${response.status} - ${errorText}`);
             }
 
             const data = await response.json();
-            console.log('Response data:', data);
-            
+            console.log('Search results:', data);
+
             // Hide loading state
+            document.body.classList.remove('loading');
             if (loadingSpinner) {
                 loadingSpinner.style.display = 'none';
             }
-            
-            // Clear previous results
-            searchResults.innerHTML = '';
 
-            if (data.error) {
-                console.error('Server returned error:', data.error);
-                searchResults.innerHTML = `
-                    <div class="alert alert-danger">
-                        ${data.error}
-                    </div>`;
-                return;
-            }
-
-            // Add summary
-            const summary = document.createElement('div');
-            summary.className = 'results-summary';
-            summary.innerHTML = `
-                <h3>Found ${data.total} results for "${query}"</h3>
-                <div class="filters-summary">
-                    ${exactMatchCheckbox.checked ? '<span>Exact Match</span>' : ''}
-                    ${fileTypeSelect.value !== 'all' ? `<span>Type: ${fileTypeSelect.value.toUpperCase()}</span>` : ''}
-                    ${dateRangeSelect.value !== 'all' ? `<span>Period: ${dateRangeSelect.options[dateRangeSelect.selectedIndex].text}</span>` : ''}
-                </div>`;
-            searchResults.appendChild(summary);
-
-            if (!data.results || data.results.length === 0) {
-                searchResults.innerHTML += `
-                    <div class="no-results">
-                        No documents found matching your search criteria.
-                    </div>`;
-                return;
-            }
-
-            // Add results
-            data.results.forEach(result => {
-                const resultCard = document.createElement('div');
-                resultCard.className = 'result-card';
-                resultCard.innerHTML = `
-                    <div class="result-content">
+            // Display results
+            if (data.results && data.results.length > 0) {
+                searchResults.innerHTML = data.results.map(doc => `
+                    <div class="search-result">
                         <div class="result-header">
-                            <h3 class="result-title">
-                                <a href="/media/documents/${result.title}" target="_blank">
-                                    ${highlightText(result.title, query, exactMatchCheckbox.checked)}
-                                </a>
-                            </h3>
-                            <span class="score-badge">${result.score}%</span>
+                            <a href="/indexer_app/download/${doc.id}/" class="result-title" download>
+                                ${doc.title}
+                            </a>
+                            <span class="result-score">${(doc.score * 100).toFixed(1)}% match</span>
                         </div>
                         <div class="result-meta">
-                            <span class="file-type">
-                                <i class="fas fa-file"></i> ${result.file_type.toUpperCase()}
-                            </span>
-                            <span class="upload-date">
-                                <i class="fas fa-calendar"></i> ${result.uploaded_at}
-                            </span>
-                            <span class="file-size">
-                                <i class="fas fa-weight"></i> ${result.size}
-                            </span>
+                            <span class="result-type">${doc.file_type}</span>
+                            <span class="result-size">${formatFileSize(doc.size)}</span>
                         </div>
-                        ${result.preview ? `
-                            <p class="preview-text">
-                                ${highlightText(result.preview, query, exactMatchCheckbox.checked)}
-                            </p>
-                        ` : ''}
-                    </div>`;
-                searchResults.appendChild(resultCard);
-            });
+                        ${doc.context ? `<div class="result-context">${doc.context}</div>` : ''}
+                    </div>
+                `).join('');
+                
+                searchResults.style.display = 'block';
+            } else {
+                searchResults.innerHTML = '<div class="no-results">No documents found matching your search.</div>';
+            }
 
         } catch (error) {
             console.error('Search error:', error);
+            searchResults.innerHTML = `
+                <div class="alert alert-danger">
+                    <p>Error performing search: ${error.message}</p>
+                    <p>Please try again or contact support if the problem persists.</p>
+                </div>`;
+        } finally {
+            // Hide loading state
+            document.body.classList.remove('loading');
             if (loadingSpinner) {
                 loadingSpinner.style.display = 'none';
             }
-            searchResults.innerHTML = `
-                <div class="alert alert-danger">
-                    An error occurred while searching. Please try again. Error: ${error.message}
-                </div>`;
+            // Re-enable the button
+            if (searchButton) {
+                searchButton.disabled = false;
+            }
         }
     });
 });

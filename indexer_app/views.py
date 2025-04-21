@@ -20,7 +20,7 @@ from django.db import transaction
 from django.core.files.uploadedfile import UploadedFile
 from django.utils import timezone
 import numpy as np
-from scipy.sparse import vstack
+from scipy.sparse import vstack, csr_matrix
 
 from .models import Document
 
@@ -482,7 +482,7 @@ def find_best_context(content: str, query: str, window_size: int = 100) -> str:
 @csrf_exempt
 def search_documents(request: HttpRequest) -> JsonResponse:
     """
-    Search for documents based on query parameters using TF-IDF and similarity metrics.
+    Search for documents based on query parameters using tokenization and TF-IDF.
     
     Args:
         request: The HTTP request containing search parameters
@@ -502,6 +502,12 @@ def search_documents(request: HttpRequest) -> JsonResponse:
         if not query:
             return JsonResponse({'error': 'Search query is required'}, status=400)
 
+        # Tokenize the search query
+        query_tokens = word_tokenize(query.lower())
+        # Remove stopwords from query
+        stop_words = set(stopwords.words('english'))
+        query_tokens = [token for token in query_tokens if token not in stop_words and token.isalnum()]
+        
         # Start with all documents
         documents = Document.objects.all()
 
@@ -529,9 +535,14 @@ def search_documents(request: HttpRequest) -> JsonResponse:
         if exact_match:
             matching_docs = []
             for doc in documents:
-                # Search in both original and processed content
-                if (query.lower() in doc.content.lower() or 
-                    query.lower() in doc.processed_content.lower()):
+                # Tokenize document content
+                doc_tokens = word_tokenize(doc.content.lower())
+                doc_tokens_processed = word_tokenize(doc.processed_content.lower())
+                
+                # Calculate token match score
+                token_matches = sum(1 for token in query_tokens if token in doc_tokens or token in doc_tokens_processed)
+                if token_matches > 0:
+                    match_score = (token_matches / len(query_tokens)) * 100
                     
                     # Find best context showing the match
                     context = find_best_context(doc.content, query)
@@ -541,26 +552,25 @@ def search_documents(request: HttpRequest) -> JsonResponse:
                         'title': doc.title,
                         'file_type': doc.file_type,
                         'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
-                        'score': 100,  # Exact match gets 100%
-                        'preview': context,
+                        'score': round(match_score, 1),
+                        'context': context,
                         'size': doc.get_file_size_display(),
-                        'url': f'/media/documents/{doc.title}'
                     })
         else:
             # Create TF-IDF vectorizer with enhanced parameters
             vectorizer = TfidfVectorizer(
-                min_df=1,  # Include all terms
-                max_df=0.95,  # Ignore terms that appear in >95% of docs
+                tokenizer=word_tokenize,
+                preprocessor=lambda x: x.lower(),
                 stop_words='english',
                 ngram_range=(1, 2),  # Include unigrams and bigrams
                 strip_accents='unicode',
-                norm='l2',  # L2 normalization
+                norm='l2',
                 use_idf=True,
                 smooth_idf=True,
-                sublinear_tf=True  # Apply sublinear scaling to term frequencies
+                sublinear_tf=True
             )
             
-            # Get document contents - combine original and processed
+            # Get document contents - combine original and processed content
             doc_contents = [
                 f"{doc.content} {doc.processed_content}" 
                 for doc in documents
@@ -574,17 +584,16 @@ def search_documents(request: HttpRequest) -> JsonResponse:
                 tfidf_matrix = vectorizer.fit_transform(all_texts)
                 
                 # Get query vector (last row) and document vectors
-                query_vector = tfidf_matrix.getrow(-1)
-                doc_vectors = vstack([tfidf_matrix.getrow(i) for i in range(tfidf_matrix.shape[0]-1)])
+                tfidf_array = csr_matrix(tfidf_matrix).toarray()
+                query_vector = tfidf_array[-1]
+                doc_vectors = tfidf_array[:-1]
                 
                 # Calculate similarities based on chosen method
                 if method == 'cosine':
-                    from sklearn.metrics.pairwise import cosine_similarity
-                    similarities = cosine_similarity(doc_vectors.toarray(), query_vector.toarray()).flatten()
+                    similarities = cosine_similarity(doc_vectors, query_vector.reshape(1, -1)).flatten()
                 else:  # euclidean
                     from sklearn.metrics.pairwise import euclidean_distances
-                    distances = euclidean_distances(doc_vectors.toarray(), query_vector.toarray()).flatten()
-                    # Convert distances to similarities (0 to 1 range)
+                    distances = euclidean_distances(doc_vectors, query_vector.reshape(1, -1)).flatten()
                     max_dist = np.max(distances) if len(distances) > 0 else 1
                     similarities = 1 - (distances / max_dist)
                 
@@ -595,15 +604,22 @@ def search_documents(request: HttpRequest) -> JsonResponse:
                         # Find best context showing the match
                         context = find_best_context(doc.content, query)
                         
+                        # Get token-based relevance score
+                        doc_tokens = word_tokenize(doc.content.lower())
+                        token_matches = sum(1 for token in query_tokens if token in doc_tokens)
+                        token_score = (token_matches / len(query_tokens)) * 100
+                        
+                        # Combine TF-IDF score with token score
+                        final_score = (float(score * 100) + token_score) / 2
+                        
                         matching_docs.append({
                             'id': doc.id,
                             'title': doc.title,
                             'file_type': doc.file_type,
                             'uploaded_at': doc.uploaded_at.strftime("%Y-%m-%d %H:%M"),
-                            'score': round(float(score * 100), 1),
-                            'preview': context,
+                            'score': round(final_score, 1),
+                            'context': context,
                             'size': doc.get_file_size_display(),
-                            'url': f'/media/documents/{doc.title}'
                         })
             
             except ValueError as e:
