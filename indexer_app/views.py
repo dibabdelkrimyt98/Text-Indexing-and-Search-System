@@ -405,7 +405,7 @@ def find_best_context(content: str, query: str, window_size: int = 100) -> str:
     start = 0
     while True:
         index = content_lower.find(query_lower, start)
-        if index == -1:
+        if index == -1: 
             break
         matches.append(index)
         start = index + 1
@@ -1135,3 +1135,89 @@ def analyze_document_vocabulary(request: HttpRequest) -> JsonResponse:
     except Exception as e:
         logger.error(f"Error analyzing document: {str(e)}")
         return JsonResponse({'error': str(e)}, status=500)
+
+
+@require_http_methods(["POST"])
+@csrf_exempt
+def get_tfidf_matrix(request: HttpRequest) -> JsonResponse:
+    """Calculate and return the TF-IDF matrix for a given query."""
+    try:
+        query = request.POST.get('query', '').strip()
+        top_n = int(request.POST.get('top_n', 10))  # Number of top keywords to show
+        
+        if not query:
+            return JsonResponse({'error': 'Search query is required'}, status=400)
+            
+        # Get all documents
+        documents = Document.objects.all()
+        
+        if not documents.exists():
+            return JsonResponse({
+                'matrix': [],
+                'documents': [],
+                'keywords': [],
+                'query': query
+            })
+            
+        # Create TF-IDF vectors
+        vectorizer = TfidfVectorizer(
+            stop_words='english',
+            max_features=10000
+        )
+        
+        # Prepare documents for vectorization
+        doc_contents = [doc.processed_content for doc in documents]
+        doc_contents.append(query)  # Add query to the corpus
+        
+        # Fit and transform the documents
+        tfidf_matrix = vectorizer.fit_transform(doc_contents)
+        
+        # Get feature names (keywords)
+        feature_names = vectorizer.get_feature_names_out().tolist()
+        
+        # Get top N keywords based on query vector
+        query_vector = tfidf_matrix.getrow(-1).toarray()[0]
+        top_keyword_indices = np.argsort(query_vector)[-top_n:][::-1]
+        top_keywords = [feature_names[i] for i in top_keyword_indices]
+        
+        # Create a matrix of document vectors with only the top keywords
+        matrix_data = []
+        for i, doc in enumerate(documents):
+            doc_vector = tfidf_matrix.getrow(i).toarray()[0]
+            doc_keyword_values = []
+            for kw in top_keywords:
+                try:
+                    idx = feature_names.index(kw)
+                    doc_keyword_values.append(float(doc_vector[idx]))
+                except (ValueError, IndexError):
+                    doc_keyword_values.append(0.0)
+                    
+            matrix_data.append({
+                'id': doc.id,
+                'title': doc.title,
+                'values': doc_keyword_values
+            })
+            
+        # Get query vector values for top keywords
+        query_values = []
+        for kw in top_keywords:
+            try:
+                idx = feature_names.index(kw)
+                query_values.append(float(query_vector[idx]))
+            except (ValueError, IndexError):
+                query_values.append(0.0)
+        
+        return JsonResponse({
+            'matrix': matrix_data,
+            'documents': [{'id': doc.id, 'title': doc.title} for doc in documents],
+            'keywords': top_keywords,
+            'query_values': query_values,
+            'query': query
+        })
+        
+    except Exception as e:
+        logger.error(f"Error in get_tfidf_matrix: {str(e)}")
+        logger.exception("Full traceback:")
+        return JsonResponse({
+            'error': 'An error occurred while calculating the TF-IDF matrix'
+        }, status=500)
